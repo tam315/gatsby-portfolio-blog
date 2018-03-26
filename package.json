@@ -1,0 +1,18 @@
+{
+  "name": "yuuni-web",
+  "description": "a web site of yuuniworks",
+  "version": "1.0.0",
+  "author": "Shota Tamura <tamura@yuuniworks.com>",
+  "dependencies": {
+    "gatsby": "^1.9.241",
+    "gatsby-link": "^1.6.39",
+    "gatsby-plugin-react-helmet": "^2.0.8",
+    "react-helmet": "^5.2.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
