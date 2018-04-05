@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5708 -3658 28 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="humberger" class="cls-1" d="M4,10H28a2,2,0,0,0,0-4H4a2,2,0,0,0,0,4Zm24,4H4a2,2,0,0,0,0,4H28a2,2,0,0,0,0-4Zm0,8H4a2,2,0,0,0,0,4H28a2,2,0,0,0,0-4Z" transform="translate(-5710 -3664)"/>
+</svg>

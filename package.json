@@ -4,10 +4,19 @@
   "version": "1.0.0",
   "author": "Shota Tamura <tamura@yuuniworks.com>",
   "dependencies": {
+    "axios": "^0.18.0",
     "gatsby": "^1.9.241",
     "gatsby-link": "^1.6.39",
+    "gatsby-plugin-glamor": "^1.6.13",
     "gatsby-plugin-react-helmet": "^2.0.8",
-    "react-helmet": "^5.2.0"
+    "gatsby-plugin-typography": "^1.7.18",
+    "prop-types": "^15.6.1",
+    "react-helmet": "^5.2.0",
+    "react-modal": "^3.3.2",
+    "react-onclickoutside": "^6.7.1",
+    "react-scroll": "^1.7.7",
+    "react-spinners": "^0.3.1",
+    "react-tooltip": "^3.4.0"
   },
   "license": "MIT",
   "scripts": {
