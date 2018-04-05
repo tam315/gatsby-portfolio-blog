@@ -101,7 +101,7 @@ class Header extends React.Component {
         transition: `background ${settings.transitionSpeed} ease-out`,
         width: '100%',
         zIndex: 10,
-        boxShadow: isScrolled ? '0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)' : 'none',
+        boxShadow: isScrolled ? '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)' : 'none',
       },
       menu: {
         display: 'flex',
