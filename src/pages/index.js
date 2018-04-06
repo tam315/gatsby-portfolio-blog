@@ -58,6 +58,7 @@ const TopSection = () => {
         to="gaiyou"
         smooth={true}
         duration={150}
+        offset={-50}
         css={styles.arrow}
       >
         <img src="/images/arrow.svg" />
@@ -336,7 +337,7 @@ const PerformanceSection = () => {
   const styles = {
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 300px))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 350px))',
       gridGap: rhythm(2),
       justifyContent: 'center',
     },
@@ -347,8 +348,8 @@ const PerformanceSection = () => {
     itemTitle: {
       marginBottom: rhythm(1),
       color: '#262626',
-      // textAlign: 'center',
       display: 'block',
+      fontWeight: 'bold',
       textDecoration: 'none',
     },
     githubIcon: {
@@ -362,9 +363,9 @@ const PerformanceSection = () => {
       color: '#fff',
       cursor: 'pointer',
       display: 'inline-block',
-      fontSize: rhythm(1/2),
-      margin: '3px 3px',
-      padding: '3px 7.2px',
+      fontSize: '0.8rem',
+      margin: '4px 3px',
+      padding: '5px 9px',
     },
     badgeLink: {
       background: '#6292F1',
@@ -380,7 +381,7 @@ const PerformanceSection = () => {
       <div css={styles.grid}>
         { performances.map((performance) => (
 
-          <WhiteBox key={performance.name} maxWidth="300px">
+          <WhiteBox key={performance.name}>
             <a href={performance.webpageURL} target="_blank" css={styles.itemTitle}>
             <div css={{
               // アスペクト比率を維持　かつ　画像で範囲全体をカバー　かつ　最も小さく表示
