@@ -451,14 +451,18 @@ const ProfileSection = () => {
       display:'flex',
       flexDirection: 'column',
       padding: rhythm(1),
+      paddingTop: 0,
+    },
+    h3: {
+      marginTop: rhythm(2),
+      marginBottom: rhythm(1.5),
     },
     gaiyouPictureContainer: {
-      marginTop: rhythm(1),
       marginBottom: rhythm(1.5),
       textAlign: 'center',
     },
     gaiyouPicture: { 
-      width: '180px',
+      width: '150px',
     },
     gaiyouListItem: {
       display: 'flex',
@@ -489,7 +493,7 @@ const ProfileSection = () => {
         <div css={styles.boxOuterContainer}>
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
-            <h3>概要</h3>
+            <h3 css={styles.h3}>概要</h3>
             <div css={styles.gaiyouPictureContainer}><img src="/images/profile.png" css={styles.gaiyouPicture}/></div>
 
             <div css={styles.gaiyouListItem}>
@@ -527,7 +531,7 @@ const ProfileSection = () => {
         <div css={styles.boxOuterContainer}>
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
-            <h3>経歴</h3>
+            <h3 css={styles.h3}>経歴</h3>
 
             <Hr />
 
@@ -564,7 +568,7 @@ const ProfileSection = () => {
         <div css={styles.boxOuterContainer}>
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
-            <h3>屋号の由来</h3>
+            <h3 css={styles.h3}>屋号の由来</h3>
             <p>「ゆうに」という言葉は島根県の石見地方で使われている方言で、以下の二つの意味を持っています。</p>
             <p><b>1．いとも簡単に・たやすく</b><br />例）ゆうにできらぁや<br />解）簡単にできますよ</p>
             <p><b>2．ゆっくりと・ゆったりと</b><br />例）ゆうに食べちゃんさいね<br />解）ゆっくり召し上がってくださいね</p>
