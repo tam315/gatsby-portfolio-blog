@@ -199,7 +199,9 @@ const SkillSection = (props) => {
       'CSS 3': 4,
       'DOM': 3,
       'git': 3,
+      'TDD/BDD': 3,
       'Python': 2,
+      'Typescript': 2,
     },
     'フロントエンド': {
       'React': 4,
@@ -212,6 +214,7 @@ const SkillSection = (props) => {
     'バックエンド': {
       'TCP/IP': 4,
       'Docker': 3,
+      'RESTful APIs': 3,
       'AWS Lambda/API': 2,
       'Nginx': 2,
       'Kubernates': 2,
