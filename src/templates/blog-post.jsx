@@ -17,14 +17,20 @@ export default ({data}) => {
       padding: rhythm(1),
     },
     backButton: {
-      color: '#262626',
+      color: '#6292F1',
       textDecoration: 'none',
-      padding: '0 1rem',
-      lineHeight: '2.5rem',
-      marginBottom: '1rem',
+      border: '2px solid #6292F1',
+      borderRadius: '7px',
+      padding: '5px 1rem',
+      marginBottom: '1.5rem',
       display: 'inline-block',
       background: '#fff',
       boxShadow: '0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)',
+      ':hover': {
+        background: '#6292F1',
+        color: '#fff',
+        cursor: 'pointer',
+      }
     },
     link: {
       display: 'block',
@@ -50,7 +56,7 @@ export default ({data}) => {
       <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} />
 
       <article css={styles.container}>
-      <Link to="/blog" css={styles.backButton}>←記事一覧に戻る</Link>
+      <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
 
       <WhiteBox>
         <div css={styles.boxInner}>
