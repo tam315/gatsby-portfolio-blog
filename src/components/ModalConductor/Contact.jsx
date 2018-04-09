@@ -205,6 +205,7 @@ class Contact extends React.Component {
                   onChange={this.handleInputChange}
                   value={this.state.mail}
                   css={styles.input}
+                  type="email"
                 />
               </label>
             </div>

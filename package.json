@@ -10,6 +10,8 @@
     "gatsby-plugin-glamor": "^1.6.13",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-typography": "^1.7.18",
+    "gatsby-source-filesystem": "^1.5.28",
+    "gatsby-transformer-remark": "^1.7.39",
     "prop-types": "^15.6.1",
     "react-helmet": "^5.2.0",
     "react-modal": "^3.3.2",

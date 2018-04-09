@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 import { Link as LinkForScroll } from 'react-scroll';
 
@@ -82,17 +83,18 @@ class Header extends React.Component {
   render() {
     const settings = {
       transitionSpeed: '0.15s',
-      barColorScrolled: 'rgba(0, 0, 15, 0.8)',
-      fontColorNonScrolled: 'rgba(255, 255, 255, 0.4)',
-      opacityNonScrolled: 0.2,
+      barColor: 'rgba(0, 0, 15, 0.8)',
+      opacityHide: 0.2,
     }
     const transitionSpeed = '0.15s';
+
     const { isMenuOpen, isScrolled } = this.state;
+    const isRootPath = this.props.location.pathname === '/';
+    const shouldBeHide = isRootPath && !isMenuOpen && !isScrolled;
 
     const styles = {
       navbar: {
-        background: isMenuOpen || isScrolled ? settings.barColorScrolled : 'transparent',
-        color: '#fff',
+        background: shouldBeHide ? 'transparent' : settings.barColor,
         display: 'flex',
         height: '50px',
         justifyContent: 'space-between',
@@ -101,7 +103,7 @@ class Header extends React.Component {
         transition: `background ${settings.transitionSpeed} ease-out`,
         width: '100%',
         zIndex: 10,
-        boxShadow: isScrolled ? '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)' : 'none',
+        boxShadow: shouldBeHide ? 'none' : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       },
       menu: {
         display: 'flex',
@@ -122,14 +124,16 @@ class Header extends React.Component {
         }
       },
       menuItems: {
+        color: '#fff',
         cursor: 'pointer',
-        opacity: this.state.isMenuOpen || this.state.isScrolled ? 1 : settings.opacityNonScrolled,
+        opacity: shouldBeHide ? settings.opacityHide : 1,
+        textDecoration: 'none',
         transition: `background ${settings.transitionSpeed} ease-out, opacity ${settings.transitionSpeed} ease-out`,
         '.active': {
           background: 'rgba(100, 100, 110, 0.95)',
         },
         '@media (max-width:749px)': {
-          background: this.state.isMenuOpen ? settings.barColorScrolled : 'transparent',
+          background:  settings.barColor,
           borderTop: '1px solid rgba(255, 255, 255, 0.2)',
           display: 'block',
           padding: '12px 25px',
@@ -147,7 +151,7 @@ class Header extends React.Component {
         cursor: 'pointer',
         display: 'flex',
         marginLeft: '25px',
-        opacity: this.state.isMenuOpen || this.state.isScrolled ? 1 : settings.opacityNonScrolled,
+        opacity: shouldBeHide ? settings.opacityHide : 1,
         width: '180px',
         transition: `opacity ${settings.transitionSpeed} ease-out`,
       },
@@ -156,7 +160,7 @@ class Header extends React.Component {
         alignItems: 'center',
         width: '28px',
         marginRight: '1.5rem',
-        opacity: this.state.isMenuOpen || this.state.isScrolled ? 1 : settings.opacityNonScrolled,
+        opacity: shouldBeHide ? settings.opacityHide : 1,
         transition: `opacity ${settings.transitionSpeed} ease-out`,
         '@media (min-width:750px)': {
           display: 'none',
@@ -165,15 +169,15 @@ class Header extends React.Component {
     }
 
     const menuItem = [
-      { name: '概要', id: 'gaiyou' },
-      { name: 'スキル', id: 'skill' },
-      { name: '実績', id: 'performance'},
-      { name: 'プロフィール', id: 'profile'},
-      { name: 'ブログ', id: 'blog'},
-      { name: '問い合わせ', id: 'contact'},
+      { name: '概要', id: 'gaiyou', path: '/#gaiyou' },
+      { name: 'スキル', id: 'skill', path: '/#skill' },
+      { name: '実績', id: 'performance', path: '/#performance' },
+      { name: 'プロフィール', id: 'profile', path: '/#profile' },
+      { name: 'ブログ', id: 'blog', path: '/blog' },
+      { name: '問い合わせ', id: 'contact', path: '/#contact' },
     ];
 
-    return (
+    return isRootPath ? (
       <nav css={styles.navbar}>
         <LinkForScroll
           to="top"
@@ -210,8 +214,43 @@ class Header extends React.Component {
         </div>
 
       </nav>
+    ) : (
+      <nav css={styles.navbar}>
+        <Link
+          to="/"
+          css={styles.logo}
+        >
+        <img src="/images/logo.svg" />
+        </Link>
+
+        <ul css={styles.menu}>
+          { menuItem.map((item) => (
+            <Link
+              to={item.path}
+              key={item.id}
+              css={styles.menuItems}
+              className={ this.props.location.pathname.startsWith(item.path) ? 'active' : null }
+              onClick={this.closeMenu}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </ul>
+        
+        <div
+          css={styles.humbergerIcon}
+          onClick={this.onHumbergerClick}
+        >
+        <img src="/images/humberger.svg" />
+        </div>
+
+      </nav>
     )
   }
+}
+
+Header.propTypes = {
+  location: PropTypes.object.isRequired,
 }
 
 export default onClickOutside(Header)

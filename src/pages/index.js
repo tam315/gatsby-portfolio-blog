@@ -49,7 +49,7 @@ const TopSection = () => {
 
   return (
     <section id="top" css={styles.container}>
-      <h1 css={styles.logo}><img src="/images/logo.svg" /></h1>
+      <h1 css={styles.logo}><img src="/images/logo.svg" alt="YUUNIWORKSのロゴ" /></h1>
       <div css={styles.description}>
         <a href="https://goo.gl/maps/HjyoY7NJ9j92" css={{ color: 'white' }} target="_blank">島根県浜田市<IconExtLink color="#fff" /></a>を拠点に<br />
         主にフロントエンド開発のお手伝いをしている<br />
@@ -61,7 +61,7 @@ const TopSection = () => {
         offset={-50}
         css={styles.arrow}
       >
-        <img src="/images/arrow.svg" />
+        <img src="/images/arrow.svg" alt="下向きの矢印" />
       </LinkForScroll>
     </section>
   )
@@ -498,7 +498,7 @@ const ProfileSection = () => {
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
             <h3 css={styles.h3}>概要</h3>
-            <div css={styles.gaiyouPictureContainer}><img src="/images/profile.png" css={styles.gaiyouPicture}/></div>
+            <div css={styles.gaiyouPictureContainer}><img src="/images/profile.png" css={styles.gaiyouPicture} alt="代表者のプロフィール写真" /></div>
 
             <div css={styles.gaiyouListItem}>
               <div css={styles.gaiyouItemName}><b>氏名</b></div>
@@ -591,34 +591,31 @@ const ProfileSection = () => {
 
 const BlogSection = () => {
   const styles = {
-    container: {
-      textAlign: 'center',
-    },
-    button: {
+    link: {
       background: '#fff',
       border: '5px solid #6292F1',
       borderRadius: '7px',
       boxShadow: '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       color: '#6292F1',
+      display: 'block',
+      margin: 'auto',
       outline: 'none',
       padding: '15px 0',
+      textAlign: 'center',
+      textDecoration: 'none',
       width: '300px',
       ':hover': {
         background: '#6292F1',
         color: '#fff',
         cursor: 'pointer',
       }
-    },
+    }
   }
 
   return (
     <SectionContainer id="blog" colorNumber="1">
       <SectionHeader text="ブログ" colorNumber="1" />
-      <div css={styles.container}>
-        <button css={styles.button}>
-          Yuuniworksブログ(準備中)
-        </button>
-      </div>
+      <Link to="/blog" css={styles.link}>Yuuniworksブログ</Link>
     </SectionContainer>
   )
 }
@@ -689,7 +686,7 @@ const FooterSection = (props) => {
         return (
           <a href={info.link || null} onClick={info.onClick || null} css={styles.link} target="_blank" key={info.description}>
             <div css={styles.ItemContainer}>
-              <img src={info.imgPath} css={styles.image} />
+              <img src={info.imgPath} css={styles.image} alt="" />
               <p css={styles.description}>{info.description}</p>
             </div>
           </a>
