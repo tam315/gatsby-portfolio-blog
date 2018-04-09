@@ -95,7 +95,6 @@ class Header extends React.Component {
     const styles = {
       navbar: {
         background: shouldBeHide ? 'transparent' : settings.barColor,
-        color: '#fff',
         display: 'flex',
         height: '50px',
         justifyContent: 'space-between',
@@ -125,8 +124,10 @@ class Header extends React.Component {
         }
       },
       menuItems: {
+        color: '#fff',
         cursor: 'pointer',
         opacity: shouldBeHide ? settings.opacityHide : 1,
+        textDecoration: 'none',
         transition: `background ${settings.transitionSpeed} ease-out, opacity ${settings.transitionSpeed} ease-out`,
         '.active': {
           background: 'rgba(100, 100, 110, 0.95)',
@@ -168,15 +169,15 @@ class Header extends React.Component {
     }
 
     const menuItem = [
-      { name: '概要', id: 'gaiyou' },
-      { name: 'スキル', id: 'skill' },
-      { name: '実績', id: 'performance'},
-      { name: 'プロフィール', id: 'profile'},
-      { name: 'ブログ', id: 'blog'},
-      { name: '問い合わせ', id: 'contact'},
+      { name: '概要', id: 'gaiyou', path: '/#gaiyou' },
+      { name: 'スキル', id: 'skill', path: '/#skill' },
+      { name: '実績', id: 'performance', path: '/#performance' },
+      { name: 'プロフィール', id: 'profile', path: '/#profile' },
+      { name: 'ブログ', id: 'blog', path: '/blog' },
+      { name: '問い合わせ', id: 'contact', path: '/#contact' },
     ];
 
-    return (
+    return isRootPath ? (
       <nav css={styles.navbar}>
         <LinkForScroll
           to="top"
@@ -205,6 +206,37 @@ class Header extends React.Component {
           ))}
         </ul>
 
+        <div
+          css={styles.humbergerIcon}
+          onClick={this.onHumbergerClick}
+        >
+        <img src="/images/humberger.svg" />
+        </div>
+
+      </nav>
+    ) : (
+      <nav css={styles.navbar}>
+        <Link
+          to="/"
+          css={styles.logo}
+        >
+        <img src="/images/logo.svg" />
+        </Link>
+
+        <ul css={styles.menu}>
+          { menuItem.map((item) => (
+            <Link
+              to={item.path}
+              key={item.id}
+              css={styles.menuItems}
+              className={ this.props.location.pathname.startsWith(item.path) ? 'active' : null }
+              onClick={this.closeMenu}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </ul>
+        
         <div
           css={styles.humbergerIcon}
           onClick={this.onHumbergerClick}

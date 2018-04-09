@@ -5,15 +5,21 @@ import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import RipIe from '../components/RipIe';
 
-const TemplateWrapper = ({ children, location, data }) => {
+const TemplateWrapper = ({ children, location }) => {
+  const siteMetadata = {
+    title: 'YUUNIWORKS / 島根のフリーランスエンジニア',
+    description: 'Yuuniworksは島根県浜田市で、主にSPAやFaaS開発のお手伝いをしている個人事業主です。',
+    keywords: 'SPA, Faas, Serverless, React, Angular, フリーランス',
+  };
+
   return (
     <div>
       <RipIe />
       <Helmet
-        title={data.site.siteMetadata.title}
+        title={siteMetadata.title}
         meta={[
-          { name: 'description', content: data.site.siteMetadata.description },
-          { name: 'keywords', content: data.site.siteMetadata.keywords },
+          { name: 'description', content: siteMetadata.description },
+          { name: 'keywords', content: siteMetadata.keywords },
         ]}
         script={[
           {
@@ -23,7 +29,7 @@ const TemplateWrapper = ({ children, location, data }) => {
           },
         ]}
       />
-      <Header />
+      <Header location={location}/>
 
       {children()}
     </div>
@@ -35,15 +41,3 @@ TemplateWrapper.propTypes = {
 }
 
 export default TemplateWrapper
-
-export const query = graphql`
-  query LayoutIndexPageQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        keywords
-      }
-    }
-  }
-`

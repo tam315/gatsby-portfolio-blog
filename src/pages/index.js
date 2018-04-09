@@ -591,34 +591,31 @@ const ProfileSection = () => {
 
 const BlogSection = () => {
   const styles = {
-    container: {
-      textAlign: 'center',
-    },
-    button: {
+    link: {
       background: '#fff',
       border: '5px solid #6292F1',
       borderRadius: '7px',
       boxShadow: '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       color: '#6292F1',
+      display: 'block',
+      margin: 'auto',
       outline: 'none',
       padding: '15px 0',
+      textAlign: 'center',
+      textDecoration: 'none',
       width: '300px',
       ':hover': {
         background: '#6292F1',
         color: '#fff',
         cursor: 'pointer',
       }
-    },
+    }
   }
 
   return (
     <SectionContainer id="blog" colorNumber="1">
       <SectionHeader text="ブログ" colorNumber="1" />
-      <div css={styles.container}>
-        <button css={styles.button}>
-          Yuuniworksブログ(準備中)
-        </button>
-      </div>
+      <Link to="/blog" css={styles.link}>Yuuniworksブログ</Link>
     </SectionContainer>
   )
 }
