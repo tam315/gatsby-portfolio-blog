@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
@@ -136,7 +137,6 @@ export default ({data}) => {
 
   const post = data.markdownRemark
   return (
-
     <SectionContainer colorNumber={1} isTop={true}>
       <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} />
 
@@ -169,7 +169,7 @@ export default ({data}) => {
       
       </div>
 
-
+    <Helmet title={`${post.frontmatter.title} / YUUNIWORKS BLOG`} />
 
     </SectionContainer>
   )
