@@ -15,21 +15,65 @@ export default ({data}) => {
     },
     boxInner: {
       padding: rhythm(1),
+      lineHeight: '2rem',
+      ' h2': {
+        borderLeft: '10px solid #5883D9',
+        paddingLeft: '10px',
+      },
+      ' h3': {
+        borderBottom: '1px dotted rgba(0,0,0,0.5)',
+        fontSize: '1.2rem',
+        paddingBottom: '5px',
+      },
+      ' h2, h3': {
+        textAlign: 'left',
+        margin: '2rem auto 1rem',
+      },
+      ' ul, li': {
+        listStyleType: 'initial',
+      },
+      ' ul':{
+        paddingLeft: '25px',
+      },
+      ' table': {
+        width: 'auto',
+      },
+      ' img': {
+        maxWidth: '500px',
+        padding: '1rem',
+      },
+      ' code': {
+        background: 'black',
+        borderRadius: '5px',
+        color: 'white',
+        display: 'inline-block',
+        padding: '1px 5px',
+      },
+      ' pre code': {
+        display: 'block',
+        overflow: 'scroll',
+        padding: '20px',
+      }
     },
     backButton: {
-      color: '#6292F1',
-      textDecoration: 'none',
+      background: '#fff',
       border: '2px solid #6292F1',
       borderRadius: '7px',
-      padding: '5px 1rem',
-      marginBottom: '1.5rem',
-      display: 'inline-block',
-      background: '#fff',
       boxShadow: '0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)',
+      color: '#6292F1',
+      display: 'inline-block',
+      padding: '5px 1rem',
+      textDecoration: 'none',
       ':hover': {
         background: '#6292F1',
         color: '#fff',
         cursor: 'pointer',
+      },
+      ':first-child': {
+        marginBottom: '2rem',
+      },
+      ':last-child': {
+        marginTop: '2rem',
       }
     },
     link: {
@@ -44,7 +88,7 @@ export default ({data}) => {
     },
     title: {
       borderBottom: '1px dotted rgba(0,0,0,0.5)',
-      marginBottom: '1rem',
+      marginBottom: '2rem',
       textAlign: 'left',
     }
   };
@@ -56,6 +100,7 @@ export default ({data}) => {
       <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} />
 
       <article css={styles.container}>
+      
       <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
 
       <WhiteBox>
@@ -67,6 +112,9 @@ export default ({data}) => {
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </WhiteBox>
+      
+      <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
+      
       </article>
 
     </SectionContainer>
