@@ -4,6 +4,9 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
     {
+      resolve: `gatsby-plugin-sitemap`
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography.js`,
@@ -17,4 +20,7 @@ module.exports = {
       },
     },
   ],
+  siteMetadata: {
+    siteUrl: `https://www.yuuniworks.com`,
+  },
 };
