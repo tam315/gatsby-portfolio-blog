@@ -28,7 +28,9 @@ const TemplateWrapper = ({ children, location }) => {
             crossorigin: 'anonymous',
           },
         ]}
-      />
+      >
+        <html lang="ja" />
+      </Helmet>
       <Header location={location}/>
 
       {children()}
