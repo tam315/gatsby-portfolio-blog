@@ -73,7 +73,6 @@ class RipIe extends React.Component {
           <li>- <a href="https://www.microsoft.com/ja-jp/windows/microsoft-edge" css={styles.link} target="_blank">Edge</a></li>
         </ul>
         <img src="/images/rip-ie.svg" css={styles.ripImage} />
-        <div css={{clear: 'both'}}></div>
       </div>
     )
   }
