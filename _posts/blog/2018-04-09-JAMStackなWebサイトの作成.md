@@ -24,7 +24,7 @@ date: '2018-04-09T15:00:00+09:00'
 * デベロッパフレンドリー
 
 ### デメリット
-* クライアントとサーバが強く結びついているサーバサイドwebアプリには原則として適用できない
+* クライアントとサーバが強く結びついているwebアプリには原則として適用できない
 
 ## 今回構築したWebサイトについて
 
@@ -32,7 +32,7 @@ date: '2018-04-09T15:00:00+09:00'
 <a href="https://www.yuuniworks.com" target="_blank">https://www.yuuniworks.com</a>
 
 ### 構成図
-<img src="/images/uploads/illust.svg" />
+<img src="/images/uploads/20180409.svg" />
 
 ### 特徴
 標準的な JAM Stack の構成に加え、下記の二つの機能を追加しています。
