@@ -8,10 +8,46 @@ module.exports = {
     siteUrl: `https://www.yuuniworks.com`,
   },
   plugins: [
-    `gatsby-plugin-feed`,
     `gatsby-plugin-glamor`,
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + '/blog' +  edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`
     },
