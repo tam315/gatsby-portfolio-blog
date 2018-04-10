@@ -323,6 +323,7 @@ const PerformanceSection = () => {
       techStack: [
         { name: 'Angular4', description: 'Front-end Framework' },
         { name: 'Firebase', description: 'ホスティング' },
+        { name: 'Semaphore', description: 'CI/CD' },
       ],
       webpageURL: 'http://split.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/splitbills',
