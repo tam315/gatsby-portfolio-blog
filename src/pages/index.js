@@ -362,13 +362,12 @@ const PerformanceSection = () => {
     },
     badge: {
       background: 'rgba(0,0,0,0.5)',
-      borderRadius: '160px',
       boxShadow: '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       color: '#fff',
       cursor: 'pointer',
       display: 'inline-block',
       fontSize: '0.8rem',
-      margin: '4px 3px',
+      margin: '6px 5px',
       padding: '5px 9px',
     },
     badgeLink: {
