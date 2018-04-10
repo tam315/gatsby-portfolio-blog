@@ -1,6 +1,7 @@
+import Link from 'gatsby-link';
 import React from 'react'
 
-const SectionHeader = ({ colorNumber, text }) => {
+const SectionHeader = ({ colorNumber, text, link }) => {
   const colors = {
     1: '#262626',
     2: '#ffffff',
@@ -21,13 +22,17 @@ const SectionHeader = ({ colorNumber, text }) => {
       height: '3px',
       marginBottom: '50px',
       width: '54px',
+    },
+    link: {
+      color: charColor,
+      textDecoration: 'none',
     }
   }
 
   return (
     <div css={styles.container}>
       <h2 css={styles.h2}>
-        {text}
+        { link ? <Link to={link} css={styles.link}>{text}</Link> : text}
       </h2>
       <hr css={styles.hr} />
     </div>
