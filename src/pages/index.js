@@ -315,6 +315,7 @@ const PerformanceSection = () => {
       ],
       webpageURL: 'http://www.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/yuuni-web',
+      blogPath: '/blog/2018-04-09-JAMStackなWebサイトの作成/',
       imgPath: '/images/jisseki-yuuni.png',
     },
     {
@@ -408,7 +409,12 @@ const PerformanceSection = () => {
                 ))}
                 
                 { performance.githubURL ? 
-                  <a href={performance.githubURL} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>ソースコードを見る</a>
+                  <a href={performance.githubURL} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>ソースコード</a>
+                  : null
+                }
+
+                { performance.blogPath ? 
+                  <Link to={performance.blogPath} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>解説ブログ</Link>
                   : null
                 }
 
