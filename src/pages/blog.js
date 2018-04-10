@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet';
 import Link from 'gatsby-link'
 
 import SectionContainer from '../components/SectionContainer';
@@ -12,6 +13,16 @@ const BlogPage = ({ data }) => {
     container: {
       maxWidth: '400px',
       margin: 'auto',
+      position: 'relative'
+    },
+    rssLink: {
+      display: 'block',
+      position: 'absolute',
+      right: 0,
+      top: '-2rem',
+      ' img': {
+        width: '1.5rem',
+      },
     },
     boxInner: {
       padding: rhythm(1),
@@ -33,10 +44,13 @@ const BlogPage = ({ data }) => {
     }
   };
 
+  const rssPath = '/rss.xml';
+
   return (
     <SectionContainer colorNumber={1} isTop={true}>
       <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} />
         <div css={styles.container}>
+        <a href={rssPath} css={styles.rssLink}><img src="/images/rss.svg" /></a>
         {data.allMarkdownRemark.edges.map(({ node }, index) => (
           <Link to={`/blog${node.fields.slug}`} css={styles.link} key={node.frontmatter.title}>
           <WhiteBox hover={true}>
@@ -50,6 +64,17 @@ const BlogPage = ({ data }) => {
           </Link>
         ))}
         </div>
+
+      <Helmet
+        link={[
+          {
+            rel: 'alternate',
+            type: 'application/atom+xml',
+            href: rssPath,
+            title: 'RSS for YUUNIWORKS Blog'
+          },
+        ]}
+      />
     </SectionContainer>
   )
 }
