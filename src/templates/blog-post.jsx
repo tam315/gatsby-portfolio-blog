@@ -138,7 +138,7 @@ export default ({data}) => {
   const post = data.markdownRemark
   return (
     <SectionContainer colorNumber={1} isTop={true}>
-      <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} />
+      <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} link="/blog" />
 
       <div css={styles.container}>
       
