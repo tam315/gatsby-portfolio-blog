@@ -49,7 +49,7 @@ const TopSection = () => {
 
   return (
     <section id="top" css={styles.container}>
-      <h1 css={styles.logo}><img src="/images/logo.svg" alt="YUUNIWORKSのロゴ" /></h1>
+      <h1 css={styles.logo}><img src="/images/logo.svg" alt="Yuuniworksのロゴ" /></h1>
       <div css={styles.description}>
         <a href="https://goo.gl/maps/HjyoY7NJ9j92" css={{ color: 'white' }} target="_blank">島根県浜田市<IconExtLink color="#fff" /></a>を拠点に<br />
         主にフロントエンド開発のお手伝いをしている<br />
@@ -303,7 +303,7 @@ const SkillSection = (props) => {
 const PerformanceSection = () => {
   const performances = [
     {
-      name: 'YUUNIWORKS(このサイト)',
+      name: 'Yuuniworks(このサイト)',
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Gatsby', description: 'Static Site Generator' },
@@ -621,7 +621,7 @@ const BlogSection = () => {
   return (
     <SectionContainer id="blog" colorNumber="1">
       <SectionHeader text="ブログ" colorNumber="1" />
-      <Link to="/blog" css={styles.link}>YUUNIWORKSブログ</Link>
+      <Link to="/blog" css={styles.link}>Yuuniworks Blog</Link>
     </SectionContainer>
   )
 }

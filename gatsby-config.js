@@ -3,7 +3,7 @@ module.exports = {
     // 下記データはRSS用にのみ使用する。
     // Webページ用のメタデータは'layouts'フォルダ内のファイルにハードコーディングする。
     // 理由は、GraphQLをネストして使用することができないという制限事項を回避するため。
-    title: 'YUUNIWORKS / 島根のフリーランスエンジニア',
+    title: 'Yuuniworks / 島根のフリーランスエンジニア',
     description: '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
     siteUrl: `https://www.yuuniworks.com`,
   },

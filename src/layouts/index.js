@@ -7,7 +7,7 @@ import RipIe from '../components/RipIe';
 
 const TemplateWrapper = ({ children, location }) => {
   const siteMetadata = {
-    title: 'YUUNIWORKS / 島根のフリーランスエンジニア',
+    title: 'Yuuniworks / 島根のフリーランスエンジニア',
     description: '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
     keywords: 'SPA, Faas, Serverless, React, Angular, フリーランス',
   };

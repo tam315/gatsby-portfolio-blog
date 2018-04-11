@@ -1,1 +1,1 @@
-This is the source code of [YUUNIWORKS](https://www.yuuniworks.com) website.
+This is the source code of [Yuuniworks](https://www.yuuniworks.com) website.

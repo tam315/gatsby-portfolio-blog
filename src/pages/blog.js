@@ -48,7 +48,7 @@ const BlogPage = ({ data }) => {
 
   return (
     <SectionContainer colorNumber={1} isTop={true}>
-      <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} />
+      <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} />
         <div css={styles.container}>
         <a href={rssPath} css={styles.rssLink}><img src="/images/rss.svg" /></a>
         {data.allMarkdownRemark.edges.map(({ node }, index) => (
@@ -71,7 +71,7 @@ const BlogPage = ({ data }) => {
             rel: 'alternate',
             type: 'application/atom+xml',
             href: rssPath,
-            title: 'RSS for YUUNIWORKS Blog'
+            title: 'RSS for Yuuniworks Blog'
           },
         ]}
       />

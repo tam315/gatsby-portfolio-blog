@@ -138,7 +138,7 @@ export default ({data}) => {
   const post = data.markdownRemark
   return (
     <SectionContainer colorNumber={1} isTop={true}>
-      <SectionHeader colorNumber={1} text={'YUUNIWORKS ブログ'} link="/blog" />
+      <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} link="/blog" />
 
       <div css={styles.container}>
       
@@ -159,7 +159,7 @@ export default ({data}) => {
           <img src="/images/profile.png" />
           <div>
             <p>田村 翔太</p>
-            <p>YUUNIWORKS代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
+            <p>Yuuniworks代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
           </div>
         </footer>
       </WhiteBox>
@@ -169,7 +169,7 @@ export default ({data}) => {
       
       </div>
 
-    <Helmet title={`${post.frontmatter.title} / YUUNIWORKS BLOG`} />
+    <Helmet title={`${post.frontmatter.title} / Yuuniworks Blog`} />
 
     </SectionContainer>
   )
