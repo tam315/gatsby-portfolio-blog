@@ -578,11 +578,11 @@ const ProfileSection = () => {
         <div css={styles.boxOuterContainer}>
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
-            <h3 css={styles.h3}>屋号の由来</h3>
+            <h3 css={styles.h3}>商号の由来</h3>
             <p>「ゆうに」という言葉は島根県の石見地方で使われている方言で、以下の二つの意味を持っています。</p>
             <p><b>1．いとも簡単に・たやすく</b><br />例）ゆうにできらぁや<br />解）簡単にできますよ</p>
             <p><b>2．ゆっくりと・ゆったりと</b><br />例）ゆうに食べちゃんさいね<br />解）ゆっくり召し上がってくださいね</p>
-            <p>Yuuniworksという屋号には、「問題をさらっと鮮やかに解決して、のんびりとした人生を送る」という意味を込めています。</p>
+            <p>Yuuniworksという商号には、「問題をさらっと鮮やかに解決して、のんびりとした人生を送る」という意味を込めています。</p>
 
             </div>
           </WhiteBox>
