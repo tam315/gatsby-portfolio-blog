@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import { Link as LinkForScroll } from 'react-scroll';
 import ReactTooltip from 'react-tooltip';
@@ -736,7 +737,32 @@ class IndexPage extends React.Component {
         <ProfileSection />
         <BlogSection />
         <FooterSection  setCurrentModal={this.setCurrentModal} />
-      </div>
+
+        <Helmet
+          script={[
+            {
+              type: 'application/ld+json',
+              innerHTML:(JSON.stringify({
+                '@context': 'http://schema.org',
+                '@type' : 'Organization',
+                'name': 'Yuuniworks',
+                'url' : 'http://www.yuuniworks.com/',
+                'logo' : 'https://www.yuuniworks.com/images/logo_for_schema.png',
+                'address': {
+                  'postalCode': '697-0123',
+                    'addressCountry': 'JP',
+                    'addressRegion': '島根県',
+                    'addressLocality': '浜田市',
+                    'streetAddress': '金城町七条',
+                },
+                'telephone': '070-4398-9424',
+                'foundingDate': '2018-4-11',
+                "description": "島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。",
+              })),
+            },
+          ]}
+        />
+        </div>
     )
   }
 }
