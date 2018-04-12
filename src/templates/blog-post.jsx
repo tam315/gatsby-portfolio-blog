@@ -183,10 +183,11 @@ export default ({data}) => {
             },
             "headline": post.frontmatter.title,
             "image": [
-              'https://www.yuuniworks.com/images/logo_for_schema.png',
+              `https://www.yuuniworks.com${post.frontmatter.thumbnail}`,
               ],
             "datePublished": post.frontmatter.date,
-            "author": {
+            "dateModified": post.frontmatter.dateModified,
+              "author": {
               "@type": "Person",
               "name": "Shota Tamura"
             },
@@ -198,7 +199,7 @@ export default ({data}) => {
                 "url": 'https://www.yuuniworks.com/images/logo_for_schema.png',
               }
             },
-            "description": post.excerpt,
+            "description": post.frontmatter.summary,
           })),
         },
       ]}
@@ -210,14 +211,15 @@ export default ({data}) => {
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
       excerpt
+      html
+      fields { slug }
       frontmatter {
         title
+        summary
         date
-      }
-      fields {
-        slug
+        dateModified
+        thumbnail
       }
     }
   }
