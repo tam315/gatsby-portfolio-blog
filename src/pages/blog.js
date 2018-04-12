@@ -36,19 +36,20 @@ const BlogPage = ({ data }) => {
       textDecoration: 'none',
       marginBottom: '2rem',
     },
-    datetime: {
-      color: '#999',
-      display: 'block',
-    },
     title: {
-      fontSize: '1.2rem',
+      fontSize: '1.3rem',
       margin: 0,
-      marginBottom: rhythm(1/2),
+      marginBottom: '1rem',
       textAlign: 'left',
     },
     summary: {
       color: '#262626',
-      fontSize: '0.9rem',
+      marginBottom: rhythm(2/3),
+    },
+    datetime: {
+      color: '#999',
+      display: 'block',
+      fontSize: '0.8rem',
     },
   };
 
@@ -80,11 +81,11 @@ const BlogPage = ({ data }) => {
               }} />
 
               <div>
-              <time css={styles.datetime} dateTime={node.frontmatter.date}>
-                {node.frontmatter.date.slice(0,10)}
-              </time>
-              <h1 css={styles.title}>{node.frontmatter.title}</h1>
-              <span css={styles.summary}>{node.frontmatter.summary}</span>
+                <h1 css={styles.title}>{node.frontmatter.title}</h1>
+                <div css={styles.summary}>{node.frontmatter.summary}</div>
+                <time css={styles.datetime} dateTime={node.frontmatter.date}>
+                  {node.frontmatter.date.slice(0,10)}
+                </time>
               </div>
 
             </article>
