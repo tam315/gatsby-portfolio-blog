@@ -169,8 +169,40 @@ export default ({data}) => {
       
       </div>
 
-    <Helmet title={`${post.frontmatter.title} / Yuuniworks Blog`} />
-
+    <Helmet
+      title={`${post.frontmatter.title} / Yuuniworks Blog`}
+      script={[
+        {
+          type: 'application/ld+json',
+          innerHTML:(JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `http://www.yuuniworks.com/blog${post.fields.slug}`
+            },
+            "headline": post.frontmatter.title,
+            "image": [
+              'https://www.yuuniworks.com/images/logo_for_schema.png',
+              ],
+            "datePublished": post.frontmatter.date,
+            "author": {
+              "@type": "Person",
+              "name": "Shota Tamura"
+            },
+              "publisher": {
+              "@type": "Organization",
+              "name": "Yuuniworks",
+              "logo": {
+                "@type": "ImageObject",
+                "url": 'https://www.yuuniworks.com/images/logo_for_schema.png',
+              }
+            },
+            "description": post.excerpt,
+          })),
+        },
+      ]}
+    />
     </SectionContainer>
   )
 }
@@ -179,9 +211,13 @@ export const query = graphql`
   query BlogPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date
+      }
+      fields {
+        slug
       }
     }
   }
