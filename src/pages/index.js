@@ -757,8 +757,8 @@ class IndexPage extends React.Component {
                 },
                 "contactPoint": [
                   { "@type": "ContactPoint",
-                    "telephone": '070-4398-9424',
-                    "contactType": "代表番号",
+                    "telephone": '+81-70-4398-9424',
+                    "contactType": "sales",
                   },
                 ],
                 'foundingDate': '2018-4-11',
