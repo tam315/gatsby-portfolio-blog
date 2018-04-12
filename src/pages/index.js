@@ -755,9 +755,17 @@ class IndexPage extends React.Component {
                     'addressLocality': '浜田市',
                     'streetAddress': '金城町七条',
                 },
-                'telephone': '070-4398-9424',
+                "contactPoint": [
+                  { "@type": "ContactPoint",
+                    "telephone": '070-4398-9424',
+                    "contactType": "代表番号",
+                  },
+                ],
                 'foundingDate': '2018-4-11',
                 "description": "島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。",
+                "sameAs": [
+                  'https://www.facebook.com/yuuniworks/',
+                ],
               })),
             },
           ]}
