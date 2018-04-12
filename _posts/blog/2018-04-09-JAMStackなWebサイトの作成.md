@@ -1,7 +1,10 @@
 ---
 layout: blog
 title: JAM StackなWebサイトの作成
+summary: JS+API+Markupで構成されるサーバレスな枠組みで、自社のWebサイトを構築してみました。
 date: '2018-04-09T15:00:00+09:00'
+dateModified: '2018-04-12T17:00:00+09:00'
+thumbnail: /images/uploads/20180409.svg
 ---
 
 新しくWebサイトを作成する機会があり、せっかくなので [JAM Stack](https://jamstack.org/) と呼ばれる手法で構築してみました。JAM Stackは、JS+API+Markupで構成されるサーバレスな枠組みです。
