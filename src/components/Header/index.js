@@ -177,68 +177,58 @@ class Header extends React.Component {
       { name: 'スキル', id: 'skill', path: '/#skill' },
       { name: '実績', id: 'performance', path: '/#performance' },
       { name: 'プロフィール', id: 'profile', path: '/#profile' },
-      { name: 'ブログ', id: 'blog', path: '/blog' },
       { name: '問い合わせ', id: 'contact', path: '/#contact' },
+      { name: 'ブログ', id: 'blog', path: '/blog' },
     ];
 
-    return isRootPath ? (
+    return (
       <nav css={styles.navbar}>
-        <LinkForScroll
-          to="top"
-          smooth={true}
-          duration={150}
-          css={styles.logo}
-        >
-        <img src="/images/logo.svg" />
-        </LinkForScroll>
+        { isRootPath ?
+          <LinkForScroll
+            to="top"
+            smooth={true}
+            duration={150}
+            css={styles.logo}
+          >
+          <img src="/images/logo.svg" />
+          </LinkForScroll>
+        :
+          <Link
+            to="/"
+            css={styles.logo}
+          >
+          <img src="/images/logo.svg" />
+          </Link>
+        }
 
         <ul css={styles.menu}>
-          { menuItem.map((item) => (
-            <LinkForScroll
-              to={item.id}
-              spy={true /* avtiveクラスを自動で設定するために必須の設定 */}
-              smooth={true}
-              duration={150}
-              offset={-50}
-              key={item.id}
-              activeClass="active"
-              css={styles.menuItems}
-              onClick={this.closeMenu}
-            >
-              {item.name}
-            </LinkForScroll>
-          ))}
-        </ul>
-
-        <div
-          css={styles.humbergerIcon}
-          onClick={this.onHumbergerClick}
-        >
-        <img src="/images/humberger.svg" />
-        </div>
-
-      </nav>
-    ) : (
-      <nav css={styles.navbar}>
-        <Link
-          to="/"
-          css={styles.logo}
-        >
-        <img src="/images/logo.svg" />
-        </Link>
-
-        <ul css={styles.menu}>
-          { menuItem.map((item) => (
-            <Link
-              to={item.path}
-              key={item.id}
-              css={styles.menuItems}
-              className={ this.props.location.pathname.substr(0, item.path.length) === item.path ? 'active' : null }
-              onClick={this.closeMenu}
-            >
-              {item.name}
-            </Link>
-          ))}
+          { menuItem.map((item) => {
+            return isRootPath && item.path.substr(0, 2) === '/#' ? (
+              <LinkForScroll
+                to={item.id}
+                spy={true /* avtiveクラスを自動で設定するために必須の設定 */}
+                smooth={true}
+                duration={150}
+                offset={-50}
+                key={item.id}
+                activeClass="active"
+                css={styles.menuItems}
+                onClick={this.closeMenu}
+              >
+                {item.name}
+              </LinkForScroll>
+            ) : (
+              <Link
+                to={item.path}
+                key={item.id}
+                css={styles.menuItems}
+                className={ this.props.location.pathname.substr(0, item.path.length) === item.path ? 'active' : null }
+                onClick={this.closeMenu}
+              >
+                {item.name}
+              </Link>
+            )
+          })}
         </ul>
 
         <div
