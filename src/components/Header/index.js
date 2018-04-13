@@ -154,6 +154,10 @@ class Header extends React.Component {
         opacity: shouldBeHide ? settings.opacityHide : 1,
         width: '180px',
         transition: `opacity ${settings.transitionSpeed} ease-out`,
+        ' img': { // for IE11
+          width: '180px',
+          height: '50px',
+        },
       },
       humbergerIcon: {
         display: 'flex',
