@@ -19,10 +19,9 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
+                  description: edge.node.frontmatter.summary,
                   url: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + '/blog' +  edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
                 });
               });
             },
@@ -36,6 +35,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
+                        summary
                         date
                       }
                     }
