@@ -53,7 +53,7 @@ const TopSection = () => {
       <h1 css={styles.logo}><img src="/images/logo.svg" alt="Yuuniworksのロゴ" /></h1>
       <div css={styles.description}>
         <a href="https://goo.gl/maps/HjyoY7NJ9j92" css={{ color: 'white' }} target="_blank">島根県浜田市<IconExtLink color="#fff" /></a>を拠点に<br />
-        主にフロントエンド開発のお手伝いをしている<br />
+        フロントエンド開発のお手伝いをしている<br />
         フリーランスエンジニアです。</div>
       <LinkForScroll
         to="gaiyou"
