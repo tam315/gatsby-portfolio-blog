@@ -10,7 +10,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-glamor`,
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -63,6 +62,14 @@ module.exports = {
         name: 'blog',
         path: `${__dirname}/_posts/blog/`
       },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+        ]
+      }
     },
   ],
 };

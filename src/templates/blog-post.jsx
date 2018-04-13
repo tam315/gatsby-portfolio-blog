@@ -8,6 +8,9 @@ import WhiteBox from '../components/WhiteBox';
 
 import { rhythm } from '../utils/typography';
 
+// for gatsby-remark-prismjs plugin
+import 'prismjs/themes/prism-tomorrow.css';
+
 export default ({data}) => {
   const styles = {
     container: {
@@ -43,18 +46,6 @@ export default ({data}) => {
         width: '100%',
         maxWidth: '500px',
         padding: '1rem',
-      },
-      ' code': {
-        background: 'black',
-        borderRadius: '5px',
-        color: 'white',
-        display: 'inline-block',
-        padding: '1px 5px',
-      },
-      ' pre code': {
-        display: 'block',
-        overflow: 'scroll',
-        padding: '20px',
       },
       ' a': {
         color: '#262626',
