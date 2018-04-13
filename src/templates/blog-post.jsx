@@ -54,7 +54,10 @@ export default ({data}) => {
         display: 'block',
         overflow: 'scroll',
         padding: '20px',
-      }
+      },
+      ' a': {
+        color: '#262626',
+      },
     },
     backButton: {
       background: '#fff',
