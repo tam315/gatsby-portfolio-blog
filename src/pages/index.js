@@ -640,6 +640,16 @@ const FooterSection = (props) => {
       link: 'mailto:info@yuuniworks.com',
     },
     {
+      imgPath: '/images/footer-facebook.svg',
+      description: 'facebook.com/yuuniworks',
+      link: 'https://www.facebook.com/yuuniworks/',
+    },
+    {
+      imgPath: '/images/footer-github.svg',
+      description: 'github.com/junkboy0315',
+      link: 'https://github.com/junkboy0315/',
+    },
+    {
       imgPath: '/images/footer-phone.svg',
       description: '070 4398 9424',
       link: 'tel:07043989424'
