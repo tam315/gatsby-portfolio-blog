@@ -40,6 +40,7 @@ export default ({data}) => {
         width: 'auto',
       },
       ' img': {
+        width: '100%',
         maxWidth: '500px',
         padding: '1rem',
       },
