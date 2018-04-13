@@ -7,7 +7,7 @@ import SkillHelp from './SkillHelp'
 import Udemy from './Udemy'
 
 class ModalConductor extends React.Component {
-  
+
   componentDidMount() {
     // - モーダルの背景画面のスクロールを防止する。
     // - propsの値に変化があるたびに実行する。
@@ -26,7 +26,7 @@ class ModalConductor extends React.Component {
       SKILL_HELP: <SkillHelp {...this.props} />,
       UDEMY: <Udemy {...this.props} />,
     }
-  
+
     return modals[this.props.currentModal] || null
   }
 }

@@ -120,7 +120,7 @@ const GaiyouSection = (props) => {
   return (
     <SectionContainer id="gaiyou" colorNumber="1">
       <SectionHeader text="概要" colorNumber="1" />
-      
+
       <div css={styles.container}>
         <WhiteBox>
           <ul css={styles.grid}>
@@ -143,7 +143,7 @@ const GaiyouSection = (props) => {
         >
           お問い合わせ
         </button>
-      
+
       </div>
     </SectionContainer>
   )
@@ -258,21 +258,21 @@ const SkillSection = (props) => {
               >
                 <i className="fas fa-question-circle"></i>
               </div>
-              { Object.keys(skills['基本']).map((skill) => 
+              { Object.keys(skills['基本']).map((skill) =>
                 <Skill skillName={skill} skillLevel={skills['基本'][skill]} key={skill} />
               )}
             </div>
 
             <div>
               <h3>フロントエンド</h3>
-              { Object.keys(skills['フロントエンド']).map((skill) => 
+              { Object.keys(skills['フロントエンド']).map((skill) =>
                 <Skill skillName={skill} skillLevel={skills['フロントエンド'][skill]} key={skill} />
               )}
             </div>
 
             <div>
               <h3>バックエンド</h3>
-              { Object.keys(skills['バックエンド']).map((skill) => 
+              { Object.keys(skills['バックエンド']).map((skill) =>
                 <Skill skillName={skill} skillLevel={skills['バックエンド'][skill]} key={skill} />
               )}
             </div>
@@ -292,7 +292,7 @@ const SkillSection = (props) => {
                 })}
               </ul>
             </div>
-            
+
           </div>
 
         </WhiteBox>
@@ -396,11 +396,11 @@ const PerformanceSection = () => {
               borderBottom: '1px solid rgba(0, 0, 0, 0.2)'
             }} />
             </a>
-        
+
             <div css={styles.itemContainer}>
 
               <a href={performance.webpageURL} target="_blank" css={styles.itemTitle}>{performance.name}<IconExtLink /></a>
-                
+
               <ul>
                 {performance.techStack.map((tech) => (
                   <span css={styles.badge} data-for={tech.name} data-tip key={tech.name}>
@@ -408,13 +408,13 @@ const PerformanceSection = () => {
                     <ReactTooltip id={tech.name} effect="solid">{tech.description}</ReactTooltip>
                   </span>
                 ))}
-                
-                { performance.githubURL ? 
+
+                { performance.githubURL ?
                   <a href={performance.githubURL} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>ソースコード</a>
                   : null
                 }
 
-                { performance.blogPath ? 
+                { performance.blogPath ?
                   <Link to={performance.blogPath} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>解説ブログ</Link>
                   : null
                 }
@@ -438,7 +438,7 @@ const ProfileSection = () => {
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
-  
+
       '@media (min-width:1000px)': {
         alignItems: 'flex-start',
         flexDirection: 'row',
@@ -453,7 +453,7 @@ const ProfileSection = () => {
       marginBottom: rhythm(1),
       width: '100%',
       maxWidth: '375px',
-  
+
       '@media (min-width:1000px)': {
         marginRight: rhythm(1),
       }
@@ -472,7 +472,7 @@ const ProfileSection = () => {
       marginBottom: rhythm(1.5),
       textAlign: 'center',
     },
-    gaiyouPicture: { 
+    gaiyouPicture: {
       width: '150px',
     },
     gaiyouListItem: {
@@ -486,7 +486,7 @@ const ProfileSection = () => {
       textAlign: 'right',
       marginRight: '1rem',
     },
-    gaiyouItemContent: { 
+    gaiyouItemContent: {
       flex: 3,
     },
     keirekiGray: {
@@ -670,7 +670,7 @@ const FooterSection = (props) => {
       maxWidth: '850px',
       paddingBottom: '600px',
     },
-    link: { 
+    link: {
       color: '#fff',
       textDecoration: 'none',
     },

@@ -18,7 +18,7 @@ const Skill = ({ skillName, skillLevel }) => {
   }
 
   skillLevel = Number(skillLevel);
-  
+
   if ((skillLevel < 1 ) || (skillLevel > 5)) {
     return null;
   }

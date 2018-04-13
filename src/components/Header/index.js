@@ -139,7 +139,7 @@ class Header extends React.Component {
           padding: '12px 25px',
           width: '100%',
         },
-        
+
         '@media (min-width:750px)': {
           alignItems: 'center',
           flex: '1 0 auto',
@@ -240,7 +240,7 @@ class Header extends React.Component {
             </Link>
           ))}
         </ul>
-        
+
         <div
           css={styles.humbergerIcon}
           onClick={this.onHumbergerClick}

@@ -53,7 +53,7 @@ class RipIe extends React.Component {
         right: '10px',
         top: '10px',
       },
-      ripImage: { 
+      ripImage: {
         float: 'right',
         height: '100px',
       }

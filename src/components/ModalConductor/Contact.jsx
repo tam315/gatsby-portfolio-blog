@@ -224,11 +224,11 @@ class Contact extends React.Component {
               css={styles.button}
             >
             {this.state.isSending ? <PulseLoader
-              color={'#fff'} 
+              color={'#fff'}
               loading={true}
               size={9}
             /> : '送信'}
-            
+
             </button>
           </div>
         )}

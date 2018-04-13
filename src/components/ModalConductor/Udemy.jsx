@@ -142,7 +142,7 @@ const Udemy = (props) => {
         css={styles.closeButton}
         onClick={() => props.setCurrentModal(null)}
       />
-      
+
       {cources.map((course) => (
         <div css={styles.courseContainer} key={course.name}>
           <div css={styles.courseJunle}>{course.junle}</div>
