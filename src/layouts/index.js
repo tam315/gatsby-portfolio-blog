@@ -14,6 +14,10 @@ const TemplateWrapper = ({ children, location }) => {
 
   return (
     <div>
+
+      {/* for Facebook Comment Plugin */}
+      <div id="fb-root"></div>
+
       <RipIe />
       <Helmet
         title={siteMetadata.title}

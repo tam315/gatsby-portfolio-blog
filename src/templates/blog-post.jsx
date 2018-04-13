@@ -96,6 +96,11 @@ export default ({data}) => {
       marginBottom: '2rem',
       textAlign: 'left',
     },
+    comments: {
+      ' hr': {
+        marginTop: '3rem',
+      }
+    },
     footer: {
       display: 'flex',
       marginTop: '2rem',
@@ -147,7 +152,7 @@ export default ({data}) => {
       <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} link="/blog" />
 
       <div css={styles.container}>
-      
+
       <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
 
       <WhiteBox>
@@ -157,7 +162,14 @@ export default ({data}) => {
           </time>
           <h1 css={styles.title}>{post.frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <aside css={styles.comments}>
+          <hr />
+          <div className="fb-comments" data-href="https://www.yuuniworks.com/" data-numposts="10"></div>
+          </aside>
+
         </article>
+
       </WhiteBox>
 
       <WhiteBox>
@@ -170,14 +182,25 @@ export default ({data}) => {
         </footer>
       </WhiteBox>
 
-    
+
       <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
-      
+
       </div>
 
     <Helmet
       title={`${post.frontmatter.title} / Yuuniworks Blog`}
       script={[
+        {
+          innerHTML:(`
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.12&appId=1597425033686344&autoLogAppEvents=1';
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          `),
+        },
         {
           type: 'application/ld+json',
           innerHTML:(JSON.stringify({
