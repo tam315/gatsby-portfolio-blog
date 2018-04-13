@@ -14,7 +14,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Summary", name: "summary", widget: "string"}
+      - {label: "Summary", name: "summary", widget: "string"} # ブログ記事一覧の説明文と、RSSの本文として使う
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Modified Date", name: "dateModified", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
