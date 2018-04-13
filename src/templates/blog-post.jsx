@@ -99,7 +99,9 @@ export default ({data}) => {
       display: 'flex',
       marginTop: '2rem',
       padding: '2rem',
-
+      ' a': {
+        color: '#262626'
+      },
       '@media (max-width: 499px)': {
         flexDirection: 'column',
         ' img': {
@@ -162,7 +164,7 @@ export default ({data}) => {
           <img src="/images/profile.png" />
           <div>
             <p>田村 翔太</p>
-            <p>Yuuniworks代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
+            <p><Link to="/">Yuuniworks</Link> 代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
           </div>
         </footer>
       </WhiteBox>
