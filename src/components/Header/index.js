@@ -229,7 +229,7 @@ class Header extends React.Component {
               to={item.path}
               key={item.id}
               css={styles.menuItems}
-              className={ this.props.location.pathname.startsWith(item.path) ? 'active' : null }
+              className={ this.props.location.pathname.substr(0, item.path.length) === item.path ? 'active' : null }
               onClick={this.closeMenu}
             >
               {item.name}
