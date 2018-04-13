@@ -1,0 +1,9 @@
+{
+  "name": "send-email",
+  "description": "Simple email transmitter",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::773819527182:role/send-email_lambda_function",
+  "environment": {},
+  "runtime": "nodejs8.10"
+}
