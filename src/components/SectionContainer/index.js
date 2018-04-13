@@ -12,8 +12,12 @@ const SectionContainer = ({ children, id, colorNumber, isTop } ) => {
     container: {
       background: bgColor,
       minHeight: isTop ? '100vh' : 'initial',
-      padding: '80px 30px 60px',
+      padding: '80px 15px 60px',
       paddingTop: isTop ? '130px' : '80px',
+      '@media (min-width: 500px)': {
+        paddingRight: '30px',
+        paddingLeft: '30px',
+      },
     }
   }
 
