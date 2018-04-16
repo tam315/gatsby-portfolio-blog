@@ -140,11 +140,11 @@ export default ({data}) => {
   const post = data.markdownRemark
   return (
     <SectionContainer colorNumber={1} isTop={true}>
-      <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} link="/blog" />
+      <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} link="/blog/" />
 
       <div css={styles.container}>
 
-      <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
+      <Link to="/blog/" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
 
       <WhiteBox>
         <article css={styles.boxInner}>
@@ -174,7 +174,7 @@ export default ({data}) => {
       </WhiteBox>
 
 
-      <Link to="/blog" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
+      <Link to="/blog/" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
 
       </div>
 

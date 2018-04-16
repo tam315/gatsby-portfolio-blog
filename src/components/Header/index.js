@@ -178,7 +178,7 @@ class Header extends React.Component {
       { name: '実績', id: 'performance', path: '/#performance' },
       { name: 'プロフィール', id: 'profile', path: '/#profile' },
       { name: '問い合わせ', id: 'contact', path: '/#contact' },
-      { name: 'ブログ', id: 'blog', path: '/blog' },
+      { name: 'ブログ', id: 'blog', path: '/blog/' },
     ];
 
     return (
