@@ -1,11 +1,11 @@
+const config = require("./data/SiteConfig");
+
 module.exports = {
   siteMetadata: {
-    // 下記データはRSS用にのみ使用する。
-    // Webページ用のメタデータは'layouts'フォルダ内のファイルにハードコーディングする。
-    // 理由は、GraphQLをネストして使用することができないという制限事項を回避するため。
-    title: 'Yuuniworks / 島根のフリーランスエンジニア',
-    description: '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
-    siteUrl: `https://www.yuuniworks.com`,
+    // these metadata only used for gatsby-plugin-feed
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     `gatsby-plugin-glamor`,
