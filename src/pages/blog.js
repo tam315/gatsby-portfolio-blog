@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
+import SEO from '../components/SEO';
 import WhiteBox from '../components/WhiteBox';
 
 import { rhythm } from '../utils/typography';
@@ -94,6 +95,13 @@ const BlogPage = ({ data }) => {
           </Link>
         ))}
         </div>
+
+      <SEO
+        metaData = {{
+          title: 'Yuuniworks Blog',
+          description: '島根のフリーランスエンジニア「Yuuniworks」のブログです。フロントエンド界隈の技術的なネタを記録しています。',
+        }}
+      />
 
       <Helmet
         link={[

@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
+import SEO from '../components/SEO';
 import WhiteBox from '../components/WhiteBox';
 
 import { rhythm } from '../utils/typography';
@@ -178,8 +179,9 @@ export default ({data}) => {
 
       </div>
 
+    <SEO postNode={post} />
+
     <Helmet
-      title={`${post.frontmatter.title} / Yuuniworks Blog`}
       script={[
         {
           innerHTML:(`

@@ -4,14 +4,9 @@ import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
 import RipIe from '../components/RipIe';
+import config from '../../data/SiteConfig'
 
 const TemplateWrapper = ({ children, location }) => {
-  const siteMetadata = {
-    title: 'Yuuniworks / 島根のフリーランスエンジニア',
-    description: '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
-    keywords: 'SPA, Faas, Serverless, React, Angular, フリーランス',
-  };
-
   return (
     <div>
 
@@ -20,11 +15,6 @@ const TemplateWrapper = ({ children, location }) => {
 
       <RipIe />
       <Helmet
-        title={siteMetadata.title}
-        meta={[
-          { name: 'description', content: siteMetadata.description },
-          { name: 'keywords', content: siteMetadata.keywords },
-        ]}
         script={[
           {
             src: 'https://use.fontawesome.com/releases/v5.0.8/js/all.js',

@@ -11,6 +11,7 @@ import IconExtLink from '../components/IconExtLink';
 import ModalConductor from '../components/ModalConductor';
 import SectionHeader from '../components/SectionHeader';
 import SectionContainer from '../components/SectionContainer';
+import SEO from '../components/SEO';
 import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
 
@@ -750,6 +751,7 @@ class IndexPage extends React.Component {
         <BlogSection />
         <FooterSection  setCurrentModal={this.setCurrentModal} />
 
+        <SEO />
         <Helmet
           script={[
             {
