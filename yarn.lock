@@ -3436,6 +3436,12 @@ gatsby-plugin-glamor@^1.6.13:
     babel-runtime "^6.26.0"
     glamor "^2.20.29"
 
+gatsby-plugin-google-analytics@^1.0.29:
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.29.tgz#9ed1beb355f5989594c1b50f3da3cd24a922bb5d"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-react-helmet@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-2.0.8.tgz#26928bfd38f6828f479d76393839523ddf85b005"
