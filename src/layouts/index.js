@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
 import RipIe from '../components/RipIe';
-import config from '../../data/SiteConfig'
 
 const TemplateWrapper = ({ children, location }) => {
   return (
