@@ -36,6 +36,10 @@ export default ({data}) => {
         textAlign: 'left',
         margin: '2rem auto 1rem',
       },
+      ' h4': {
+        marginBottom: '0.5rem',
+        marginTop: '2rem',
+      },
       ' ul, li': {
         listStyleType: 'initial',
       },
@@ -48,6 +52,9 @@ export default ({data}) => {
       ' a': {
         color: '#262626',
       },
+      ' p': {
+        marginBottom: '1rem',
+      }
     },
     backButton: {
       background: '#fff',
