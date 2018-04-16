@@ -43,11 +43,6 @@ export default ({data}) => {
       ' table': {
         width: 'auto',
       },
-      ' img': {
-        width: '100%',
-        maxWidth: '500px',
-        padding: '1rem',
-      },
       ' a': {
         color: '#262626',
       },
