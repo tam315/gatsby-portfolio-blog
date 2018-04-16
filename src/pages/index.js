@@ -19,11 +19,27 @@ import { rhythm } from '../utils/typography';
 
 import '../css/global.css';
 
+import arrowSvg from '../icons/arrow.svg';
+import footerFacebookSvg from '../icons/footer-facebook.svg';
+import footerFormSvg from '../icons/footer-form.svg';
+import footerGithubSvg from '../icons/footer-github.svg';
+import footerMailSvg from '../icons/footer-mail.svg';
+import footerPhoneSvg from '../icons/footer-phone.svg';
+import footerPinSvg from '../icons/footer-pin.svg';
+import logoSvg from '../icons/logo.svg';
+import questionSvg from '../icons/question.svg';
+
+import jissekiShisanPng from '../images/jisseki-shisan.png';
+import jissekiWarikanPng from '../images/jisseki-warikan.png';
+import jissekiYuuniPng from '../images/jisseki-yuuni.png';
+import profilePng from '../images/profile.png';
+import topImagePng from '../images/top-image.png'
+
 const TopSection = () => {
   const styles = {
     container: {
       alignItems: 'center',
-      background: '#6292F1 url("/images/top-image.png") no-repeat center center',
+      background: `#6292F1 url("${topImagePng}") no-repeat center center`,
       backgroundSize: 'cover',
       display: 'flex',
       flexDirection: 'column',
@@ -51,7 +67,7 @@ const TopSection = () => {
 
   return (
     <section id="top" css={styles.container}>
-      <h1 css={styles.logo}><img src="/images/logo.svg" alt="Yuuniworksのロゴ" /></h1>
+      <h1 css={styles.logo}><img src={logoSvg} alt="Yuuniworksのロゴ" /></h1>
       <div css={styles.description}>
         <a href="https://goo.gl/maps/HjyoY7NJ9j92" css={{ color: 'white' }} target="_blank">島根県浜田市<IconExtLink color="#fff" /></a>を拠点に<br />
         フロントエンド開発のお手伝いをしている<br />
@@ -63,7 +79,7 @@ const TopSection = () => {
         offset={-50}
         css={styles.arrow}
       >
-        <img src="/images/arrow.svg" alt="下向きの矢印" />
+        <img src={arrowSvg} alt="下向きの矢印" />
       </LinkForScroll>
     </section>
   )
@@ -172,6 +188,7 @@ const SkillSection = (props) => {
       right: '5px',
       top: '20px',
       cursor: 'pointer',
+      ' img': { width: '1.2rem'}
     },
     sonotaListItem: {
       marginBottom: rhythm(1),
@@ -258,7 +275,7 @@ const SkillSection = (props) => {
                 css={styles.helpButton}
                 onClick={() => props.setCurrentModal('SKILL_HELP')}
               >
-                <i className="fas fa-question-circle"></i>
+                <img src={questionSvg} />
               </div>
               { Object.keys(skills['基本']).map((skill) =>
                 <Skill skillName={skill} skillLevel={skills['基本'][skill]} key={skill} />
@@ -319,7 +336,7 @@ const PerformanceSection = () => {
       webpageURL: 'http://www.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/yuuni-web',
       blogPath: '/blog/2018-04-09-JAMStackなWebサイトの作成/',
-      imgPath: '/images/jisseki-yuuni.png',
+      imgPath: jissekiYuuniPng,
     },
     {
       name: '割り勘計算ツール',
@@ -330,7 +347,7 @@ const PerformanceSection = () => {
       ],
       webpageURL: 'http://split.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/splitbills',
-      imgPath: '/images/jisseki-warikan.png',
+      imgPath: jissekiWarikanPng,
     },
     {
       name: '資産運用支援ツール（作成中）',
@@ -338,7 +355,7 @@ const PerformanceSection = () => {
         { name: 'React', description: 'UI' },
         { name: 'Redux', description: 'State Container' },
       ],
-      imgPath: '/images/jisseki-shisan.png',
+      imgPath: jissekiShisanPng,
     },
   ]
 
@@ -507,7 +524,7 @@ const ProfileSection = () => {
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
             <h3 css={styles.h3}>概要</h3>
-            <div css={styles.gaiyouPictureContainer}><img src="/images/profile.png" css={styles.gaiyouPicture} alt="代表者のプロフィール写真" /></div>
+            <div css={styles.gaiyouPictureContainer}><img src={profilePng} css={styles.gaiyouPicture} alt="代表者のプロフィール写真" /></div>
 
             <div css={styles.gaiyouListItem}>
               <div css={styles.gaiyouItemName}><b>氏名</b></div>
@@ -633,32 +650,32 @@ const BlogSection = () => {
 const FooterSection = (props) => {
   const footerInfo = [
     {
-      imgPath: '/images/footer-form.svg',
+      imgPath: footerFormSvg,
       description: 'フォームでのお問い合わせ',
       onClick: () => props.setCurrentModal('CONTACT'),
     },
     {
-      imgPath: '/images/footer-mail.svg',
+      imgPath: footerMailSvg,
       description: 'info@yuuniworks.com',
       link: 'mailto:info@yuuniworks.com',
     },
     {
-      imgPath: '/images/footer-facebook.svg',
+      imgPath: footerFacebookSvg,
       description: 'facebook.com/yuuniworks',
       link: 'https://www.facebook.com/yuuniworks/',
     },
     {
-      imgPath: '/images/footer-github.svg',
+      imgPath: footerGithubSvg,
       description: 'github.com/junkboy0315',
       link: 'https://github.com/junkboy0315/',
     },
     {
-      imgPath: '/images/footer-phone.svg',
+      imgPath: footerPhoneSvg,
       description: '070 4398 9424',
       link: 'tel:07043989424'
     },
     {
-      imgPath: '/images/footer-pin.svg',
+      imgPath: footerPinSvg,
       description: '島根県浜田市金城町七条',
       link: 'https://goo.gl/maps/V5G3DJSYy8u',
     },

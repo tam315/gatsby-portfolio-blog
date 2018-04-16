@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import IconExtLink from '../../components/IconExtLink';
 
+import closeSvg from '../../icons/close.svg';
+
 const Udemy = (props) => {
   const cources = [
     {
@@ -138,7 +140,7 @@ const Udemy = (props) => {
       ariaHideApp={false}
     >
       <img
-        src="/images/close.svg"
+        src={closeSvg}
         css={styles.closeButton}
         onClick={() => props.setCurrentModal(null)}
       />

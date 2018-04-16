@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import onClickOutside from 'react-onclickoutside';
 import { Link as LinkForScroll } from 'react-scroll';
 
+import humbergerSvg from '../../icons/humberger.svg';
+import logoSvg from '../../icons/logo.svg';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -190,14 +193,14 @@ class Header extends React.Component {
             duration={150}
             css={styles.logo}
           >
-          <img src="/images/logo.svg" />
+          <img src={logoSvg} />
           </LinkForScroll>
         :
           <Link
             to="/"
             css={styles.logo}
           >
-          <img src="/images/logo.svg" />
+          <img src={logoSvg} />
           </Link>
         }
 
@@ -235,7 +238,7 @@ class Header extends React.Component {
           css={styles.humbergerIcon}
           onClick={this.onHumbergerClick}
         >
-        <img src="/images/humberger.svg" />
+        <img src={humbergerSvg} />
         </div>
 
       </nav>

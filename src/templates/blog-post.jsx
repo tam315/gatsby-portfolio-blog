@@ -9,6 +9,8 @@ import WhiteBox from '../components/WhiteBox';
 
 import { rhythm } from '../utils/typography';
 
+import profilePng from '../images/profile.png';
+
 // for gatsby-remark-prismjs plugin
 import 'prismjs/themes/prism-tomorrow.css';
 
@@ -161,7 +163,7 @@ export default ({data}) => {
 
       <WhiteBox>
         <footer css={styles.footer}>
-          <img src="/images/profile.png" />
+          <img src={profilePng} />
           <div>
             <p>田村 翔太</p>
             <p><Link to="/">Yuuniworks</Link> 代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>

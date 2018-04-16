@@ -9,6 +9,8 @@ import WhiteBox from '../components/WhiteBox';
 
 import { rhythm } from '../utils/typography';
 
+import rssSvg from '../icons/rss.svg';
+
 const BlogPage = ({ data }) => {
   const styles = {
     container: {
@@ -60,7 +62,7 @@ const BlogPage = ({ data }) => {
     <SectionContainer colorNumber={1} isTop={true}>
       <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} />
         <div css={styles.container}>
-        <a href={rssPath} css={styles.rssLink}><img src="/images/rss.svg" /></a>
+        <a href={rssPath} css={styles.rssLink}><img src={rssSvg} /></a>
         {data.allMarkdownRemark.edges.map(({ node }, index) => (
           <Link to={`/blog${node.fields.slug}`} css={styles.link} key={node.frontmatter.title}>
           <WhiteBox hover={true}>

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ripIeSvg from '../../icons/rip-ie.svg';
+
 class RipIe extends React.Component {
   constructor(props) {
     super(props);
@@ -72,7 +74,7 @@ class RipIe extends React.Component {
           <li>- <a href="https://www.apple.com/jp/safari/" css={styles.link} target="_blank">Safari</a></li>
           <li>- <a href="https://www.microsoft.com/ja-jp/windows/microsoft-edge" css={styles.link} target="_blank">Edge</a></li>
         </ul>
-        <img src="/images/rip-ie.svg" css={styles.ripImage} />
+        <img src={ripIeSvg} css={styles.ripImage} />
       </div>
     )
   }

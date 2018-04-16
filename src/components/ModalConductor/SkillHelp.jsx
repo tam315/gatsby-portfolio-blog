@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import Stars from '../Stars';
 
+import closeSvg from '../../icons/close.svg';
+
 const SkillHelp = (props) => {
   const articles = [
     {
@@ -84,7 +86,7 @@ const SkillHelp = (props) => {
       ariaHideApp={false}
     >
       <img
-        src="/images/close.svg"
+        src={closeSvg}
         css={styles.closeButton}
         onClick={() => props.setCurrentModal(null)}
       />

@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import { PulseLoader } from 'react-spinners';
 
+import closeSvg from '../../icons/close.svg';
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
@@ -171,7 +173,7 @@ class Contact extends React.Component {
         ariaHideApp={false}
       >
         <img
-          src="/images/close.svg"
+          src={closeSvg}
           css={styles.closeButton}
           onClick={this.closeModal}
         />
