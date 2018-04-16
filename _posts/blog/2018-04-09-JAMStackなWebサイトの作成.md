@@ -58,7 +58,7 @@ Gatsbyでは、Webサイトでよく使われる機能について、あらか�
 #### gatsby-plugin-glamor
 下記のような、css-in-jsを使えるようにする。
 ```javascript
-<MyComponent css={{
+<div css={{
   marginHeight: '1rem',
   display: this.state.isVisible ? 'block' : 'none',
 }}>
