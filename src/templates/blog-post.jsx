@@ -15,6 +15,12 @@ import profileJpg from '../images/profile.jpg';
 import 'prismjs/themes/prism-tomorrow.css';
 
 export default class BlogPost extends React.Component {
+  componentDidMount() {
+    if(typeof FB === 'object') {
+      FB.XFBML.parse();
+    }
+  }
+
   render() {
     const styles = {
       container: {
