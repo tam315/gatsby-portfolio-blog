@@ -92,11 +92,15 @@ export default ({data}) => {
       marginBottom: '2rem',
       textAlign: 'left',
     },
-    comments: {
+    facebook: {
       ' hr': {
-        marginBottom: '1rem',
+        marginBottom: 0,
         marginTop: '2rem',
       },
+    },
+    fbLike: {
+      display: 'block',
+      padding: '0.5rem 0',
     },
     footer: {
       display: 'flex',
@@ -162,9 +166,9 @@ export default ({data}) => {
           <h1 css={styles.title}>{post.frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <aside css={styles.comments}>
+          <aside css={styles.facebook}>
           <hr />
-            <div className="fb-like" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            <div css={styles.fbLike}><div className="fb-like" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
             <div className="fb-comments" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-numposts="10"></div>
           </aside>
 
