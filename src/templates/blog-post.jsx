@@ -94,8 +94,9 @@ export default ({data}) => {
     },
     comments: {
       ' hr': {
-        marginTop: '3rem',
-      }
+        marginBottom: '1rem',
+        marginTop: '2rem',
+      },
     },
     footer: {
       display: 'flex',
@@ -163,7 +164,8 @@ export default ({data}) => {
 
           <aside css={styles.comments}>
           <hr />
-          <div className="fb-comments" data-href="https://www.yuuniworks.com/" data-numposts="10"></div>
+            <div className="fb-like" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            <div className="fb-comments" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-numposts="10"></div>
           </aside>
 
         </article>
