@@ -9,7 +9,7 @@ thumbnail: /blogImages/20180416.png
 ## 概要
 [セマンティック・ウェブ](https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E3%83%BB%E3%82%A6%E3%82%A7%E3%83%96)の一つに、構造化データというものがあります。構造化データを記載することで、データの「意味」を、クローラー等に分かりやすく伝えることができます。
 
-これは、場合によってはSEO対策にもなるようです。例えば、Googleで検索した時に下記のような「リッチスニペット」と呼ばれるものが出てくることがありますが、これはJSON-LDの構造化データを使用しているそうです。
+場合によってはSEO対策にもなります。例えば、Googleで検索した時に下記のような「リッチスニペット」と呼ばれるものが出てくることがありますが、これはJSON-LDの構造化データを使用しています。
 ![リッチスニペットの例](/blogImages/20180416.png)
 
 ## 方法
@@ -96,6 +96,6 @@ React Helmetは、Headタグ内のデータを動的に生成してくれる便�
 ```
 
 ## 参考
-* [構造化データテストツール by Google](https://search.google.com/structured-data/testing-tool/u/0/)
+* [構造化データテストツール by Google](https://search.google.com/structured-data/testing-tool/)
 * [Schema.org](http://schema.org/docs/full.html)
-* [構造化データについての解説(en)](https://developers.google.com/search/docs/guides/search-features?authuser=1&hl=ja)
+* [Introduction to Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data)
