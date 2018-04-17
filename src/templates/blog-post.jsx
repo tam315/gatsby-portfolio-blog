@@ -9,7 +9,7 @@ import WhiteBox from '../components/WhiteBox';
 
 import { rhythm } from '../utils/typography';
 
-import profilePng from '../images/profile.png';
+import profileJpg from '../images/profile.jpg';
 
 // for gatsby-remark-prismjs plugin
 import 'prismjs/themes/prism-tomorrow.css';
@@ -109,6 +109,7 @@ export default ({data}) => {
         ' img': {
           width: '100px',
           margin: '0 auto 2rem',
+          borderRadius: '50%',
         },
         ' div p:first-child': {
           fontWeight: 'bold',
@@ -127,6 +128,7 @@ export default ({data}) => {
         ' img': {
           height: '100px',
           marginRight: '2rem',
+          borderRadius: '50%',
         },
         ' div p:first-child': {
           fontWeight: 'bold',
@@ -170,7 +172,7 @@ export default ({data}) => {
 
       <WhiteBox>
         <footer css={styles.footer}>
-          <img src={profilePng} />
+          <img src={profileJpg} />
           <div>
             <p>田村 翔太</p>
             <p><Link to="/">Yuuniworks</Link> 代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>

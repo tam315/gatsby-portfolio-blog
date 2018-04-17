@@ -31,15 +31,15 @@ import questionSvg from '../icons/question.svg';
 
 import jissekiShisanPng from '../images/jisseki-shisan.png';
 import jissekiWarikanPng from '../images/jisseki-warikan.png';
-import jissekiYuuniPng from '../images/jisseki-yuuni.png';
-import profilePng from '../images/profile.png';
-import topImagePng from '../images/top-image.png'
+import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
+import profileJpg from '../images/profile.jpg';
+import topImageJpg from '../images/top-image.jpg'
 
 const TopSection = () => {
   const styles = {
     container: {
       alignItems: 'center',
-      background: `#6292F1 url("${topImagePng}") no-repeat center center`,
+      background: `#6292F1 url("${topImageJpg}") no-repeat center center`,
       backgroundSize: 'cover',
       display: 'flex',
       flexDirection: 'column',
@@ -336,7 +336,7 @@ const PerformanceSection = () => {
       webpageURL: 'http://www.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/yuuni-web',
       blogPath: '/blog/2018-04-09-JAMStackなWebサイトの作成/',
-      imgPath: jissekiYuuniPng,
+      imgPath: jissekiYuuniJpg,
     },
     {
       name: '割り勘計算ツール',
@@ -493,6 +493,7 @@ const ProfileSection = () => {
     },
     gaiyouPicture: {
       width: '150px',
+      borderRadius: '50%',
     },
     gaiyouListItem: {
       display: 'flex',
@@ -524,7 +525,7 @@ const ProfileSection = () => {
           <WhiteBox height="auto">
             <div  css={styles.boxInnerContainer}>
             <h3 css={styles.h3}>概要</h3>
-            <div css={styles.gaiyouPictureContainer}><img src={profilePng} css={styles.gaiyouPicture} alt="代表者のプロフィール写真" /></div>
+            <div css={styles.gaiyouPictureContainer}><img src={profileJpg} css={styles.gaiyouPicture} alt="代表者のプロフィール写真" /></div>
 
             <div css={styles.gaiyouListItem}>
               <div css={styles.gaiyouItemName}><b>氏名</b></div>
