@@ -689,7 +689,7 @@ const FooterSection = (props) => {
       justifyContent: 'center',
       margin: 'auto',
       maxWidth: '850px',
-      paddingBottom: '600px',
+      paddingBottom: '200px',
     },
     link: {
       color: '#fff',
