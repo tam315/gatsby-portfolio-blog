@@ -27,6 +27,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               fields {
                 slug
               }
+              frontmatter {
+                dateModified # rss用
+              }
             }
           }
         }
@@ -40,6 +43,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
+            modifiedDate: node.frontmatter.dateModified, // rss用 詳細はgatsby-config.jsを参照
           }
         })
       });

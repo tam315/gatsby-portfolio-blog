@@ -54,7 +54,37 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage {
+              edges {
+                node {
+                  path
+                  context {
+                    modifiedDate # デフォルト設定に追加
+                  }
+                }
+              }
+            }
+          }
+        `,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => ({
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+              lastmodISO: edge.node.context.modifiedDate, // デフォルト設定に追加
+            })
+          )
+      },
     },
     {
       resolve: `gatsby-plugin-typography`,
