@@ -19,6 +19,7 @@ export default ({data}) => {
     container: {
       maxWidth: '800px',
       margin: 'auto',
+      animation: 'bottomToTop 0.15s ease-out',
     },
     boxInner: {
       padding: rhythm(1),
