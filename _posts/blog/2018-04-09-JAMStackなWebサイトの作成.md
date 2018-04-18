@@ -3,7 +3,7 @@ layout: blog
 title: JAM StackなWebサイトの作成
 summary: JS+API+Markupで構成されるサーバレスな枠組みで、自社のWebサイトを構築してみました。
 date: '2018-04-09T15:00:00+09:00'
-dateModified: '2018-04-16T17:00:00+09:00'
+dateModified: '2018-04-18T23:00:00+09:00'
 thumbnail: /blogImages/20180409.png
 ---
 
@@ -103,7 +103,7 @@ markdownファイルにある画像を検出し、解像度の異なる画像を
 ```
 
 #### gatsby-remark-relative-images
-前述のgatsby-remark-imagesは、画像リンクが相対パスでないと機能しない。NetlifyCMSでアップした画像は必ず相対パスになってしまい、画像が最適化されない。この問題を解消するため、このプラグインを使ってあらかじめ絶対パスを相対パスに書き換える。
+前述のgatsby-remark-imagesは、画像リンクが相対パスでないと機能しない。NetlifyCMSでアップした画像は必ず絶対パスになってしまうため、画像が最適化されない。この問題を解消するため、このプラグインを使ってあらかじめ絶対パスを相対パスに書き換える。
 
 ## 所感
 - コストがかからない
