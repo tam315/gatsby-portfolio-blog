@@ -1,3 +1,11 @@
+import fontawesome from '@fortawesome/fontawesome';
+import faStarEmpty from '@fortawesome/fontawesome-free-regular/faStar';
+import faArrowLeft from '@fortawesome/fontawesome-free-solid/faArrowLeft';
+import faCaretSquareRight from '@fortawesome/fontawesome-free-solid/faCaretSquareRight';
+import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
+import faStar from '@fortawesome/fontawesome-free-solid/faStar';
+import faTimesCircle from '@fortawesome/fontawesome-free-solid/faTimesCircle';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -6,6 +14,15 @@ import Header from '../components/Header';
 import RipIe from '../components/RipIe';
 
 const TemplateWrapper = ({ children, location }) => {
+  fontawesome.library.add(
+    faArrowLeft,
+    faCaretSquareRight,
+    faExternalLinkAlt,
+    faStar,
+    faStarEmpty,
+    faTimesCircle,
+  );
+
   return (
     <div>
 
@@ -13,17 +30,7 @@ const TemplateWrapper = ({ children, location }) => {
       <div id="fb-root"></div>
 
       <RipIe />
-      <Helmet
-        script={[
-          {
-            src: 'https://use.fontawesome.com/releases/v5.0.8/js/all.js',
-            integrity:'sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ',
-            crossOrigin: 'anonymous',
-          },
-        ]}
-      >
-        <html lang="ja" />
-      </Helmet>
+      <Helmet><html lang="ja" /></Helmet>
       <Header location={location}/>
 
       {children()}

@@ -1,3 +1,4 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
@@ -146,7 +147,9 @@ const GaiyouSection = (props) => {
               articles.map((article) => {
                 return (
                   <li key={ article[0] }>
-                    <div css={styles.title}><i className="fas fa-caret-square-right" css={styles.caret}/> {article[0]}</div>
+                    <div css={styles.title}>
+                    <FontAwesomeIcon icon="caret-square-right" style={styles.caret} />{article[0]}
+                    </div>
                     <div>{article[1]}</div>
                   </li>
                 )
@@ -303,7 +306,7 @@ const SkillSection = (props) => {
                   return (
                     <li css={styles.sonotaListItem} key={item.title}>
                       <div css={styles.sonotaTitle}>
-                        <i className="fas fa-caret-square-right" css={styles.caret} />{item.title}
+                      <FontAwesomeIcon icon="caret-square-right" style={styles.caret} />{item.title}
                       </div>
                       <div css={styles.sonotaContent}>{item.content}</div>
                     </li>

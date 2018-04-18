@@ -1,3 +1,4 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react'
 
 const Stars = ({ countOfStars }) => {
@@ -24,17 +25,11 @@ const Stars = ({ countOfStars }) => {
   return (
     <span css={styles.star}>
 
-    {stars.map((star, index)=>{
-      let style;
-
-      return (
-        <i
-          style={star ? null : styles.starTranslucent }
-          className={star ? 'fas fa-star' : 'far fa-star'}
-          key={index}
-        />
-      )
-    })}
+    {stars.map((star, index) =>
+      star
+        ? <FontAwesomeIcon icon={['fas', 'star']} key={index} />
+        : <FontAwesomeIcon icon={['far', 'star']} style={styles.starTranslucent} key={index} />
+    )}
     </span>
   )
 }

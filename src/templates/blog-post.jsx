@@ -1,3 +1,4 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
@@ -164,7 +165,7 @@ export default class BlogPost extends React.Component {
 
         <div css={styles.container}>
 
-        <Link to="/blog/" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
+        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" /> 記事一覧に戻る</Link>
 
         <WhiteBox>
           <article css={styles.boxInner}>
@@ -194,8 +195,7 @@ export default class BlogPost extends React.Component {
           </footer>
         </WhiteBox>
 
-
-        <Link to="/blog/" css={styles.backButton}><span className="fas fa-arrow-left" /> 記事一覧に戻る</Link>
+        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" /> 記事一覧に戻る</Link>
 
         </div>
 

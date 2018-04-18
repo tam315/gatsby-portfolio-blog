@@ -1,3 +1,4 @@
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 import ripIeSvg from '../../icons/rip-ie.svg';
@@ -64,7 +65,7 @@ class RipIe extends React.Component {
     return (
       <div css={styles.container}>
         <div css={styles.closeButton} onClick={this.onCloseClick}>
-          <i className="far fa-times-circle"></i>
+          <FontAwesomeIcon icon="times-circle" />
         </div>
 
         <p>当サイトはInternet Explorerに対応しておりません。<br /><br />Internet ExplorerはITの可能性を狭め、エンジニア達を苦しめています。人助けだと思って、下記のようなブラウザを使ってみませんか。</p>
