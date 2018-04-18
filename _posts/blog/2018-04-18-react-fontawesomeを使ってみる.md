@@ -8,7 +8,7 @@ thumbnail: /blogImages/20180418.png
 ---
 ## スピードの問題
 
-[Font Awesome](https://fontawesome.com/icons?d=gallery)にはよくお世話になります。Font Asewomeは通常下記のようにJSファイルを読み込むんで使用します。
+[Font Awesome](https://fontawesome.com/icons?d=gallery)にはよくお世話になります。Font Asewomeは通常下記のようにJSファイルを読み込んで使用します。
 
 ```html
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
