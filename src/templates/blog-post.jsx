@@ -34,16 +34,16 @@ export default class BlogPost extends React.Component {
         lineHeight: '2rem',
         ' h2': {
           borderLeft: '10px solid #5883D9',
+          margin: '4rem auto 1rem',
           paddingLeft: '10px',
+          textAlign: 'left',
         },
         ' h3': {
           borderBottom: '1px dotted rgba(0,0,0,0.5)',
           fontSize: '1.2rem',
+          margin: '3rem auto 1rem',
           paddingBottom: '5px',
-        },
-        ' h2, h3': {
           textAlign: 'left',
-          margin: '2rem auto 1rem',
         },
         ' h4': {
           marginBottom: '0.5rem',
@@ -63,6 +63,9 @@ export default class BlogPost extends React.Component {
         },
         ' p': {
           marginBottom: '1rem',
+        },
+        ' pre': {
+          margin: '1rem auto !important',
         }
       },
       backButton: {
