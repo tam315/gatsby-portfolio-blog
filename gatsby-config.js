@@ -21,6 +21,7 @@ module.exports = {
                   description: edge.node.frontmatter.summary,
                   url: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + '/blog' +  edge.node.fields.slug,
+                  enclosure: { url: site.siteMetadata.siteUrl + edge.node.frontmatter.thumbnail },
                 });
               });
             },
@@ -36,6 +37,7 @@ module.exports = {
                         title
                         summary
                         date
+                        thumbnail
                       }
                     }
                   }
