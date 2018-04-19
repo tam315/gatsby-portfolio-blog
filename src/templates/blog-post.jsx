@@ -87,6 +87,9 @@ export default class BlogPost extends React.Component {
         },
         ':last-child': {
           marginTop: '2rem',
+        },
+        arrow: {
+          width:'0.875em',
         }
       },
       link: {
@@ -168,7 +171,7 @@ export default class BlogPost extends React.Component {
 
         <div css={styles.container}>
 
-        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" /> 記事一覧に戻る</Link>
+        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
 
         <WhiteBox>
           <article css={styles.boxInner}>
@@ -198,7 +201,7 @@ export default class BlogPost extends React.Component {
           </footer>
         </WhiteBox>
 
-        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" /> 記事一覧に戻る</Link>
+        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
 
         </div>
 
