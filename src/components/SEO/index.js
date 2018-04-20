@@ -38,7 +38,7 @@ class SEO extends React.Component {
         meta={[
           { name: 'description', content: _metaData.description },
           { name: 'keywords', content: _metaData.keywords },
-          { name: 'image', content: _metaData.image },
+          { name: 'image', content: _metaData.image, property: 'og:image' },
         ]}
       />
     );
