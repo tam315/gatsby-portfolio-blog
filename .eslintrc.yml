@@ -1,0 +1,32 @@
+# How to use eslint with airbnb style guide
+#
+# 1. Install 'linter-eslint' on atom
+# 2. Install following npm packages locally
+#   npm install --save babel-eslint eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+
+# if you changed eslint setting file, reboot Atom because it has a bug.
+
+extends: airbnb
+parser: babel-eslint
+rules:
+  no-underscore-dangle: 0
+  no-unused-expressions: 0
+  no-console: 1
+  linebreak-style: 0
+  import/no-extraneous-dependencies: 0
+  quote-props: 0
+  react/jsx-no-target-blank: 0
+  jsx-a11y/click-events-have-key-events: 0
+  jsx-a11y/anchor-is-valid:
+   - error
+   - components:
+      - Link
+     specialLink:
+      - to
+env:
+  mocha: true
+
+# stop no-undef warning about global variables.
+globals:
+  document: true
+  window: true
