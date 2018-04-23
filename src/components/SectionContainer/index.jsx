@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const SectionContainer = ({ children, id, colorNumber, isTop } ) => {
+const SectionContainer = ({
+  children,
+  colorNumber,
+  id,
+  isTop,
+}) => {
   const colors = {
     1: '#F5F7FA',
     2: '#6292f1',
-  }
+  };
 
   const bgColor = colors[colorNumber] || 'initial';
 
@@ -18,14 +23,14 @@ const SectionContainer = ({ children, id, colorNumber, isTop } ) => {
         paddingRight: '30px',
         paddingLeft: '30px',
       },
-    }
-  }
+    },
+  };
 
   return (
     <section id={id} css={styles.container}>
       {children}
     </section>
-  )
-}
+  );
+};
 
-export default SectionContainer
+export default SectionContainer;

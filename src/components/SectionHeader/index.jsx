@@ -1,11 +1,11 @@
 import Link from 'gatsby-link';
-import React from 'react'
+import React from 'react';
 
 const SectionHeader = ({ colorNumber, text, link }) => {
   const colors = {
     1: '#262626',
     2: '#ffffff',
-  }
+  };
   const charColor = colors[colorNumber] || 'initial';
 
   const styles = {
@@ -26,8 +26,8 @@ const SectionHeader = ({ colorNumber, text, link }) => {
     link: {
       color: charColor,
       textDecoration: 'none',
-    }
-  }
+    },
+  };
 
   return (
     <div css={styles.container}>
@@ -36,7 +36,7 @@ const SectionHeader = ({ colorNumber, text, link }) => {
       </h2>
       <hr css={styles.hr} />
     </div>
-  )
-}
+  );
+};
 
-export default SectionHeader
+export default SectionHeader;

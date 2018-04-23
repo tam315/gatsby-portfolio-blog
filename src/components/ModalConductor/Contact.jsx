@@ -57,14 +57,14 @@ class Contact extends React.Component {
       url: 'https://3vejp046g6.execute-api.ap-northeast-1.amazonaws.com/production/submit',
       data: mailContent,
     })
-      .then((result) => {
+      .then(() => {
         this.setState({
           isSent: true,
           resultMessage: '送信を正常に完了しました。概ね2営業日以内にご連絡差し上げますので、いましばらくお待ちくださいませ。',
         });
       })
-      .catch((err) => {
-        alert(`送信に失敗しました。`);
+      .catch(() => {
+        window.alert('送信に失敗しました。');
         this.setState({
           isSending: false,
         });
@@ -77,7 +77,7 @@ class Contact extends React.Component {
       return;
     }
 
-    if (confirm("送信が完了していません。入力した内容が失われますがよろしいですか？")) {
+    if (window.confirm('送信が完了していません。入力した内容が失われますがよろしいですか？')) {
       this.props.setCurrentModal(null);
     }
   }
@@ -120,7 +120,7 @@ class Contact extends React.Component {
         flex: 1,
         marginBottom: '16px',
         '@media (min-width:600px)': {
-          ':first-child' : {
+          ':first-child': {
             marginRight: '30px',
           },
         },
@@ -153,8 +153,12 @@ class Contact extends React.Component {
         width: '94px',
       },
       closeButton: {
+        background: `url(${closeSvg})`,
+        border: 0,
+        boxSizing: 'border-box',
         cursor: 'pointer',
         height: '18px',
+        padding: 0,
         position: 'absolute',
         right: '1rem',
         top: '1rem',
@@ -164,7 +168,7 @@ class Contact extends React.Component {
 
     return (
       <ReactModal
-        isOpen={true}
+        isOpen
         onRequestClose={this.closeModal}
         style={{
           overlay: styles.modalOverlay,
@@ -172,8 +176,8 @@ class Contact extends React.Component {
         }}
         ariaHideApp={false}
       >
-        <img
-          src={closeSvg}
+
+        <button
           css={styles.closeButton}
           onClick={this.closeModal}
         />
@@ -193,7 +197,7 @@ class Contact extends React.Component {
           <div>
             <h2>お問い合わせ</h2>
             <div css={styles.nameMailContainer}>
-              <label css={styles.nameMailItem}>お名前：
+              <label css={styles.nameMailItem} htmlFor="name">お名前：
                 <input
                   name="name"
                   onChange={this.handleInputChange}
@@ -202,7 +206,7 @@ class Contact extends React.Component {
                 />
               </label>
 
-              <label css={styles.nameMailItem}>メールアドレス：
+              <label css={styles.nameMailItem} htmlFor="mail">メールアドレス：
                 <input
                   name="mail"
                   onChange={this.handleInputChange}
@@ -213,24 +217,24 @@ class Contact extends React.Component {
               </label>
             </div>
 
-            <label>お問い合わせ内容：
+            <label htmlFor="message">お問い合わせ内容：
               <textarea
                 name="message"
                 onChange={this.handleInputChange}
                 value={this.state.message}
                 css={styles.textArea}
-              ></textarea>
+              />
             </label>
 
             <button
               onClick={this.onClickSubmit}
               css={styles.button}
             >
-            {this.state.isSending ? <PulseLoader
-              color={'#fff'}
-              loading={true}
-              size={9}
-            /> : '送信'}
+              {this.state.isSending ? <PulseLoader
+                color="#fff"
+                loading
+                size={9}
+              /> : '送信'}
 
             </button>
           </div>
