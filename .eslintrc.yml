@@ -23,6 +23,7 @@ rules:
       - Link
      specialLink:
       - to
+  react/no-danger: 0
 env:
   mocha: true
 
@@ -30,3 +31,4 @@ env:
 globals:
   document: true
   window: true
+  graphql: true

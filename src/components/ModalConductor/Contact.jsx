@@ -11,7 +11,7 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state=({
+    this.state = ({
       name: '',
       mail: '',
       message: `・御社名
@@ -31,15 +31,19 @@ class Contact extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  closeModal() {
-    if(this.state.isSent){
-      this.props.setCurrentModal(null);
-      return;
-    }
+  componentDidMount() {
+    this.requestInterceptor = axios.interceptors.request.use((config) => {
+      this.setState({
+        isSending: true,
+      });
+      return config;
+    });
+  }
 
-    if(confirm("送信が完了していません。入力した内容が失われますがよろしいですか？")) {
-      this.props.setCurrentModal(null)
-    }
+  componentWillUnmount() {
+    // この処理を行わないと、コンポーネントを2回目以降にマウントした際、コンソールにエラーが出る。
+    // これは、すでにアンマウントされた初回コンポーネントの'this.setState'を再利用してしまうため。
+    axios.interceptors.request.eject(this.requestInterceptor);
   }
 
   onClickSubmit() {
@@ -57,35 +61,31 @@ class Contact extends React.Component {
         this.setState({
           isSent: true,
           resultMessage: '送信を正常に完了しました。概ね2営業日以内にご連絡差し上げますので、いましばらくお待ちくださいませ。',
-        })
+        });
       })
       .catch((err) => {
         alert(`送信に失敗しました。`);
         this.setState({
           isSending: false,
         });
-      })
+      });
+  }
+
+  closeModal() {
+    if (this.state.isSent) {
+      this.props.setCurrentModal(null);
+      return;
+    }
+
+    if (confirm("送信が完了していません。入力した内容が失われますがよろしいですか？")) {
+      this.props.setCurrentModal(null);
+    }
   }
 
   handleInputChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
-
-  componentDidMount() {
-    this.requestInterceptor = axios.interceptors.request.use((config) => {
-      this.setState({
-        isSending: true
-      })
-      return config;
-    })
-  }
-
-  componentWillUnmount() {
-    // この処理を行わないと、コンポーネントを2回目以降にマウントした際、コンソールにエラーが出る。
-    // これは、すでにアンマウントされた初回コンポーネントの'this.setState'を再利用してしまうため。
-    axios.interceptors.request.eject(this.requestInterceptor)
   }
 
   render() {
@@ -112,30 +112,30 @@ class Contact extends React.Component {
       nameMailContainer: {
         display: 'flex',
         flexDirection: 'column',
-        "@media (min-width:600px)": {
+        '@media (min-width:600px)': {
           flexDirection: 'row',
-        }
+        },
       },
       nameMailItem: {
         flex: 1,
         marginBottom: '16px',
-        "@media (min-width:600px)": {
-          ":first-child" : {
-            marginRight: '30px'
-          }
-        }
+        '@media (min-width:600px)': {
+          ':first-child' : {
+            marginRight: '30px',
+          },
+        },
       },
       input: {
         background: 'rgba(0, 0, 0, 0.01)',
         border: '1px solid #999999',
-        boxShadow:'inset 1px 2px 3px rgba(0, 0, 0, 0.1)',
+        boxShadow: 'inset 1px 2px 3px rgba(0, 0, 0, 0.1)',
         padding: '10px',
         width: '100%',
       },
       textArea: {
         background: 'rgba(0, 0, 0, 0.01)',
         border: '1px solid #999999',
-        boxShadow:'inset 1px 2px 3px rgba(0, 0, 0, 0.1)',
+        boxShadow: 'inset 1px 2px 3px rgba(0, 0, 0, 0.1)',
         height: '200px',
         marginBottom: '30px',
         padding: '10px',
@@ -184,7 +184,8 @@ class Contact extends React.Component {
             <button
               onClick={() => this.props.setCurrentModal(null)}
               css={styles.button}
-            >閉じる</button>
+            >閉じる
+            </button>
           </div>
         )
         :
@@ -236,12 +237,12 @@ class Contact extends React.Component {
         )}
 
       </ReactModal>
-    )
+    );
   }
 }
 
 Contact.propTypes = {
-  setCurrentModal: PropTypes.func.isRequired
-}
+  setCurrentModal: PropTypes.func.isRequired,
+};
 
-export default Contact
+export default Contact;

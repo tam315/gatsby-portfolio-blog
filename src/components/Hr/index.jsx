@@ -1,6 +1,5 @@
-import React from 'react'
-
-import { rhythm } from '../../utils/typography';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const Hr = ({ text }) => {
   const color = '#999999';
@@ -21,24 +20,32 @@ const Hr = ({ text }) => {
         marginRight: '0.5rem',
       },
       ':after': {
-        marginLeft: '0.5rem'
-      }
+        marginLeft: '0.5rem',
+      },
     },
     withoutInnerText: {
       background: color,
       marginBottom: '20px',
-    }
-  }
+    },
+  };
 
   if (text) {
     return (
       <div css={styles.withInnerText}>
         {text}
       </div>
-    )
-  } else {
-    return <hr css={styles.withoutInnerText} />
+    );
   }
-}
 
-export default Hr
+  return <hr css={styles.withoutInnerText} />;
+};
+
+Hr.propTypes = {
+  text: PropTypes.string,
+};
+
+Hr.defaultProps = {
+  text: null,
+};
+
+export default Hr;

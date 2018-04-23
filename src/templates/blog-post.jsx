@@ -1,7 +1,10 @@
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+
+import 'prismjs/themes/prism-tomorrow.css';
 
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
@@ -12,12 +15,10 @@ import { rhythm } from '../utils/typography';
 
 import profileJpg from '../images/profile.jpg';
 
-// for gatsby-remark-prismjs plugin
-import 'prismjs/themes/prism-tomorrow.css';
-
 export default class BlogPost extends React.Component {
   componentDidMount() {
-    if(typeof FB === 'object') {
+    if (typeof FB === 'object') {
+      /* global FB */
       FB.XFBML.parse();
     }
   }
@@ -52,7 +53,7 @@ export default class BlogPost extends React.Component {
         ' ul, li': {
           listStyleType: 'initial',
         },
-        ' ul':{
+        ' ul': {
           paddingLeft: '25px',
         },
         ' table': {
@@ -66,7 +67,7 @@ export default class BlogPost extends React.Component {
         },
         ' pre': {
           margin: '1rem auto !important',
-        }
+        },
       },
       backButton: {
         background: '#fff',
@@ -89,8 +90,8 @@ export default class BlogPost extends React.Component {
           marginTop: '2rem',
         },
         arrow: {
-          width:'0.875em',
-        }
+          width: '0.875em',
+        },
       },
       link: {
         display: 'block',
@@ -122,7 +123,7 @@ export default class BlogPost extends React.Component {
         marginTop: '2rem',
         padding: '2rem',
         ' a': {
-          color: '#262626'
+          color: '#262626',
         },
         '@media (max-width: 499px)': {
           flexDirection: 'column',
@@ -159,103 +160,112 @@ export default class BlogPost extends React.Component {
           },
           ' p': {
             marginBottom: 0,
-          }
-        }
-      }
+          },
+        },
+      },
     };
 
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.markdownRemark;
+
     return (
-      <SectionContainer colorNumber={1} isTop={true}>
-        <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} link="/blog/" />
+      <SectionContainer colorNumber={1} isTop>
+        <SectionHeader colorNumber={1} text="Yuuniworks Blog" link="/blog/" />
 
         <div css={styles.container}>
 
-        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
+          <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
 
-        <WhiteBox>
-          <article css={styles.boxInner}>
-            <time css={styles.datetime} dateTime={post.frontmatter.date}>
-              {post.frontmatter.date.slice(0,10)}
-            </time>
-            <h1 css={styles.title}>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <WhiteBox>
+            <article css={styles.boxInner}>
+              <time css={styles.datetime} dateTime={post.frontmatter.date}>
+                {post.frontmatter.date.slice(0, 10)}
+              </time>
+              <h1 css={styles.title}>{post.frontmatter.title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-            <aside css={styles.facebook}>
-            <hr />
-              <div css={styles.fbLike}><div className="fb-like" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
-              <div className="fb-comments" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-numposts="10"></div>
-            </aside>
+              <aside css={styles.facebook}>
+                <hr />
+                <div css={styles.fbLike}>
+                  <div className="fb-like" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" />
+                </div>
+                <div className="fb-comments" data-href={`http://www.yuuniworks.com/blog${post.fields.slug}`} data-numposts="10" />
+              </aside>
 
-          </article>
+            </article>
 
-        </WhiteBox>
+          </WhiteBox>
 
-        <WhiteBox>
-          <footer css={styles.footer}>
-            <img src={profileJpg} />
-            <div>
-              <p>田村 翔太</p>
-              <p><Link to="/">Yuuniworks</Link> 代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
-            </div>
-          </footer>
-        </WhiteBox>
+          <WhiteBox>
+            <footer css={styles.footer}>
+              <img src={profileJpg} alt="profile" />
+              <div>
+                <p>田村 翔太</p>
+                <p><Link to="/">Yuuniworks</Link> 代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
+              </div>
+            </footer>
+          </WhiteBox>
 
-        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
+          <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
 
         </div>
 
-      <SEO postNode={post} />
+        <SEO postNode={post} />
 
-      <Helmet
-        script={[
-          {
-            innerHTML:(`
-              (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.12&appId=1597425033686344&autoLogAppEvents=1';
-                fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));
-            `),
-          },
-          {
-            type: 'application/ld+json',
-            innerHTML:(JSON.stringify({
-              "@context": "http://schema.org",
-              "@type": "BlogPosting",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": `http://www.yuuniworks.com/blog${post.fields.slug}`
-              },
-              "headline": post.frontmatter.title,
-              "image": [
-                `https://www.yuuniworks.com${post.frontmatter.thumbnail}`,
-                ],
-              "datePublished": post.frontmatter.date,
-              "dateModified": post.frontmatter.dateModified,
-                "author": {
-                "@type": "Person",
-                "name": "Shota Tamura"
-              },
-                "publisher": {
-                "@type": "Organization",
-                "name": "Yuuniworks",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": 'https://www.yuuniworks.com/images/logo_for_schema.png',
-                }
-              },
-              "description": post.frontmatter.summary,
-            })),
-          },
-        ]}
-      />
+        <Helmet
+          script={[
+            {
+              innerHTML: (`
+                (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.12&appId=1597425033686344&autoLogAppEvents=1';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              `),
+            },
+            {
+              type: 'application/ld+json',
+              innerHTML: (JSON.stringify({
+                '@context': 'http://schema.org',
+                '@type': 'BlogPosting',
+                'mainEntityOfPage': {
+                  '@type': 'WebPage',
+                  '@id': `http://www.yuuniworks.com/blog${post.fields.slug}`,
+                },
+                'headline': post.frontmatter.title,
+                'image': [
+                  `https://www.yuuniworks.com${post.frontmatter.thumbnail}`,
+                  ],
+                'datePublished': post.frontmatter.date,
+                'dateModified': post.frontmatter.dateModified,
+                  'author': {
+                  '@type': 'Person',
+                  'name': 'Shota Tamura',
+                },
+                  'publisher': {
+                  '@type': 'Organization',
+                  'name': 'Yuuniworks',
+                  'logo': {
+                    '@type': 'ImageObject',
+                    'url': 'https://www.yuuniworks.com/images/logo_for_schema.png',
+                  },
+                },
+                'description': post.frontmatter.summary,
+              })),
+            },
+          ]}
+        />
       </SectionContainer>
-    )
+    );
   }
 }
+
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+  }).isRequired,
+};
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -272,4 +282,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

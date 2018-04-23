@@ -15,11 +15,11 @@ class RipIe extends React.Component {
   }
 
   componentDidMount() {
-    // ブラウザがIEかどうかの判定
-    if(document.documentMode) {
+    // Judgement if the browser is IE
+    if (document.documentMode) {
       this.setState({
         isVisible: true,
-      })
+      });
     }
   }
 
@@ -30,7 +30,7 @@ class RipIe extends React.Component {
   }
 
   render() {
-    const transitionSpeed = '0.15s'
+    const transitionSpeed = '0.15s';
 
     const styles = {
       container: {
@@ -59,26 +59,28 @@ class RipIe extends React.Component {
       ripImage: {
         float: 'right',
         height: '100px',
-      }
-    }
+      },
+    };
 
     return (
       <div css={styles.container}>
-        <div css={styles.closeButton} onClick={this.onCloseClick}>
+        <div css={styles.closeButton} onClick={this.onCloseClick} role="button" tabIndex={0}>
           <FontAwesomeIcon icon="times-circle" />
         </div>
 
-        <p>当サイトはInternet Explorerに対応しておりません。<br /><br />Internet ExplorerはITの可能性を狭め、エンジニア達を苦しめています。人助けだと思って、下記のようなブラウザを使ってみませんか。</p>
+        <p>当サイトはInternet Explorerに対応しておりません。<br /><br />
+        Internet ExplorerはITの可能性を狭め、エンジニア達を苦しめています。人助けだと思って、下記のようなブラウザを使ってみませんか。
+        </p>
         <ul css={{ float: 'left' }}>
           <li>- <a href="https://www.google.co.jp/chrome/index.html" css={styles.link} target="_blank">Chrome（オススメ）</a></li>
           <li>- <a href="https://www.mozilla.org/ja/firefox/" css={styles.link} target="_blank">Firefox</a></li>
           <li>- <a href="https://www.apple.com/jp/safari/" css={styles.link} target="_blank">Safari</a></li>
           <li>- <a href="https://www.microsoft.com/ja-jp/windows/microsoft-edge" css={styles.link} target="_blank">Edge</a></li>
         </ul>
-        <img src={ripIeSvg} css={styles.ripImage} />
+        <img src={ripIeSvg} css={styles.ripImage} alt="IE in the grave" />
       </div>
-    )
+    );
   }
 }
 
-export default RipIe
+export default RipIe;

@@ -1,6 +1,7 @@
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link'
+import Link from 'gatsby-link';
 
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
@@ -16,7 +17,7 @@ const BlogPage = ({ data }) => {
     container: {
       maxWidth: '600px',
       margin: 'auto',
-      position: 'relative'
+      position: 'relative',
     },
     rssLink: {
       display: 'block',
@@ -32,7 +33,7 @@ const BlogPage = ({ data }) => {
       padding: rhythm(1),
       '@media (max-width: 450px)': {
         flexDirection: 'column',
-      }
+      },
     },
     link: {
       display: 'block',
@@ -47,7 +48,7 @@ const BlogPage = ({ data }) => {
     },
     summary: {
       color: '#262626',
-      marginBottom: rhythm(2/3),
+      marginBottom: rhythm(2 / 3),
     },
     datetime: {
       color: '#999',
@@ -59,47 +60,49 @@ const BlogPage = ({ data }) => {
   const rssPath = '/rss.xml';
 
   return (
-    <SectionContainer colorNumber={1} isTop={true}>
-      <SectionHeader colorNumber={1} text={'Yuuniworks Blog'} />
-        <div css={styles.container}>
-        <a href={rssPath} css={styles.rssLink}><img src={rssSvg} /></a>
-        {data.allMarkdownRemark.edges.map(({ node }, index) => (
+    <SectionContainer colorNumber={1} isTop>
+      <SectionHeader colorNumber={1} text="Yuuniworks Blog" />
+      <div css={styles.container}>
+        <a href={rssPath} css={styles.rssLink}><img src={rssSvg} alt="rss" /></a>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
           <Link to={`/blog${node.fields.slug}`} css={styles.link} key={node.frontmatter.title}>
-          <WhiteBox hover={true}>
+            <WhiteBox hover>
 
-            <article css={styles.boxInner}>
+              <article css={styles.boxInner}>
 
-              <div css={{
-                // アスペクト比率を維持　かつ　画像で範囲全体をカバー　かつ　最も小さく表示
-                background: `url("${node.frontmatter.thumbnail}") no-repeat center center`,
-                backgroundSize: 'cover',
-                flex: '0 0 100px',
-                border: '1px solid rgba(0,0,0,0.2)',
-                marginRight: '1rem',
-                '@media (max-width: 450px)': {
-                  marginRight: 0,
-                  marginBottom: '1rem',
-                  flex: '0 0 150px',
-                }
-              }} />
+                <div
+                  css={{
+                    // アスペクト比率を維持、かつ、画像で範囲全体をカバー、かつ、最も小さく表示
+                    background: `url("${node.frontmatter.thumbnail}") no-repeat center center`,
+                    backgroundSize: 'cover',
+                    flex: '0 0 100px',
+                    border: '1px solid rgba(0,0,0,0.2)',
+                    marginRight: '1rem',
+                    '@media (max-width: 450px)': {
+                      marginRight: 0,
+                      marginBottom: '1rem',
+                      flex: '0 0 150px',
+                    },
+                  }}
+                />
 
-              <div>
-                <h1 css={styles.title}>{node.frontmatter.title}</h1>
-                <div css={styles.summary}>{node.frontmatter.summary}</div>
-                <time css={styles.datetime} dateTime={node.frontmatter.date}>
-                  {node.frontmatter.date.slice(0,10)}
-                </time>
-              </div>
+                <div>
+                  <h1 css={styles.title}>{node.frontmatter.title}</h1>
+                  <div css={styles.summary}>{node.frontmatter.summary}</div>
+                  <time css={styles.datetime} dateTime={node.frontmatter.date}>
+                    {node.frontmatter.date.slice(0, 10)}
+                  </time>
+                </div>
 
-            </article>
+              </article>
 
-          </WhiteBox>
+            </WhiteBox>
           </Link>
         ))}
-        </div>
+      </div>
 
       <SEO
-        metaData = {{
+        metaData={{
           title: 'Yuuniworks Blog',
           description: '島根のフリーランスエンジニア「Yuuniworks」のブログです。フロントエンド界隈の技術的なネタを記録しています。',
         }}
@@ -111,15 +114,21 @@ const BlogPage = ({ data }) => {
             rel: 'alternate',
             type: 'application/atom+xml',
             href: rssPath,
-            title: 'RSS for Yuuniworks Blog'
+            title: 'RSS for Yuuniworks Blog',
           },
         ]}
       />
     </SectionContainer>
-  )
-}
+  );
+};
 
-export default BlogPage
+BlogPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.object,
+  }).isRequired,
+};
+
+export default BlogPage;
 
 export const query = graphql`
   query BlogPageQuery {
@@ -139,4 +148,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

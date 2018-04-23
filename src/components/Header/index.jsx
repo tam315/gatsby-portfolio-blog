@@ -14,63 +14,12 @@ class Header extends React.Component {
     this.state = {
       isMenuOpen: false,
       isScrolled: false,
-      activeSection : '', // react-scrollから報告された、現在のスクロール位置を含むエレメントのid
     };
 
     this.closeMenu = this.closeMenu.bind(this);
     this.onKeydown = this.onKeydown.bind(this);
     this.onHumbergerClick = this.onHumbergerClick.bind(this);
     this.onScroll = this.onScroll.bind(this);
-  }
-
-  closeMenu() {
-    this.setState({
-      isMenuOpen: false,
-    });
-  }
-
-  // メニューの外側をクリックするとメニューを閉じる（react-onclickoutsideで制御）
-  handleClickOutside(e) {
-    if(this.state.isMenuOpen) {
-      this.setState({
-        isMenuOpen: false,
-      });
-    }
-  }
-
-  // ハンバーガーメニューをクリックするとメニューを開閉する
-  onHumbergerClick() {
-    this.setState({
-      isMenuOpen: !this.state.isMenuOpen,
-    });
-  }
-
-  // ESCキーでメニューを閉じる
-  onKeydown(e) {
-    if(e.keyCode === 27) {
-      this.setState({
-        isMenuOpen: false,
-      });
-    }
-  }
-
-  // スクロール位置がトップになっているか判断する
-  onScroll() {
-    const JUDGE_POSITION_Y = 50;
-
-    let supportPageOffset = window.pageYOffset !== undefined;
-    let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
-    let scrollY = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-
-    if (scrollY > JUDGE_POSITION_Y) {
-      this.setState({
-        isScrolled: true,
-      })
-    } else {
-      this.setState({
-        isScrolled: false,
-      })
-    }
   }
 
   componentDidMount() {
@@ -83,13 +32,66 @@ class Header extends React.Component {
     window.removeEventListener('keydown', this.onKeydown);
   }
 
+  // ハンバーガーメニューをクリックするとメニューを開閉する
+  onHumbergerClick() {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    });
+  }
+
+  // ESCキーでメニューを閉じる
+  onKeydown(e) {
+    if (e.keyCode === 27) {
+      this.setState({
+        isMenuOpen: false,
+      });
+    }
+  }
+
+  // スクロール位置がトップになっているか判断する
+  onScroll() {
+    const JUDGE_POSITION_Y = 50;
+
+    const supportPageOffset = window.pageYOffset !== undefined;
+    const isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+
+    let scrollY;
+    if (supportPageOffset) scrollY = window.pageYOffset;
+    else if (isCSS1Compat) scrollY = document.documentElement.scrollTop;
+    else scrollY = document.body.scrollTop;
+
+    if (scrollY > JUDGE_POSITION_Y) {
+      this.setState({
+        isScrolled: true,
+      });
+    } else {
+      this.setState({
+        isScrolled: false,
+      });
+    }
+  }
+
+  closeMenu() {
+    this.setState({
+      isMenuOpen: false,
+    });
+  }
+
+  // メニューの外側をクリックするとメニューを閉じる（react-onclickoutsideで制御）
+  handleClickOutside() {
+    if (this.state.isMenuOpen) {
+      this.setState({
+        isMenuOpen: false,
+      });
+    }
+  }
+
   render() {
     const settings = {
       transitionSpeed: '0.15s',
       barColor: 'rgba(0, 0, 15, 0.8)',
       opacityHide: 0.2,
-    }
-    const transitionSpeed = '0.15s';
+    };
 
     const { isMenuOpen, isScrolled } = this.state;
     const isRootPath = this.props.location.pathname === '/';
@@ -124,7 +126,7 @@ class Header extends React.Component {
           flexDirection: 'row',
           marginRight: '1rem',
           width: '500px',
-        }
+        },
       },
       menuItems: {
         color: '#fff',
@@ -136,7 +138,7 @@ class Header extends React.Component {
           background: 'rgba(100, 100, 110, 0.95)',
         },
         '@media (max-width:749px)': {
-          background:  settings.barColor,
+          background: settings.barColor,
           borderTop: '1px solid rgba(255, 255, 255, 0.2)',
           display: 'block',
           padding: '12px 25px',
@@ -173,7 +175,7 @@ class Header extends React.Component {
           display: 'none',
         },
       },
-    }
+    };
 
     const menuItem = [
       { name: '概要', id: 'gaiyou', path: '/#gaiyou' },
@@ -189,65 +191,71 @@ class Header extends React.Component {
         { isRootPath ?
           <LinkForScroll
             to="top"
-            smooth={true}
+            smooth
             duration={150}
             css={styles.logo}
           >
-          <img src={logoSvg} />
+            <img src={logoSvg} alt="Yuuniworksのロゴ" />
           </LinkForScroll>
         :
           <Link
             to="/"
             css={styles.logo}
           >
-          <img src={logoSvg} />
+            <img src={logoSvg} alt="Yuuniworksのロゴ" />
           </Link>
         }
 
         <ul css={styles.menu}>
           { menuItem.map((item) => {
-            return isRootPath && item.path.substr(0, 2) === '/#' ? (
-              <LinkForScroll
-                to={item.id}
-                spy={true /* avtiveクラスを自動で設定するために必須の設定 */}
-                smooth={true}
-                duration={150}
-                offset={-50}
-                key={item.id}
-                activeClass="active"
-                css={styles.menuItems}
-                onClick={this.closeMenu}
-              >
-                {item.name}
-              </LinkForScroll>
-            ) : (
+            if (isRootPath && item.path.substr(0, 2) === '/#') {
+              return (
+                <LinkForScroll
+                  to={item.id}
+                  spy // avtiveクラスを自動で設定するために必須の設定
+                  smooth
+                  duration={150}
+                  offset={-50}
+                  key={item.id}
+                  activeClass="active"
+                  css={styles.menuItems}
+                  onClick={this.closeMenu}
+                >
+                  {item.name}
+                </LinkForScroll>
+              );
+            }
+
+            return (
               <Link
                 to={item.path}
                 key={item.id}
                 css={styles.menuItems}
-                className={ this.props.location.pathname.substr(0, item.path.length) === item.path ? 'active' : null }
+                className={this.props.location.pathname.substr(0, item.path.length) === item.path ? 'active' : null}
                 onClick={this.closeMenu}
               >
                 {item.name}
               </Link>
-            )
+            );
           })}
         </ul>
 
         <div
           css={styles.humbergerIcon}
           onClick={this.onHumbergerClick}
+          role="button"
+          tabIndex={0}
         >
-        <img src={humbergerSvg} />
+          <img src={humbergerSvg} alt="humberger menu button" />
         </div>
 
       </nav>
-    )
+    );
   }
 }
 
 Header.propTypes = {
-  location: PropTypes.object.isRequired,
-}
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
+};
 
-export default onClickOutside(Header)
+export default onClickOutside(Header);

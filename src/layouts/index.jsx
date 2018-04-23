@@ -5,7 +5,6 @@ import faCaretSquareRight from '@fortawesome/fontawesome-free-solid/faCaretSquar
 import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
 import faStar from '@fortawesome/fontawesome-free-solid/faStar';
 import faTimesCircle from '@fortawesome/fontawesome-free-solid/faTimesCircle';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
@@ -27,19 +26,20 @@ const TemplateWrapper = ({ children, location }) => {
     <div>
 
       {/* for Facebook Comment Plugin */}
-      <div id="fb-root"></div>
+      <div id="fb-root" />
 
       <RipIe />
       <Helmet><html lang="ja" /></Helmet>
-      <Header location={location}/>
+      <Header location={location} />
 
       {children()}
     </div>
-  )
-}
+  );
+};
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func.isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;
