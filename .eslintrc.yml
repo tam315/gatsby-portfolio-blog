@@ -24,6 +24,8 @@ rules:
      specialLink:
       - to
   react/no-danger: 0
+  react/react-in-jsx-scope: 0
+  no-alert: 0
 env:
   mocha: true
 
