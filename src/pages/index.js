@@ -346,6 +346,8 @@ const PerformanceSection = () => {
       techStack: [
         { name: 'Angular4', description: 'Front-end Framework' },
         { name: 'Firebase', description: 'ホスティング' },
+        { name: 'Jasmine', description: 'Unit/E2E Test' },
+        { name: 'Protractor', description: 'E2E Test' },
         { name: 'Semaphore', description: 'CI/CD' },
       ],
       webpageURL: 'http://split.yuuniworks.com',
