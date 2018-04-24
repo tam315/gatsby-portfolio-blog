@@ -22,8 +22,13 @@ const TemplateWrapper = ({ children, location }) => {
     faTimesCircle,
   );
 
+  const style = {
+    // global background color
+    background: '#F5F7FA',
+  };
+
   return (
-    <div>
+    <div css={style}>
 
       {/* for Facebook Comment Plugin */}
       <div id="fb-root" />

@@ -168,8 +168,8 @@ export default class BlogPost extends React.Component {
     const post = this.props.data.markdownRemark;
 
     return (
-      <SectionContainer colorNumber={1} isTop>
-        <SectionHeader colorNumber={1} text="Yuuniworks Blog" link="/blog/" />
+      <SectionContainer colorNumber="1" isTop>
+        <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
 
         <div css={styles.container}>
 

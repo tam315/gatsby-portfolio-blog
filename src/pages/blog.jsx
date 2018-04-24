@@ -60,8 +60,8 @@ const BlogPage = ({ data }) => {
   const rssPath = '/rss.xml';
 
   return (
-    <SectionContainer colorNumber={1} isTop>
-      <SectionHeader colorNumber={1} text="Yuuniworks Blog" />
+    <SectionContainer colorNumber="1" isTop>
+      <SectionHeader colorNumber="1" text="Yuuniworks Blog" />
       <div css={styles.container}>
         <a href={rssPath} css={styles.rssLink}><img src={rssSvg} alt="rss" /></a>
         {data.allMarkdownRemark.edges.map(({ node }) => (

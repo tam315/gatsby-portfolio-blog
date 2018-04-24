@@ -138,7 +138,7 @@ const GaiyouSection = (props) => {
   };
 
   return (
-    <SectionContainer id="gaiyou" colorNumber="1">
+    <SectionContainer id="gaiyou">
       <SectionHeader text="概要" colorNumber="1" />
 
       <div css={styles.container}>
@@ -263,7 +263,7 @@ const SkillSection = (props) => {
   };
 
   return (
-    <SectionContainer id="skill" colorNumber="2">
+    <SectionContainer id="skill" colorNumber="2" skew>
       <SectionHeader text="スキル" colorNumber="2" />
       <div>
         <WhiteBox maxWidth="850">
@@ -399,7 +399,7 @@ const PerformanceSection = () => {
   };
 
   return (
-    <SectionContainer id="performance" colorNumber="1">
+    <SectionContainer id="performance">
       <SectionHeader text="実績" colorNumber="1" />
 
       {/* グリッド始点 */}
@@ -518,7 +518,7 @@ const ProfileSection = () => {
   };
 
   return (
-    <SectionContainer id="profile" colorNumber="2">
+    <SectionContainer id="profile" colorNumber="2" skew skewReverse>
       <SectionHeader text="プロフィール" colorNumber="2" />
 
       {/* Flex始点 */}
@@ -649,7 +649,7 @@ const BlogSection = () => {
   };
 
   return (
-    <SectionContainer id="blog" colorNumber="1">
+    <SectionContainer id="blog">
       <SectionHeader text="ブログ" colorNumber="1" />
       <Link to="/blog/" css={styles.link}>Yuuniworks Blog</Link>
     </SectionContainer>
@@ -697,7 +697,6 @@ const FooterSection = (props) => {
       justifyContent: 'center',
       margin: 'auto',
       maxWidth: '850px',
-      paddingBottom: '200px',
     },
     link: {
       color: '#fff',
@@ -723,7 +722,7 @@ const FooterSection = (props) => {
   };
 
   return (
-    <SectionContainer id="contact" colorNumber="2">
+    <SectionContainer id="contact" colorNumber="2" skew skewFillBottom>
       <SectionHeader text="お問い合わせ・ご連絡先" colorNumber="2" />
 
       <div css={styles.container}>
