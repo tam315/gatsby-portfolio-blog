@@ -46,7 +46,7 @@ class RipIe extends React.Component {
         right: 0,
         transition: `visibility ${transitionSpeed} ease-out, opacity ${transitionSpeed} ease-out`, // for amimation
         visibility: this.state.isVisible ? 'visible' : 'hidden', // for amimation
-        zIndex: 5,
+        zIndex: 300,
       },
       link: {
         color: '#721C24',

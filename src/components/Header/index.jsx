@@ -107,7 +107,7 @@ class Header extends React.Component {
         top: 0,
         transition: `background ${settings.transitionSpeed} ease-out`,
         width: '100%',
-        zIndex: 10,
+        zIndex: 300,
         boxShadow: shouldBeHide ? 'none' : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       },
       menu: {

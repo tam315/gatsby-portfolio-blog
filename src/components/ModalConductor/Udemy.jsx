@@ -95,7 +95,7 @@ const Udemy = (props) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      zIndex: 15,
+      zIndex: 500,
     },
     modalContent: {
       margin: '1rem',

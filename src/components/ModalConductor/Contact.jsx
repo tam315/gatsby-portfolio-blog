@@ -95,7 +95,7 @@ class Contact extends React.Component {
         background: 'rgba(64,64,64,0.7)',
         display: 'flex',
         justifyContent: 'center',
-        zIndex: 15,
+        zIndex: 500,
       },
       modalContent: {
         bottom: 'auto',
