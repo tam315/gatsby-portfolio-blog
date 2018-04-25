@@ -235,12 +235,13 @@ const SkillSection = (props) => {
     'バックエンド': {
       'TCP/IP': 4,
       'Docker': 3,
-      'RESTful APIs': 3,
-      'AWS Lambda/API': 2,
+      'RDBMS': 3,
+      'Swagger': 2,
+      'AWS Lambda': 2,
+      'AWS DynamoDB': 2,
+      'AWS Cognito': 2,
       'Nginx': 2,
       'Kubernates': 2,
-      'MongoDB': 2,
-      'MariaDB': 2,
     },
     'その他': [
       {

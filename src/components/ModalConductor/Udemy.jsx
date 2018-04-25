@@ -78,6 +78,11 @@ const Udemy = (props) => {
       'url': 'https://www.udemy.com/react-redux/',
     },
     {
+      'junle': 'Serverless',
+      'name': 'AWS Serverless APIs & Apps - A Complete Introduction',
+      'url': 'https://www.udemy.com/aws-serverless-a-complete-introduction/learn/v4/questions',
+    },
+    {
       'junle': 'Typescript',
       'name': 'Introduction to TypeScript ',
       'url': 'https://www.udemy.com/typescript/',
