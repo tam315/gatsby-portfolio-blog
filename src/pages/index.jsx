@@ -390,7 +390,7 @@ const PerformanceSection = () => {
       cursor: 'pointer',
       display: 'inline-block',
       fontSize: '0.8rem',
-      margin: '6px 5px',
+      margin: '0 10px 12px 0',
       padding: '5px 9px',
     },
     badgeLink: {
@@ -415,7 +415,8 @@ const PerformanceSection = () => {
                   background: `url("${performance.imgPath}") no-repeat center center`,
                   backgroundSize: 'cover',
                   height: '160px',
-                  borderBottom: '1px solid rgba(0, 0, 0, 0.2)',
+                  border: '1px solid #aaa',
+                  margin: rhythm(1),
                 }}
               />
             </a>
