@@ -9,6 +9,7 @@ const typography = new Typography({
     'Yu Gothic Medium', // win
     '游ゴシック体', // mac
     'YuGothic', // mac
+    'メイリオ', // win 7
     'sans-serif',
   ],
   headerColor: '#262626',
@@ -17,6 +18,7 @@ const typography = new Typography({
     'Yu Gothic Medium', // win
     '游ゴシック体', // mac
     'YuGothic', // mac
+    'メイリオ', // win 7
     'sans-serif',
   ],
   overrideStyles: () => ({
