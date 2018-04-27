@@ -29,10 +29,6 @@ const TemplateWrapper = ({ children, location }) => {
 
   return (
     <div css={style}>
-
-      {/* for Facebook Comment Plugin */}
-      <div id="fb-root" />
-
       <RipIe />
       <Helmet><html lang="ja" /></Helmet>
       <Header location={location} />
