@@ -61,6 +61,9 @@ export default function BlogPost(props) {
       },
       ' pre': {
         margin: '1rem auto !important',
+        ' a': {
+          color: '#7ec699', // prevent a link color to be browser's default
+        },
       },
     },
     backButton: {
