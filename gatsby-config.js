@@ -56,6 +56,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-PSGDFDD',
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         query: `
