@@ -58,6 +58,7 @@ export default function BlogPost(props) {
       },
       ' p': {
         marginBottom: '1rem',
+        marginTop: '1rem',
       },
       ' pre': {
         margin: '1rem auto !important',
