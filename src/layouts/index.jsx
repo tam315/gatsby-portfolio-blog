@@ -30,7 +30,9 @@ const TemplateWrapper = ({ children, location }) => {
   return (
     <div css={style}>
       <RipIe />
-      <Helmet><html lang="ja" /></Helmet>
+      <Helmet>
+        <html lang="ja" />
+      </Helmet>
       <Header location={location} />
 
       {children()}
@@ -40,7 +42,8 @@ const TemplateWrapper = ({ children, location }) => {
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
 };
 
 export default TemplateWrapper;

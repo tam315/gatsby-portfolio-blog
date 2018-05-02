@@ -2,18 +2,18 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
+  const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: '_posts/blog' })
+    const slug = createFilePath({ node, getNode, basePath: '_posts/blog' });
 
     createNodeField({
       node,
       name: 'slug',
       value: slug,
-    })
+    });
   }
-}
+};
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -34,8 +34,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       }
-    `)
-    .then(result => {
+    `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: `/blog${node.fields.slug}`,
@@ -44,13 +43,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
             modifiedDate: node.frontmatter.dateModified, // rss用 詳細はgatsby-config.jsを参照
-          }
-        })
+          },
+        });
       });
 
       resolve();
-    })
-  })
-}
+    });
+  });
+};
 
-module.exports = exports
+module.exports = exports;

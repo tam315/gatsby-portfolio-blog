@@ -40,7 +40,8 @@ class AgeCalculator extends React.Component {
     const YEAR_AS_MILLISEC = 1000 * 60 * 60 * 24 * 365;
     datetimeFrom.setFullYear(1970);
     datetimeTo.setFullYear(1970);
-    const diffTime = (datetimeTo.getTime() - datetimeFrom.getTime()) / YEAR_AS_MILLISEC;
+    const diffTime =
+      (datetimeTo.getTime() - datetimeFrom.getTime()) / YEAR_AS_MILLISEC;
 
     // 小数点以下の差を、仮計算した年齢に加算又は減算する
     const result = diffYear + diffTime;
@@ -50,7 +51,11 @@ class AgeCalculator extends React.Component {
 
   render() {
     const age = this.state.age.toFixed(9).split('.');
-    return <div>{age[0]}.<span css={{ fontSize: '0.8rem' }}>{age[1]}</span>歳</div>;
+    return (
+      <div>
+        {age[0]}.<span css={{ fontSize: '0.8rem' }}>{age[1]}</span>歳
+      </div>
+    );
   }
 }
 

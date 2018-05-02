@@ -53,7 +53,7 @@ class Header extends React.Component {
     const JUDGE_POSITION_Y = 50;
 
     const supportPageOffset = window.pageYOffset !== undefined;
-    const isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+    const isCSS1Compat = (document.compatMode || '') === 'CSS1Compat';
 
     let scrollY;
     if (supportPageOffset) scrollY = window.pageYOffset;
@@ -108,7 +108,9 @@ class Header extends React.Component {
         transition: `background ${settings.transitionSpeed} ease-out`,
         width: '100%',
         zIndex: 300,
-        boxShadow: shouldBeHide ? 'none' : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
+        boxShadow: shouldBeHide
+          ? 'none'
+          : '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       },
       menu: {
         display: 'flex',
@@ -133,7 +135,9 @@ class Header extends React.Component {
         cursor: 'pointer',
         opacity: shouldBeHide ? settings.opacityHide : 1,
         textDecoration: 'none',
-        transition: `background ${settings.transitionSpeed} ease-out, opacity ${settings.transitionSpeed} ease-out`,
+        transition: `background ${settings.transitionSpeed} ease-out, opacity ${
+          settings.transitionSpeed
+        } ease-out`,
         '.active': {
           background: 'rgba(100, 100, 110, 0.95)',
         },
@@ -159,7 +163,8 @@ class Header extends React.Component {
         opacity: shouldBeHide ? settings.opacityHide : 1,
         width: '180px',
         transition: `opacity ${settings.transitionSpeed} ease-out`,
-        ' img': { // for IE11
+        ' img': {
+          // for IE11
           width: '180px',
           height: '50px',
         },
@@ -188,26 +193,18 @@ class Header extends React.Component {
 
     return (
       <nav css={styles.navbar}>
-        { isRootPath ?
-          <LinkForScroll
-            to="top"
-            smooth
-            duration={150}
-            css={styles.logo}
-          >
+        {isRootPath ? (
+          <LinkForScroll to="top" smooth duration={150} css={styles.logo}>
             <img src={logoSvg} alt="Yuuniworksのロゴ" />
           </LinkForScroll>
-        :
-          <Link
-            to="/"
-            css={styles.logo}
-          >
+        ) : (
+          <Link to="/" css={styles.logo}>
             <img src={logoSvg} alt="Yuuniworksのロゴ" />
           </Link>
-        }
+        )}
 
         <ul css={styles.menu}>
-          { menuItem.map((item) => {
+          {menuItem.map(item => {
             if (isRootPath && item.path.substr(0, 2) === '/#') {
               return (
                 <LinkForScroll
@@ -231,7 +228,12 @@ class Header extends React.Component {
                 to={item.path}
                 key={item.id}
                 css={styles.menuItems}
-                className={this.props.location.pathname.substr(0, item.path.length) === item.path ? 'active' : null}
+                className={
+                  this.props.location.pathname.substr(0, item.path.length) ===
+                  item.path
+                    ? 'active'
+                    : null
+                }
                 onClick={this.closeMenu}
               >
                 {item.name}
@@ -248,14 +250,14 @@ class Header extends React.Component {
         >
           <img src={humbergerSvg} alt="humberger menu button" />
         </div>
-
       </nav>
     );
   }
 }
 
 Header.propTypes = {
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
 };
 
 export default onClickOutside(Header);

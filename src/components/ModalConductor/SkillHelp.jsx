@@ -6,7 +6,7 @@ import Stars from '../Stars';
 
 import closeSvg from '../../icons/close.svg';
 
-const SkillHelp = (props) => {
+const SkillHelp = props => {
   const articles = [
     {
       level: 5,
@@ -89,7 +89,6 @@ const SkillHelp = (props) => {
       }}
       ariaHideApp={false}
     >
-
       <button
         css={styles.closeButton}
         onClick={() => props.setCurrentModal(null)}
@@ -104,7 +103,6 @@ const SkillHelp = (props) => {
           <div css={styles.articleDescription}>{article.description}</div>
         </div>
       ))}
-
     </ReactModal>
   );
 };

@@ -71,7 +71,8 @@ export default function BlogPost(props) {
       background: '#fff',
       border: '2px solid #6292F1',
       borderRadius: '7px',
-      boxShadow: '0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)',
+      boxShadow:
+        '0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)',
       color: '#6292F1',
       display: 'inline-block',
       padding: '5px 1rem',
@@ -175,8 +176,10 @@ export default function BlogPost(props) {
       <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
 
       <div css={styles.container}>
-
-        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
+        <Link to="/blog/" css={styles.backButton}>
+          <FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} />{' '}
+          記事一覧に戻る
+        </Link>
 
         <WhiteBox>
           <article css={styles.boxInner}>
@@ -190,10 +193,7 @@ export default function BlogPost(props) {
 
         <WhiteBox>
           <aside css={styles.comments}>
-            <DiscussionEmbed
-              shortname="yuuniworks"
-              config={disqusConfig}
-            />
+            <DiscussionEmbed shortname="yuuniworks" config={disqusConfig} />
           </aside>
         </WhiteBox>
 
@@ -202,13 +202,19 @@ export default function BlogPost(props) {
             <img src={profileJpg} alt="profile" />
             <div>
               <p>田村 翔太</p>
-              <p><Link to="/">Yuuniworks</Link> 代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle Page Applicationや、NodeJSを使ったAPI開発を得意としています。</p>
+              <p>
+                <Link to="/">Yuuniworks</Link>{' '}
+                代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle
+                Page Applicationや、NodeJSを使ったAPI開発を得意としています。
+              </p>
             </div>
           </footer>
         </WhiteBox>
 
-        <Link to="/blog/" css={styles.backButton}><FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} /> 記事一覧に戻る</Link>
-
+        <Link to="/blog/" css={styles.backButton}>
+          <FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} />{' '}
+          記事一覧に戻る
+        </Link>
       </div>
 
       <SEO postNode={post} />
@@ -216,7 +222,7 @@ export default function BlogPost(props) {
       <Helmet
         script={[
           {
-            innerHTML: (`
+            innerHTML: `
               (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
@@ -224,37 +230,37 @@ export default function BlogPost(props) {
                 js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.12&appId=1597425033686344&autoLogAppEvents=1';
                 fjs.parentNode.insertBefore(js, fjs);
               }(document, 'script', 'facebook-jssdk'));
-            `),
+            `,
           },
           {
             type: 'application/ld+json',
-            innerHTML: (JSON.stringify({
+            innerHTML: JSON.stringify({
               '@context': 'http://schema.org',
               '@type': 'BlogPosting',
-              'mainEntityOfPage': {
+              mainEntityOfPage: {
                 '@type': 'WebPage',
                 '@id': `http://www.yuuniworks.com/blog${post.fields.slug}`,
               },
-              'headline': post.frontmatter.title,
-              'image': [
+              headline: post.frontmatter.title,
+              image: [
                 `https://www.yuuniworks.com${post.frontmatter.thumbnail}`,
-                ],
-              'datePublished': post.frontmatter.date,
-              'dateModified': post.frontmatter.dateModified,
-                'author': {
+              ],
+              datePublished: post.frontmatter.date,
+              dateModified: post.frontmatter.dateModified,
+              author: {
                 '@type': 'Person',
-                'name': 'Shota Tamura',
+                name: 'Shota Tamura',
               },
-                'publisher': {
+              publisher: {
                 '@type': 'Organization',
-                'name': 'Yuuniworks',
-                'logo': {
+                name: 'Yuuniworks',
+                logo: {
                   '@type': 'ImageObject',
-                  'url': 'https://www.yuuniworks.com/images/logo_for_schema.png',
+                  url: 'https://www.yuuniworks.com/images/logo_for_schema.png',
                 },
               },
-              'description': post.frontmatter.summary,
-            })),
+              description: post.frontmatter.summary,
+            }),
           },
         ]}
       />
@@ -273,7 +279,9 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       excerpt
       html
-      fields { slug }
+      fields {
+        slug
+      }
       frontmatter {
         title
         summary

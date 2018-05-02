@@ -11,7 +11,7 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = ({
+    this.state = {
       name: '',
       mail: '',
       message: `・御社名
@@ -24,7 +24,7 @@ class Contact extends React.Component {
       isSending: false,
       isSent: false,
       resultMessage: '',
-    });
+    };
 
     this.closeModal = this.closeModal.bind(this);
     this.onClickSubmit = this.onClickSubmit.bind(this);
@@ -32,7 +32,7 @@ class Contact extends React.Component {
   }
 
   componentDidMount() {
-    this.requestInterceptor = axios.interceptors.request.use((config) => {
+    this.requestInterceptor = axios.interceptors.request.use(config => {
       this.setState({
         isSending: true,
       });
@@ -49,18 +49,22 @@ class Contact extends React.Component {
   onClickSubmit() {
     const mailContent = JSON.stringify({
       subject: '【問合せ】yuuni-webサイトより',
-      body: `■名前：\n${this.state.name}\n\n■メール：\n${this.state.mail}\n\n■内容：\n${this.state.message}\n\n`,
+      body: `■名前：\n${this.state.name}\n\n■メール：\n${
+        this.state.mail
+      }\n\n■内容：\n${this.state.message}\n\n`,
     });
 
     axios({
       method: 'post',
-      url: 'https://3vejp046g6.execute-api.ap-northeast-1.amazonaws.com/production/submit',
+      url:
+        'https://3vejp046g6.execute-api.ap-northeast-1.amazonaws.com/production/submit',
       data: mailContent,
     })
       .then(() => {
         this.setState({
           isSent: true,
-          resultMessage: '送信を正常に完了しました。概ね2営業日以内にご連絡差し上げますので、いましばらくお待ちくださいませ。',
+          resultMessage:
+            '送信を正常に完了しました。概ね2営業日以内にご連絡差し上げますので、いましばらくお待ちくださいませ。',
         });
       })
       .catch(() => {
@@ -77,7 +81,11 @@ class Contact extends React.Component {
       return;
     }
 
-    if (window.confirm('送信が完了していません。入力した内容が失われますがよろしいですか？')) {
+    if (
+      window.confirm(
+        '送信が完了していません。入力した内容が失われますがよろしいですか？',
+      )
+    ) {
       this.props.setCurrentModal(null);
     }
   }
@@ -176,11 +184,7 @@ class Contact extends React.Component {
         }}
         ariaHideApp={false}
       >
-
-        <button
-          css={styles.closeButton}
-          onClick={this.closeModal}
-        />
+        <button css={styles.closeButton} onClick={this.closeModal} />
 
         {this.state.isSent ? (
           <div>
@@ -188,16 +192,16 @@ class Contact extends React.Component {
             <button
               onClick={() => this.props.setCurrentModal(null)}
               css={styles.button}
-            >閉じる
+            >
+              閉じる
             </button>
           </div>
-        )
-        :
-        (
+        ) : (
           <div>
             <h2>お問い合わせ</h2>
             <div css={styles.nameMailContainer}>
-              <label css={styles.nameMailItem} htmlFor="name">お名前：
+              <label css={styles.nameMailItem} htmlFor="name">
+                お名前：
                 <input
                   name="name"
                   onChange={this.handleInputChange}
@@ -206,7 +210,8 @@ class Contact extends React.Component {
                 />
               </label>
 
-              <label css={styles.nameMailItem} htmlFor="mail">メールアドレス：
+              <label css={styles.nameMailItem} htmlFor="mail">
+                メールアドレス：
                 <input
                   name="mail"
                   onChange={this.handleInputChange}
@@ -217,7 +222,8 @@ class Contact extends React.Component {
               </label>
             </div>
 
-            <label htmlFor="message">お問い合わせ内容：
+            <label htmlFor="message">
+              お問い合わせ内容：
               <textarea
                 name="message"
                 onChange={this.handleInputChange}
@@ -226,20 +232,15 @@ class Contact extends React.Component {
               />
             </label>
 
-            <button
-              onClick={this.onClickSubmit}
-              css={styles.button}
-            >
-              {this.state.isSending ? <PulseLoader
-                color="#fff"
-                loading
-                size={9}
-              /> : '送信'}
-
+            <button onClick={this.onClickSubmit} css={styles.button}>
+              {this.state.isSending ? (
+                <PulseLoader color="#fff" loading size={9} />
+              ) : (
+                '送信'
+              )}
             </button>
           </div>
         )}
-
       </ReactModal>
     );
   }

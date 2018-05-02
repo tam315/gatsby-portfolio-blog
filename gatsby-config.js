@@ -1,4 +1,4 @@
-const config = require("./data/SiteConfig");
+const config = require('./data/SiteConfig');
 
 module.exports = {
   siteMetadata: {
@@ -19,9 +19,15 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.summary,
-                  url: site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + '/blog' +  edge.node.fields.slug,
-                  enclosure: { url: site.siteMetadata.siteUrl + edge.node.frontmatter.thumbnail },
+                  url:
+                    site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl + '/blog' + edge.node.fields.slug,
+                  enclosure: {
+                    url:
+                      site.siteMetadata.siteUrl +
+                      edge.node.frontmatter.thumbnail,
+                  },
                 });
               });
             },
@@ -44,7 +50,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
           },
         ],
       },
@@ -86,12 +92,11 @@ module.exports = {
         `,
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges.map(edge => ({
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: `daily`,
-              priority: 0.7,
-              lastmodISO: edge.node.context.modifiedDate, // デフォルト設定に追加
-            })
-          )
+            url: site.siteMetadata.siteUrl + edge.node.path,
+            changefreq: `daily`,
+            priority: 0.7,
+            lastmodISO: edge.node.context.modifiedDate, // デフォルト設定に追加
+          })),
       },
     },
     {
@@ -104,7 +109,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: `${__dirname}/_posts/blog/`
+        path: `${__dirname}/_posts/blog/`,
       },
     },
     {
@@ -138,8 +143,8 @@ module.exports = {
               maxWidth: 500,
             },
           },
-        ]
-      }
+        ],
+      },
     },
   ],
 };

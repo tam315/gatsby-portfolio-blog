@@ -35,7 +35,9 @@ ModalConductor.propTypes = {
     const propValue = props[propName]; // the actual value of `currentModal` prop
 
     if (propValue === null || typeof propValue === 'string') return null;
-    return new Error(`${componentName} must receive null or string for '${propName}' prop`);
+    return new Error(
+      `${componentName} must receive null or string for '${propName}' prop`,
+    );
   },
   setCurrentModal: PropTypes.func.isRequired,
 };

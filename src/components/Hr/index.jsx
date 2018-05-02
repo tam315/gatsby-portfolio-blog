@@ -30,11 +30,7 @@ const Hr = ({ text }) => {
   };
 
   if (text) {
-    return (
-      <div css={styles.withInnerText}>
-        {text}
-      </div>
-    );
+    return <div css={styles.withInnerText}>{text}</div>;
   }
 
   return <hr css={styles.withoutInnerText} />;

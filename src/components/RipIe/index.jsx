@@ -36,7 +36,8 @@ class RipIe extends React.Component {
       container: {
         background: '#F8D7DA',
         bottom: 0,
-        boxShadow: '0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)',
+        boxShadow:
+          '0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1)',
         color: '#721C24',
         margin: '2rem',
         maxWidth: '400px',
@@ -64,18 +65,62 @@ class RipIe extends React.Component {
 
     return (
       <div css={styles.container}>
-        <div css={styles.closeButton} onClick={this.onCloseClick} role="button" tabIndex={0}>
+        <div
+          css={styles.closeButton}
+          onClick={this.onCloseClick}
+          role="button"
+          tabIndex={0}
+        >
           <FontAwesomeIcon icon="times-circle" />
         </div>
 
-        <p>当サイトはInternet Explorerに対応しておりません。<br /><br />
-        Internet ExplorerはITの可能性を狭め、エンジニア達を苦しめています。人助けだと思って、下記のようなブラウザを使ってみませんか。
+        <p>
+          当サイトはInternet Explorerに対応しておりません。<br />
+          <br />
+          Internet
+          ExplorerはITの可能性を狭め、エンジニア達を苦しめています。人助けだと思って、下記のようなブラウザを使ってみませんか。
         </p>
         <ul css={{ float: 'left' }}>
-          <li>- <a href="https://www.google.co.jp/chrome/index.html" css={styles.link} target="_blank">Chrome（オススメ）</a></li>
-          <li>- <a href="https://www.mozilla.org/ja/firefox/" css={styles.link} target="_blank">Firefox</a></li>
-          <li>- <a href="https://www.apple.com/jp/safari/" css={styles.link} target="_blank">Safari</a></li>
-          <li>- <a href="https://www.microsoft.com/ja-jp/windows/microsoft-edge" css={styles.link} target="_blank">Edge</a></li>
+          <li>
+            -{' '}
+            <a
+              href="https://www.google.co.jp/chrome/index.html"
+              css={styles.link}
+              target="_blank"
+            >
+              Chrome（オススメ）
+            </a>
+          </li>
+          <li>
+            -{' '}
+            <a
+              href="https://www.mozilla.org/ja/firefox/"
+              css={styles.link}
+              target="_blank"
+            >
+              Firefox
+            </a>
+          </li>
+          <li>
+            -{' '}
+            <a
+              href="https://www.apple.com/jp/safari/"
+              css={styles.link}
+              target="_blank"
+            >
+              Safari
+            </a>
+          </li>
+          <li>
+            -{' '}
+            <a
+              href="https://www.microsoft.com/ja-jp/windows/microsoft-edge"
+              css={styles.link}
+              target="_blank"
+            >
+              Edge
+            </a>
+          </li>
         </ul>
         <img src={ripIeSvg} css={styles.ripImage} alt="IE in the grave" />
       </div>

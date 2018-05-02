@@ -9,7 +9,7 @@ const Stars = ({ countOfStars }) => {
 
   countOfStars = Number(countOfStars);
 
-  if ((countOfStars < 1) || (countOfStars > 5)) {
+  if (countOfStars < 1 || countOfStars > 5) {
     return null;
   }
 
@@ -24,11 +24,18 @@ const Stars = ({ countOfStars }) => {
 
   return (
     <span css={styles.star}>
-
-      {stars.map((star, index) =>
-        star
-          ? <FontAwesomeIcon icon={['fas', 'star']} key={index} />
-          : <FontAwesomeIcon icon={['far', 'star']} style={styles.starTranslucent} key={index} />)}
+      {stars.map(
+        (star, index) =>
+          star ? (
+            <FontAwesomeIcon icon={['fas', 'star']} key={index} />
+          ) : (
+            <FontAwesomeIcon
+              icon={['far', 'star']}
+              style={styles.starTranslucent}
+              key={index}
+            />
+          ),
+      )}
     </span>
   );
 };

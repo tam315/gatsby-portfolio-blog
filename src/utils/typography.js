@@ -30,7 +30,7 @@ const typography = new Typography({
     'h1, h2, h3': {
       textAlign: 'center',
     },
-    'img': {
+    img: {
       margin: 0,
     },
   }),

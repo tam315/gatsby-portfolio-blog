@@ -19,14 +19,16 @@ const Skill = ({ skillName, skillLevel }) => {
 
   skillLevel = Number(skillLevel);
 
-  if ((skillLevel < 1) || (skillLevel > 5)) {
+  if (skillLevel < 1 || skillLevel > 5) {
     return null;
   }
 
   return (
     <div css={styles.container}>
-      <div>{ skillName }</div>
-      <div css={styles.stars}><Stars countOfStars={skillLevel} /></div>
+      <div>{skillName}</div>
+      <div css={styles.stars}>
+        <Stars countOfStars={skillLevel} />
+      </div>
     </div>
   );
 };

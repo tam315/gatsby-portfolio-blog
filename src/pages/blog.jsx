@@ -63,17 +63,23 @@ const BlogPage = ({ data }) => {
     <SectionContainer colorNumber="1" isTop>
       <SectionHeader colorNumber="1" text="Yuuniworks Blog" />
       <div css={styles.container}>
-        <a href={rssPath} css={styles.rssLink}><img src={rssSvg} alt="rss" /></a>
+        <a href={rssPath} css={styles.rssLink}>
+          <img src={rssSvg} alt="rss" />
+        </a>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Link to={`/blog${node.fields.slug}`} css={styles.link} key={node.frontmatter.title}>
+          <Link
+            to={`/blog${node.fields.slug}`}
+            css={styles.link}
+            key={node.frontmatter.title}
+          >
             <WhiteBox hover>
-
               <article css={styles.boxInner}>
-
                 <div
                   css={{
                     // アスペクト比率を維持、かつ、画像で範囲全体をカバー、かつ、最も小さく表示
-                    background: `url("${node.frontmatter.thumbnail}") no-repeat center center`,
+                    background: `url("${
+                      node.frontmatter.thumbnail
+                    }") no-repeat center center`,
                     backgroundSize: 'cover',
                     flex: '0 0 100px',
                     border: '1px solid rgba(0,0,0,0.2)',
@@ -93,9 +99,7 @@ const BlogPage = ({ data }) => {
                     {node.frontmatter.date.slice(0, 10)}
                   </time>
                 </div>
-
               </article>
-
             </WhiteBox>
           </Link>
         ))}
@@ -104,7 +108,8 @@ const BlogPage = ({ data }) => {
       <SEO
         metaData={{
           title: 'Yuuniworks Blog',
-          description: '島根のフリーランスエンジニア「Yuuniworks」のブログです。フロントエンド界隈の技術的なネタを記録しています。',
+          description:
+            '島根のフリーランスエンジニア「Yuuniworks」のブログです。フロントエンド界隈の技術的なネタを記録しています。',
         }}
       />
 

@@ -54,13 +54,9 @@ const SectionContainer = ({
     <section id={id} css={styles.container}>
       {children}
 
-      {skew
-        ? <div css={styles.bgLayer} />
-        : null}
+      {skew ? <div css={styles.bgLayer} /> : null}
 
-      {skewFillBottom
-        ? <div css={styles.fillBottom} />
-        : null }
+      {skewFillBottom ? <div css={styles.fillBottom} /> : null}
     </section>
   );
 };

@@ -68,9 +68,17 @@ const TopSection = () => {
 
   return (
     <section id="top" css={styles.container}>
-      <h1 css={styles.logo}><img src={logoSvg} alt="Yuuniworksのロゴ" /></h1>
+      <h1 css={styles.logo}>
+        <img src={logoSvg} alt="Yuuniworksのロゴ" />
+      </h1>
       <div css={styles.description}>
-        <a href="https://goo.gl/maps/HjyoY7NJ9j92" css={{ color: 'white' }} target="_blank">島根県浜田市<IconExtLink color="#fff" /></a>を拠点に<br />
+        <a
+          href="https://goo.gl/maps/HjyoY7NJ9j92"
+          css={{ color: 'white' }}
+          target="_blank"
+        >
+          島根県浜田市<IconExtLink color="#fff" />
+        </a>を拠点に<br />
         フロントエンド開発のお手伝いをしている<br />
         フリーランスエンジニアです。
       </div>
@@ -87,13 +95,24 @@ const TopSection = () => {
   );
 };
 
-
-const GaiyouSection = (props) => {
+const GaiyouSection = props => {
   const articles = [
-    ['何ができる？', 'React/Reduxを用いたSPA等のフロントエンド開発や、NodeJSを使ったAPI開発を得意としています。'],
-    ['契約形態は？', '準委任契約による人的リソースの提供が可能です。内容によっては請負契約も可能です。'],
-    ['常駐できる？', '基本的にリモートワークを前提としておりますが、遠方での打ち合わせ等にも柔軟に対応いたします（交通費別途）。'],
-    ['いくらかかる？', 'ご相談ください。期間や内容に応じたお見書を作成いたします。'],
+    [
+      '何ができる？',
+      'React/Reduxを用いたSPA等のフロントエンド開発や、NodeJSを使ったAPI開発を得意としています。',
+    ],
+    [
+      '契約形態は？',
+      '準委任契約による人的リソースの提供が可能です。内容によっては請負契約も可能です。',
+    ],
+    [
+      '常駐できる？',
+      '基本的にリモートワークを前提としておりますが、遠方での打ち合わせ等にも柔軟に対応いたします（交通費別途）。',
+    ],
+    [
+      'いくらかかる？',
+      'ご相談ください。期間や内容に応じたお見書を作成いたします。',
+    ],
     ['いま仕事できる？', '2018年7月以降であればご相談可能です。'],
   ];
 
@@ -121,7 +140,8 @@ const GaiyouSection = (props) => {
       background: '#fff',
       border: '5px solid #6292F1',
       borderRadius: '7px',
-      boxShadow: '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
+      boxShadow:
+        '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       color: '#6292F1',
       display: 'block',
       margin: '60px auto 0',
@@ -144,16 +164,18 @@ const GaiyouSection = (props) => {
       <div css={styles.container}>
         <WhiteBox>
           <ul css={styles.grid}>
-            {
-              articles.map(article => (
-                <li key={article[0]}>
-                  <div css={styles.title}>
-                    <FontAwesomeIcon icon="caret-square-right" style={styles.caret} />{article[0]}
-                  </div>
-                  <div>{article[1]}</div>
-                </li>
-              ))
-            }
+            {articles.map(article => (
+              <li key={article[0]}>
+                <div css={styles.title}>
+                  <FontAwesomeIcon
+                    icon="caret-square-right"
+                    style={styles.caret}
+                  />
+                  {article[0]}
+                </div>
+                <div>{article[1]}</div>
+              </li>
+            ))}
           </ul>
         </WhiteBox>
 
@@ -163,13 +185,12 @@ const GaiyouSection = (props) => {
         >
           お問い合わせ
         </button>
-
       </div>
     </SectionContainer>
   );
 };
 
-const SkillSection = (props) => {
+const SkillSection = props => {
   const styles = {
     grid: {
       display: 'grid',
@@ -181,7 +202,8 @@ const SkillSection = (props) => {
       paddingBottom: rhythm(2),
     },
     containerKihon: {
-      position: 'relative', /* 親要素をrelativeにしないと子(?マーク)がはみ出すため */
+      position:
+        'relative' /* 親要素をrelativeにしないと子(?マーク)がはみ出すため */,
     },
     helpButton: {
       color: '#999999',
@@ -213,48 +235,71 @@ const SkillSection = (props) => {
   };
 
   const skills = {
-    '基本': {
+    基本: {
       'Javascript (ES6)': 4,
-      'NodeJS': 4,
+      NodeJS: 4,
       'HTML 5': 4,
       'CSS 3': 4,
-      'DOM': 3,
-      'git': 3,
+      DOM: 3,
+      git: 3,
       'TDD/BDD': 3,
-      'Python': 2,
-      'Typescript': 2,
+      Python: 2,
+      Typescript: 2,
     },
-    'フロントエンド': {
-      'React': 4,
-      'Redux': 3,
-      'Bootstrap': 3,
-      'webpack': 2,
-      'PostCSS': 2,
+    フロントエンド: {
+      React: 4,
+      Redux: 3,
+      Bootstrap: 3,
+      webpack: 2,
+      PostCSS: 2,
       'Angular(2以降)': 2,
     },
-    'バックエンド': {
+    バックエンド: {
       'TCP/IP': 4,
-      'Docker': 3,
-      'RDBMS': 3,
-      'Swagger': 2,
+      Docker: 3,
+      RDBMS: 3,
+      Swagger: 2,
       'AWS Lambda': 2,
       'AWS DynamoDB': 2,
       'AWS Cognito': 2,
-      'Nginx': 2,
-      'Kubernates': 2,
+      Nginx: 2,
+      Kubernates: 2,
     },
-    'その他': [
+    その他: [
       {
         title: 'スキルテスト',
-        content: <div>Paizaコーディング <a href="https://paiza.jp/guide/career#rank" css={styles.link} target="_blank">Aランク<IconExtLink /></a></div>,
+        content: (
+          <div>
+            Paizaコーディング{' '}
+            <a
+              href="https://paiza.jp/guide/career#rank"
+              css={styles.link}
+              target="_blank"
+            >
+              Aランク<IconExtLink />
+            </a>
+          </div>
+        ),
       },
       {
         title: 'スキル習得方法',
-        content: <div onClick={() => props.setCurrentModal('UDEMY')} role="button" tabIndex={0} >Udemy（<span css={styles.link}>学習したコースの一覧</span>）</div>,
+        content: (
+          <div
+            onClick={() => props.setCurrentModal('UDEMY')}
+            role="button"
+            tabIndex={0}
+          >
+            Udemy（<span css={styles.link}>学習したコースの一覧</span>）
+          </div>
+        ),
       },
       {
         title: '言語',
-        content: <div>日本語<br />英語（○読む書く聞く、×話す）</div>,
+        content: (
+          <div>
+            日本語<br />英語（○読む書く聞く、×話す）
+          </div>
+        ),
       },
       {
         title: '好きなツール',
@@ -268,9 +313,7 @@ const SkillSection = (props) => {
       <SectionHeader text="スキル" colorNumber="2" />
       <div>
         <WhiteBox maxWidth="850">
-
           <div css={styles.grid}>
-
             <div css={styles.containerKihon}>
               <h3>基本</h3>
               <div
@@ -281,21 +324,35 @@ const SkillSection = (props) => {
               >
                 <img src={questionSvg} alt="hint button" />
               </div>
-              { Object.keys(skills['基本']).map(skill => (
-                <Skill skillName={skill} skillLevel={skills['基本'][skill]} key={skill} />
+              {Object.keys(skills['基本']).map(skill => (
+                <Skill
+                  skillName={skill}
+                  skillLevel={skills['基本'][skill]}
+                  key={skill}
+                />
               ))}
             </div>
 
             <div>
               <h3>フロントエンド</h3>
-              { Object.keys(skills['フロントエンド']).map(skill =>
-                <Skill skillName={skill} skillLevel={skills['フロントエンド'][skill]} key={skill} />)}
+              {Object.keys(skills['フロントエンド']).map(skill => (
+                <Skill
+                  skillName={skill}
+                  skillLevel={skills['フロントエンド'][skill]}
+                  key={skill}
+                />
+              ))}
             </div>
 
             <div>
               <h3>バックエンド</h3>
-              { Object.keys(skills['バックエンド']).map(skill =>
-                <Skill skillName={skill} skillLevel={skills['バックエンド'][skill]} key={skill} />)}
+              {Object.keys(skills['バックエンド']).map(skill => (
+                <Skill
+                  skillName={skill}
+                  skillLevel={skills['バックエンド'][skill]}
+                  key={skill}
+                />
+              ))}
             </div>
 
             <div>
@@ -304,16 +361,18 @@ const SkillSection = (props) => {
                 {skills['その他'].map(item => (
                   <li css={styles.sonotaListItem} key={item.title}>
                     <div css={styles.sonotaTitle}>
-                      <FontAwesomeIcon icon="caret-square-right" style={styles.caret} />{item.title}
+                      <FontAwesomeIcon
+                        icon="caret-square-right"
+                        style={styles.caret}
+                      />
+                      {item.title}
                     </div>
                     <div css={styles.sonotaContent}>{item.content}</div>
                   </li>
                 ))}
               </ul>
             </div>
-
           </div>
-
         </WhiteBox>
       </div>
     </SectionContainer>
@@ -327,7 +386,10 @@ const PerformanceSection = () => {
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Gatsby', description: 'Static Site Generator' },
-        { name: 'AWS API Gateway', description: '問い合わせフォーム用バックエンド' },
+        {
+          name: 'AWS API Gateway',
+          description: '問い合わせフォーム用バックエンド',
+        },
         { name: 'AWS Lambda', description: '問い合わせフォーム用バックエンド' },
         { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
         { name: 'Netlify', description: 'ホスティング、CI/CD' },
@@ -385,7 +447,8 @@ const PerformanceSection = () => {
     },
     badge: {
       background: 'rgba(0,0,0,0.5)',
-      boxShadow: '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
+      boxShadow:
+        '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       color: '#fff',
       cursor: 'pointer',
       display: 'inline-block',
@@ -405,14 +468,19 @@ const PerformanceSection = () => {
 
       {/* グリッド始点 */}
       <div css={styles.grid}>
-        { performances.map(performance => (
-
+        {performances.map(performance => (
           <WhiteBox key={performance.name}>
-            <a href={performance.webpageURL} target="_blank" css={styles.itemTitle}>
+            <a
+              href={performance.webpageURL}
+              target="_blank"
+              css={styles.itemTitle}
+            >
               <div
                 css={{
                   // アスペクト比率を維持、かつ、画像で範囲全体をカバー、かつ、最も小さく表示
-                  background: `url("${performance.imgPath}") no-repeat center center`,
+                  background: `url("${
+                    performance.imgPath
+                  }") no-repeat center center`,
                   backgroundSize: 'cover',
                   height: '160px',
                   border: '1px solid #aaa',
@@ -422,36 +490,55 @@ const PerformanceSection = () => {
             </a>
 
             <div css={styles.itemContainer}>
-
-              <a href={performance.webpageURL} target="_blank" css={styles.itemTitle}>{performance.name}<IconExtLink /></a>
+              <a
+                href={performance.webpageURL}
+                target="_blank"
+                css={styles.itemTitle}
+              >
+                {performance.name}
+                <IconExtLink />
+              </a>
 
               <ul>
                 {performance.techStack.map(tech => (
-                  <span css={styles.badge} data-for={tech.name} data-tip key={tech.name}>
+                  <span
+                    css={styles.badge}
+                    data-for={tech.name}
+                    data-tip
+                    key={tech.name}
+                  >
                     {tech.name}
-                    <ReactTooltip id={tech.name} effect="solid">{tech.description}</ReactTooltip>
+                    <ReactTooltip id={tech.name} effect="solid">
+                      {tech.description}
+                    </ReactTooltip>
                   </span>
                 ))}
 
-                { performance.githubURL ?
-                  <a href={performance.githubURL} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>ソースコード</a>
-                  : null
-                }
+                {performance.githubURL ? (
+                  <a
+                    href={performance.githubURL}
+                    target="_blank"
+                    css={{ ...styles.badge, ...styles.badgeLink }}
+                  >
+                    ソースコード
+                  </a>
+                ) : null}
 
-                { performance.blogPath ?
-                  <Link to={performance.blogPath} target="_blank" css={{ ...styles.badge, ...styles.badgeLink }}>解説ブログ</Link>
-                  : null
-                }
-
+                {performance.blogPath ? (
+                  <Link
+                    to={performance.blogPath}
+                    target="_blank"
+                    css={{ ...styles.badge, ...styles.badgeLink }}
+                  >
+                    解説ブログ
+                  </Link>
+                ) : null}
               </ul>
             </div>
           </WhiteBox>
-
-          ))
-        }
+        ))}
       </div>
       {/* グリッド終点 */}
-
     </SectionContainer>
   );
 };
@@ -525,43 +612,64 @@ const ProfileSection = () => {
 
       {/* Flex始点 */}
       <div css={styles.container}>
-
         <div css={styles.boxOuterContainer}>
           <WhiteBox height="auto">
             <div css={styles.boxInnerContainer}>
               <h3 css={styles.h3}>概要</h3>
-              <div css={styles.gaiyouPictureContainer}><img src={profileJpg} css={styles.gaiyouPicture} alt="代表者のプロフィール写真" /></div>
+              <div css={styles.gaiyouPictureContainer}>
+                <img
+                  src={profileJpg}
+                  css={styles.gaiyouPicture}
+                  alt="代表者のプロフィール写真"
+                />
+              </div>
 
               <div css={styles.gaiyouListItem}>
-                <div css={styles.gaiyouItemName}><b>氏名</b></div>
+                <div css={styles.gaiyouItemName}>
+                  <b>氏名</b>
+                </div>
                 <div css={styles.gaiyouItemContent}>田村 翔太</div>
               </div>
 
               <div css={styles.gaiyouListItem}>
-                <div css={styles.gaiyouItemName}><b>年齢</b></div>
-                <div css={styles.gaiyouItemContent}><AgeCalculator birthday="1985-03-15T15:00+09:00" /></div>
+                <div css={styles.gaiyouItemName}>
+                  <b>年齢</b>
+                </div>
+                <div css={styles.gaiyouItemContent}>
+                  <AgeCalculator birthday="1985-03-15T15:00+09:00" />
+                </div>
               </div>
 
               <div css={styles.gaiyouListItem}>
-                <div css={styles.gaiyouItemName}><b>居住地</b></div>
+                <div css={styles.gaiyouItemName}>
+                  <b>居住地</b>
+                </div>
                 <div css={styles.gaiyouItemContent}>島根県浜田市</div>
               </div>
 
               <div css={styles.gaiyouListItem}>
-                <div css={styles.gaiyouItemName}><b>趣味</b></div>
+                <div css={styles.gaiyouItemName}>
+                  <b>趣味</b>
+                </div>
                 <div css={styles.gaiyouItemContent}>
-                  <a href="https://www.youtube.com/channel/UCbcCsHMZEjfsQZ5aaxNYNiw" css={{ color: '#262626' }} target="_blank">
-                  バンド活動<IconExtLink />
-                  </a><br />
+                  <a
+                    href="https://www.youtube.com/channel/UCbcCsHMZEjfsQZ5aaxNYNiw"
+                    css={{ color: '#262626' }}
+                    target="_blank"
+                  >
+                    バンド活動<IconExtLink />
+                  </a>
+                  <br />
                   車の修理
                 </div>
               </div>
 
               <div css={styles.gaiyouListItem}>
-                <div css={styles.gaiyouItemName}><b>座右の銘</b></div>
+                <div css={styles.gaiyouItemName}>
+                  <b>座右の銘</b>
+                </div>
                 <div css={styles.gaiyouItemContent}>全てがコードになる</div>
               </div>
-
             </div>
           </WhiteBox>
         </div>
@@ -573,35 +681,55 @@ const ProfileSection = () => {
 
               <Hr />
 
-              <p><b>フリーランスエンジニア</b><br />
+              <p>
+                <b>フリーランスエンジニア</b>
+                <br />
                 <span css={styles.keirekiGray}>(2018.4 - )</span>
               </p>
-              <p>フリーランスエンジニアとして独立。Single Page Applicationの開発を中心に受託を行う。
+              <p>
+                フリーランスエンジニアとして独立。Single Page
+                Applicationの開発を中心に受託を行う。
                 APIとフロントエンドが分離された美しく優しい世界を広めるべく、日々邁進中。
               </p>
 
               <Hr />
 
-              <p><b>システム管理者</b><br />
+              <p>
+                <b>システム管理者</b>
+                <br />
                 <span css={styles.keirekiGray}>(2008.4 - 2018.3)</span>
               </p>
-              <p>自治体のIT部門において主にインフラ管理を担当。
-                <a href="https://www.nutanix.jp/company/customers/all-customers/hamada-city/" target="_blank" css={styles.link}>
-                Nutanixによるプライベートクラウド基盤の構築<IconExtLink />
+              <p>
+                自治体のIT部門において主にインフラ管理を担当。
+                <a
+                  href="https://www.nutanix.jp/company/customers/all-customers/hamada-city/"
+                  target="_blank"
+                  css={styles.link}
+                >
+                  Nutanixによるプライベートクラウド基盤の構築<IconExtLink />
                 </a>や、
-                <a href="https://jpn.nec.com/case/city.hamada/index.html" target="_blank" css={styles.link}>
-                SDNの導入<IconExtLink />
+                <a
+                  href="https://jpn.nec.com/case/city.hamada/index.html"
+                  target="_blank"
+                  css={styles.link}
+                >
+                  SDNの導入<IconExtLink />
                 </a>などを手がける。
               </p>
-              <p>またプライベートにおいて、React、NodeJS、Docker、Kubernatesなどの技術を独学する。</p>
+              <p>
+                またプライベートにおいて、React、NodeJS、Docker、Kubernatesなどの技術を独学する。
+              </p>
 
               <Hr text="(様々な紆余曲折)" />
 
-              <p><b>小学生</b><br />
+              <p>
+                <b>小学生</b>
+                <br />
                 <span css={styles.keirekiGray}>(1993)</span>
               </p>
-              <p>なぜか祖父の家に置いてあったMSXに触れ、プログラミングの面白さに目覚める。これを一生の仕事にすることを決意する。</p>
-
+              <p>
+                なぜか祖父の家に置いてあったMSXに触れ、プログラミングの面白さに目覚める。これを一生の仕事にすることを決意する。
+              </p>
             </div>
           </WhiteBox>
         </div>
@@ -610,18 +738,25 @@ const ProfileSection = () => {
           <WhiteBox height="auto">
             <div css={styles.boxInnerContainer}>
               <h3 css={styles.h3}>商号の由来</h3>
-              <p>「ゆうに」という言葉は島根県の石見地方で使われている方言で、以下の二つの意味を持っています。</p>
-              <p><b>1．いとも簡単に・たやすく</b><br />例）ゆうにできらぁや<br />解）簡単にできますよ</p>
-              <p><b>2．ゆっくりと・ゆったりと</b><br />例）ゆうに食べちゃんさいね<br />解）ゆっくり召し上がってくださいね</p>
-              <p>Yuuniworksという商号には、「問題をさらっと鮮やかに解決して、のんびりとした人生を送る」という意味を込めています。</p>
-
+              <p>
+                「ゆうに」という言葉は島根県の石見地方で使われている方言で、以下の二つの意味を持っています。
+              </p>
+              <p>
+                <b>1．いとも簡単に・たやすく</b>
+                <br />例）ゆうにできらぁや<br />解）簡単にできますよ
+              </p>
+              <p>
+                <b>2．ゆっくりと・ゆったりと</b>
+                <br />例）ゆうに食べちゃんさいね<br />解）ゆっくり召し上がってくださいね
+              </p>
+              <p>
+                Yuuniworksという商号には、「問題をさらっと鮮やかに解決して、のんびりとした人生を送る」という意味を込めています。
+              </p>
             </div>
           </WhiteBox>
         </div>
-
       </div>
       {/* Flex終点 */}
-
     </SectionContainer>
   );
 };
@@ -632,7 +767,8 @@ const BlogSection = () => {
       background: '#fff',
       border: '5px solid #6292F1',
       borderRadius: '7px',
-      boxShadow: '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
+      boxShadow:
+        '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
       color: '#6292F1',
       display: 'block',
       margin: 'auto',
@@ -653,12 +789,14 @@ const BlogSection = () => {
   return (
     <SectionContainer id="blog">
       <SectionHeader text="ブログ" colorNumber="1" />
-      <Link to="/blog/" css={styles.link}>Yuuniworks Blog</Link>
+      <Link to="/blog/" css={styles.link}>
+        Yuuniworks Blog
+      </Link>
     </SectionContainer>
   );
 };
 
-const FooterSection = (props) => {
+const FooterSection = props => {
   const footerInfo = [
     {
       imgPath: footerFormSvg,
@@ -728,21 +866,24 @@ const FooterSection = (props) => {
       <SectionHeader text="お問い合わせ・ご連絡先" colorNumber="2" />
 
       <div css={styles.container}>
-
-        { footerInfo.map(info => (
-          <a href={info.link || null} onClick={info.onClick || null} css={styles.link} target="_blank" key={info.description}>
+        {footerInfo.map(info => (
+          <a
+            href={info.link || null}
+            onClick={info.onClick || null}
+            css={styles.link}
+            target="_blank"
+            key={info.description}
+          >
             <div css={styles.ItemContainer}>
               <img src={info.imgPath} css={styles.image} alt="" />
               <p css={styles.description}>{info.description}</p>
             </div>
           </a>
         ))}
-
       </div>
     </SectionContainer>
   );
 };
-
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -764,10 +905,12 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div>
-        {this.state.currentModal ? <ModalConductor
-          currentModal={this.state.currentModal}
-          setCurrentModal={this.setCurrentModal}
-        /> : null}
+        {this.state.currentModal ? (
+          <ModalConductor
+            currentModal={this.state.currentModal}
+            setCurrentModal={this.setCurrentModal}
+          />
+        ) : null}
 
         <TopSection />
         <GaiyouSection setCurrentModal={this.setCurrentModal} />
@@ -782,37 +925,36 @@ class IndexPage extends React.Component {
           script={[
             {
               type: 'application/ld+json',
-              innerHTML: (JSON.stringify({
+              innerHTML: JSON.stringify({
                 '@context': 'http://schema.org',
                 '@type': 'Corporation',
-                'name': 'Yuuniworks',
-                'url': 'http://www.yuuniworks.com/',
-                'logo': 'https://www.yuuniworks.com/images/logo_for_schema.png',
-                'address': {
-                  'postalCode': '697-0123',
-                    'addressCountry': 'JP',
-                    'addressRegion': '島根県',
-                    'addressLocality': '浜田市',
-                    'streetAddress': '金城町七条',
+                name: 'Yuuniworks',
+                url: 'http://www.yuuniworks.com/',
+                logo: 'https://www.yuuniworks.com/images/logo_for_schema.png',
+                address: {
+                  postalCode: '697-0123',
+                  addressCountry: 'JP',
+                  addressRegion: '島根県',
+                  addressLocality: '浜田市',
+                  streetAddress: '金城町七条',
                 },
-                'contactPoint': [
+                contactPoint: [
                   {
                     '@type': 'ContactPoint',
-                    'telephone': '+81-70-4398-9424',
-                    'contactType': 'sales',
+                    telephone: '+81-70-4398-9424',
+                    contactType: 'sales',
                   },
                 ],
-                'founder': {
+                founder: {
                   '@type': 'Person',
-                  'givenName': '翔太',
-                  'familyName': '田村',
+                  givenName: '翔太',
+                  familyName: '田村',
                 },
-                'foundingDate': '2018-4-11',
-                'description': '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
-                'sameAs': [
-                  'https://www.facebook.com/yuuniworks/',
-                ],
-              })),
+                foundingDate: '2018-4-11',
+                description:
+                  '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
+                sameAs: ['https://www.facebook.com/yuuniworks/'],
+              }),
             },
           ]}
         />

@@ -32,7 +32,13 @@ const SectionHeader = ({ colorNumber, text, link }) => {
   return (
     <div css={styles.container}>
       <h2 css={styles.h2}>
-        { link ? <Link to={link} css={styles.link}>{text}</Link> : text}
+        {link ? (
+          <Link to={link} css={styles.link}>
+            {text}
+          </Link>
+        ) : (
+          text
+        )}
       </h2>
       <hr css={styles.hr} />
     </div>
