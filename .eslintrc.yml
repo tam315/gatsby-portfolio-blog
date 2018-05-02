@@ -1,33 +1,21 @@
-# How to use eslint with airbnb style guide
+# HOW TO USE PRETTIER
 #
-# 1. Install 'linter-eslint' on atom
-# 2. Install following npm packages locally
-#   npm install --save babel-eslint eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+# 1. add following packages
+#    prettier eslint-config-prettier eslint-plugin-prettier
+# 2. add .eslintrc.yml
+# 3. add a following script into package.json
+#    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css}\"",
 
-# if you changed eslint setting file, reboot Atom because it has a bug.
-
-extends: airbnb
+extends: prettier
 parser: babel-eslint
 rules:
-  no-underscore-dangle: 0
-  no-unused-expressions: 0
-  no-console: 1
-  linebreak-style: 0
-  import/no-extraneous-dependencies: 0
-  quote-props: 0
-  react/jsx-no-target-blank: 0
-  jsx-a11y/click-events-have-key-events: 0
-  jsx-a11y/anchor-is-valid:
-   - error
-   - components:
-      - Link
-     specialLink:
-      - to
-  react/no-danger: 0
-  react/react-in-jsx-scope: 0
-  no-alert: 0
+  prettier/prettier: error
+
 env:
   mocha: true
+
+plugins:
+  - prettier
 
 # stop no-undef warning about global variables.
 globals:
