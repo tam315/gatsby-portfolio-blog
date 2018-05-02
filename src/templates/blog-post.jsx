@@ -44,8 +44,11 @@ export default function BlogPost(props) {
         marginBottom: '0.5rem',
         marginTop: '2rem',
       },
-      ' ul, li': {
+      ' ul > li': {
         listStyleType: 'initial',
+      },
+      ' ol > li': {
+        listStyleType: 'decimal',
       },
       ' ul': {
         paddingLeft: '25px',
