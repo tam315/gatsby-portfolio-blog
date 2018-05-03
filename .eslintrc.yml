@@ -1,3 +1,11 @@
+# HOW TO USE AIRBNB STYLE GUIDE
+#
+# 1. Install 'ESLint' plugin on VSCode
+# 2. Install following npm packages locally
+#    yarn add babel-eslint eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+# 3. add script
+#    "prettier": "prettier --write \"src/**/*.{js,jsx,css}\"",
+
 # HOW TO USE PRETTIER
 #
 # 1. add following packages
@@ -5,11 +13,36 @@
 # 2. add .eslintrc.yml
 # 3. add a following script into package.json
 #    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css}\"",
+# 4. add script
+#    "lint": "eslint --ext .js,.jsx .",
 
-extends: prettier
+extends: airbnb
 parser: babel-eslint
 rules:
-  prettier/prettier: error
+  arrow-parens: 0
+  function-paren-newline: 0
+  import/no-extraneous-dependencies: 0
+  import/no-unresolved: 0
+  jsx-a11y/anchor-is-valid:
+   - error
+   - components:
+      - Link
+     specialLink:
+      - to
+  jsx-a11y/click-events-have-key-events: 0
+  linebreak-style: 0
+  no-alert: 0
+  no-console: 1
+  no-underscore-dangle: 0
+  no-unused-expressions: 0
+  object-curly-newline: 0
+  prettier/prettier: 2
+  quote-props: 0
+  react/forbid-prop-types: 0
+  react/jsx-no-target-blank: 0
+  react/no-array-index-key: 1
+  react/no-danger: 0
+  react/react-in-jsx-scope: 0
 
 env:
   mocha: true
