@@ -7,6 +7,10 @@ import { PulseLoader } from 'react-spinners';
 
 import closeSvg from '../../icons/close.svg';
 
+const propTypes = {
+  setCurrentModal: PropTypes.func.isRequired,
+};
+
 class Contact extends React.Component {
   constructor(props) {
     super(props);
@@ -246,8 +250,6 @@ class Contact extends React.Component {
   }
 }
 
-Contact.propTypes = {
-  setCurrentModal: PropTypes.func.isRequired,
-};
+Contact.propTypes = propTypes;
 
 export default Contact;

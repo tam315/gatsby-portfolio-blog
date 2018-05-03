@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const propTypes = {
+  text: PropTypes.string,
+};
+
+const defaultProps = {
+  text: null,
+};
+
 const Hr = ({ text }) => {
   const color = '#999999';
 
@@ -36,12 +44,7 @@ const Hr = ({ text }) => {
   return <hr css={styles.withoutInnerText} />;
 };
 
-Hr.propTypes = {
-  text: PropTypes.string,
-};
-
-Hr.defaultProps = {
-  text: null,
-};
+Hr.propTypes = propTypes;
+Hr.defaultProps = defaultProps;
 
 export default Hr;

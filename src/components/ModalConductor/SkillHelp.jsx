@@ -6,6 +6,10 @@ import Stars from '../Stars';
 
 import closeSvg from '../../icons/close.svg';
 
+const propTypes = {
+  setCurrentModal: PropTypes.func.isRequired,
+};
+
 const SkillHelp = props => {
   const articles = [
     {
@@ -107,8 +111,6 @@ const SkillHelp = props => {
   );
 };
 
-SkillHelp.propTypes = {
-  setCurrentModal: PropTypes.func.isRequired,
-};
+SkillHelp.propTypes = propTypes;
 
 export default SkillHelp;

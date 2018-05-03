@@ -2,7 +2,15 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const IconExtLink = ({ color = '#999999' }) => (
+const propTypes = {
+  color: PropTypes.string,
+};
+
+const defaultProps = {
+  color: '#999999',
+};
+
+const IconExtLink = ({ color }) => (
   <FontAwesomeIcon
     icon="external-link-alt"
     style={{
@@ -13,12 +21,7 @@ const IconExtLink = ({ color = '#999999' }) => (
   />
 );
 
-IconExtLink.propTypes = {
-  color: PropTypes.string,
-};
-
-IconExtLink.defaultProps = {
-  color: null,
-};
+IconExtLink.propTypes = propTypes;
+IconExtLink.defaultProps = defaultProps;
 
 export default IconExtLink;

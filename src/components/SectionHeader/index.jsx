@@ -1,5 +1,18 @@
 import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 import React from 'react';
+
+const propTypes = {
+  colorNumber: PropTypes.string,
+  text: PropTypes.string,
+  link: PropTypes.string,
+};
+
+const defaultProps = {
+  colorNumber: null,
+  text: null,
+  link: null,
+};
 
 const SectionHeader = ({ colorNumber, text, link }) => {
   const colors = {
@@ -44,5 +57,8 @@ const SectionHeader = ({ colorNumber, text, link }) => {
     </div>
   );
 };
+
+SectionHeader.propTypes = propTypes;
+SectionHeader.defaultProps = defaultProps;
 
 export default SectionHeader;

@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const propTypes = {
+  birthday: PropTypes.string.isRequired,
+};
+
 class AgeCalculator extends React.Component {
   constructor(props) {
     super(props);
@@ -59,8 +63,6 @@ class AgeCalculator extends React.Component {
   }
 }
 
-AgeCalculator.propTypes = {
-  birthday: PropTypes.string.isRequired,
-};
+AgeCalculator.propTypes = propTypes;
 
 export default AgeCalculator;

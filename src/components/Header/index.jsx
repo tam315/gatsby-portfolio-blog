@@ -7,6 +7,11 @@ import { Link as LinkForScroll } from 'react-scroll';
 import humbergerSvg from '../../icons/humberger.svg';
 import logoSvg from '../../icons/logo.svg';
 
+const propTypes = {
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
+};
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -255,9 +260,6 @@ class Header extends React.Component {
   }
 }
 
-Header.propTypes = {
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
-};
+Header.propTypes = propTypes;
 
 export default onClickOutside(Header);

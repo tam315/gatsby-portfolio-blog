@@ -12,6 +12,12 @@ import Helmet from 'react-helmet';
 import Header from '../components/Header';
 import RipIe from '../components/RipIe';
 
+const propTypes = {
+  children: PropTypes.func.isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
+};
+
 const TemplateWrapper = ({ children, location }) => {
   fontawesome.library.add(
     faArrowLeft,
@@ -40,10 +46,6 @@ const TemplateWrapper = ({ children, location }) => {
   );
 };
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
-};
+TemplateWrapper.propTypes = propTypes;
 
 export default TemplateWrapper;

@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 const AWS = require('aws-sdk');
 
 AWS.config.update({
@@ -15,7 +16,7 @@ const ses = new AWS.SES({ apiVersion: '2010-12-01' });
 module.exports = function sendEmail(subject, body) {
   return new Promise((resolve, reject) => {
     // this must relate to a verified SES account
-    const from = process.env.FROM_NAME + ' <' + process.env.FROM_EMAIL + '>';
+    const from = `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>`;
     const params = {
       Source: from,
       Destination: { ToAddresses: [process.env.TO_EMAIL] },

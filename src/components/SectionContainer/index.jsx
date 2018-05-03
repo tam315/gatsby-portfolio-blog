@@ -1,6 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  colorNumber: PropTypes.string,
+  id: PropTypes.string,
+  isTop: PropTypes.bool,
+  skew: PropTypes.bool,
+  skewFillBottom: PropTypes.bool,
+  skewReverse: PropTypes.bool,
+};
+
+const defaultProps = {
+  colorNumber: null,
+  id: null,
+  isTop: false,
+  skew: false,
+  skewFillBottom: false,
+  skewReverse: false,
+};
+
 const SectionContainer = ({
   children,
   colorNumber,
@@ -61,23 +83,7 @@ const SectionContainer = ({
   );
 };
 
-SectionContainer.propTypes = {
-  children: PropTypes.array.isRequired,
-  colorNumber: PropTypes.string,
-  id: PropTypes.string,
-  isTop: PropTypes.bool,
-  skew: PropTypes.bool,
-  skewFillBottom: PropTypes.bool,
-  skewReverse: PropTypes.bool,
-};
-
-SectionContainer.defaultProps = {
-  colorNumber: null,
-  id: null,
-  isTop: false,
-  skew: false,
-  skewFillBottom: false,
-  skewReverse: false,
-};
+SectionContainer.propTypes = propTypes;
+SectionContainer.defaultProps = defaultProps;
 
 export default SectionContainer;

@@ -34,21 +34,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       }
-    `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: `/blog${node.fields.slug}`,
-          component: path.resolve(`./src/templates/blog-post.jsx`),
-          context: {
-            // Data passed to context is available in page queries as GraphQL variables.
-            slug: node.fields.slug,
-            modifiedDate: node.frontmatter.dateModified, // rss用 詳細はgatsby-config.jsを参照
-          },
+    `)
+      .then(result => {
+        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+          createPage({
+            path: `/blog${node.fields.slug}`,
+            component: path.resolve('./src/templates/blog-post.jsx'),
+            context: {
+              // Data passed to context is available in page queries as GraphQL variables.
+              slug: node.fields.slug,
+              modifiedDate: node.frontmatter.dateModified, // rss用 詳細はgatsby-config.jsを参照
+            },
+          });
         });
-      });
 
-      resolve();
-    });
+        resolve();
+      })
+      .catch(() => reject());
   });
 };
 

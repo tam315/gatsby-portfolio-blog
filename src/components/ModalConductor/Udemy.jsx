@@ -5,6 +5,10 @@ import IconExtLink from '../../components/IconExtLink';
 
 import closeSvg from '../../icons/close.svg';
 
+const propTypes = {
+  setCurrentModal: PropTypes.func.isRequired,
+};
+
 const Udemy = props => {
   const cources = [
     {
@@ -168,8 +172,6 @@ const Udemy = props => {
   );
 };
 
-Udemy.propTypes = {
-  setCurrentModal: PropTypes.func.isRequired,
-};
+Udemy.propTypes = propTypes;
 
 export default Udemy;

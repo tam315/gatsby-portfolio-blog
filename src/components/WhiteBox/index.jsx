@@ -1,12 +1,25 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-const WhiteBox = ({
-  children,
-  height = '100%',
-  maxWidth = 'initial',
-  padding = 0,
-  hover = false,
-}) => {
+const propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  height: PropTypes.string,
+  maxWidth: PropTypes.string,
+  padding: PropTypes.string,
+  hover: PropTypes.bool,
+};
+
+const defaultProps = {
+  height: '100%',
+  maxWidth: 'initial',
+  padding: '0',
+  hover: false,
+};
+
+const WhiteBox = ({ children, height, maxWidth, padding, hover }) => {
   const style = {
     background: '#fff',
     boxShadow:
@@ -26,5 +39,8 @@ const WhiteBox = ({
 
   return <div css={style}>{children}</div>;
 };
+
+WhiteBox.propTypes = propTypes;
+WhiteBox.defaultProps = defaultProps;
 
 export default WhiteBox;

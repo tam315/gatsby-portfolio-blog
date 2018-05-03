@@ -12,6 +12,12 @@ import { rhythm } from '../utils/typography';
 
 import rssSvg from '../icons/rss.svg';
 
+const propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.object,
+  }).isRequired,
+};
+
 const BlogPage = ({ data }) => {
   const styles = {
     container: {
@@ -127,11 +133,7 @@ const BlogPage = ({ data }) => {
   );
 };
 
-BlogPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.object,
-  }).isRequired,
-};
+BlogPage.propTypes = propTypes;
 
 export default BlogPage;
 

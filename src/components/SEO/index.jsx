@@ -4,6 +4,16 @@ import Helmet from 'react-helmet';
 
 import config from '../../../data/SiteConfig';
 
+const propTypes = {
+  postNode: PropTypes.object,
+  metaData: PropTypes.object,
+};
+
+const defaultProps = {
+  postNode: null,
+  metaData: null,
+};
+
 function SEO({ postNode, metaData }) {
   // initial metadata
   let _metaData = {
@@ -15,12 +25,10 @@ function SEO({ postNode, metaData }) {
 
   // override _metadata if node is blogpost
   if (postNode) {
-    const postMeta = postNode.frontmatter;
-
-    _metaData.title = `${postMeta.title} / Yuuniworks Blog`;
+    _metaData.title = `${postNode.frontmatter.title} / Yuuniworks Blog`;
     _metaData.description = postNode.excerpt;
     _metaData.keywords = config.siteKeywords;
-    _metaData.image = config.siteUrl + postMeta.thumbnail;
+    _metaData.image = config.siteUrl + postNode.frontmatter.thumbnail;
   }
 
   // override _metadata if metadata is set manually
@@ -41,9 +49,7 @@ function SEO({ postNode, metaData }) {
   );
 }
 
-SEO.propTypes = {
-  postNode: PropTypes.object,
-  metaData: PropTypes.object,
-};
+SEO.propTypes = propTypes;
+SEO.defaultProps = defaultProps;
 
 export default SEO;

@@ -1,6 +1,12 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Stars from '../Stars';
+
+const propTypes = {
+  skillName: PropTypes.string.isRequired,
+  skillLevel: PropTypes.number.isRequired,
+};
 
 const Skill = ({ skillName, skillLevel }) => {
   const styles = {
@@ -17,8 +23,6 @@ const Skill = ({ skillName, skillLevel }) => {
     },
   };
 
-  skillLevel = Number(skillLevel);
-
   if (skillLevel < 1 || skillLevel > 5) {
     return null;
   }
@@ -32,5 +36,7 @@ const Skill = ({ skillName, skillLevel }) => {
     </div>
   );
 };
+
+Skill.propTypes = propTypes;
 
 export default Skill;

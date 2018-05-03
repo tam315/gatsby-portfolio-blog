@@ -16,6 +16,12 @@ import { rhythm } from '../utils/typography';
 
 import profileJpg from '../images/profile.jpg';
 
+const propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+  }).isRequired,
+};
+
 export default function BlogPost(props) {
   const styles = {
     container: {
@@ -271,11 +277,7 @@ export default function BlogPost(props) {
   );
 }
 
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }).isRequired,
-};
+BlogPost.propTypes = propTypes;
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
