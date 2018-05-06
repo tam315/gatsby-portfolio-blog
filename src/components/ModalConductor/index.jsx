@@ -6,7 +6,7 @@ import SkillHelp from './SkillHelp';
 import Udemy from './Udemy';
 
 const propTypes = {
-  currentModal: PropTypes.string,
+  currentModal: PropTypes.oneOf(['CONTACT', 'SKILL_HELP', 'UDEMY']),
   setCurrentModal: PropTypes.func.isRequired,
 };
 
