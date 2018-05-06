@@ -17,9 +17,6 @@ const defaultProps = {
 class ModalConductor extends React.Component {
   componentDidMount() {
     // - モーダルの背景画面のスクロールを防止する。
-    // - propsの値に変化があるたびに実行する。
-    // - ライフサイクルメソッドの外で'document'を扱うと、
-    //   'gatsby build' したときにWebpackでエラーが出るため、仕方なくstateful componentにした。
     document.documentElement.style.overflowY = 'hidden';
   }
 
