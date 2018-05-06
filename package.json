@@ -22,6 +22,7 @@
     "gatsby-plugin-glamor": "^1.6.13",
     "gatsby-plugin-google-analytics": "^1.0.29",
     "gatsby-plugin-google-tagmanager": "^1.0.18",
+    "gatsby-plugin-nprogress": "^1.0.14",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-sitemap": "^1.2.20",
     "gatsby-plugin-typography": "^1.7.18",

@@ -69,6 +69,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        showSpinner: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
