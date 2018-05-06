@@ -4310,6 +4310,12 @@ gatsby-plugin-react-helmet@^2.0.8:
   dependencies:
     babel-runtime "^6.26.0"
 
+gatsby-plugin-sentry@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sentry/-/gatsby-plugin-sentry-0.0.4.tgz#707a14a1ce29599c56eff1a37881b55595ee395b"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-sharp@^1.6.42:
   version "1.6.42"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.42.tgz#c2c900ca80ff2b19d3c56ba8dcfb24fbd664d397"

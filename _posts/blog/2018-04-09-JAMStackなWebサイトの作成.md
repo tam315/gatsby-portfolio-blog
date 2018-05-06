@@ -76,6 +76,9 @@ google analytics用コードを自動で設置する。
 #### gatsby-plugin-google-tagmanager
 google tag manager用コードを自動で設置する。
 
+#### gatsby-plugin-sentry
+[Sentry](https://sentry.io/welcome/) (クライアント側エラーのログ管理)用コードを自動で設置する。
+
 #### gatsby-plugin-sitemap
 サイトマップを自動生成する。
 

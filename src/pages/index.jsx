@@ -394,6 +394,7 @@ const PerformanceSection = () => {
         { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
         { name: 'Netlify', description: 'ホスティング、CI/CD' },
         { name: 'Netlify CMS', description: 'CMS' },
+        { name: 'Sentry', description: 'クライアントサイドのエラー収集' },
       ],
       webpageURL: 'http://www.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/yuuni-web',

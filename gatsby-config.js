@@ -75,6 +75,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://5810361c02584d38b6c795628dae3e1a@sentry.io/1201814',
+        // Raven.js version, this is optional.
+        version: '3.24.2',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
