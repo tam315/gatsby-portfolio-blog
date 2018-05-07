@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+
 import axios from 'axios';
 import React from 'react';
 import ReactModal from 'react-modal';

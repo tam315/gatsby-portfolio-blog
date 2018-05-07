@@ -68,6 +68,9 @@ class RipIe extends React.Component {
         <div
           css={styles.closeButton}
           onClick={this.onCloseClick}
+          onKeyDown={e => {
+            if (e.keyCode === 13) this.onCloseClick();
+          }}
           role="button"
           tabIndex={0}
         >
@@ -87,6 +90,7 @@ class RipIe extends React.Component {
               href="https://www.google.co.jp/chrome/index.html"
               css={styles.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Chrome（オススメ）
             </a>
@@ -97,6 +101,7 @@ class RipIe extends React.Component {
               href="https://www.mozilla.org/ja/firefox/"
               css={styles.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Firefox
             </a>
@@ -107,6 +112,7 @@ class RipIe extends React.Component {
               href="https://www.apple.com/jp/safari/"
               css={styles.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Safari
             </a>
@@ -117,6 +123,7 @@ class RipIe extends React.Component {
               href="https://www.microsoft.com/ja-jp/windows/microsoft-edge"
               css={styles.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Edge
             </a>

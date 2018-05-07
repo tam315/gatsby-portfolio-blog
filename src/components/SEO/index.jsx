@@ -5,8 +5,11 @@ import Helmet from 'react-helmet';
 import config from '../../../data/SiteConfig';
 
 const propTypes = {
-  postNode: PropTypes.object,
-  metaData: PropTypes.object,
+  postNode: PropTypes.shape({
+    frontmatter: PropTypes.object,
+    excerpt: PropTypes.string,
+  }),
+  metaData: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {

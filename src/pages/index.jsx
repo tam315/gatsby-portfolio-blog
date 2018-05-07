@@ -76,6 +76,7 @@ const TopSection = () => {
           href="https://goo.gl/maps/HjyoY7NJ9j92"
           css={{ color: 'white' }}
           target="_blank"
+          rel="noopener noreferrer"
         >
           島根県浜田市<IconExtLink color="#fff" />
         </a>を拠点に<br />
@@ -275,6 +276,7 @@ const SkillSection = props => {
               href="https://paiza.jp/guide/career#rank"
               css={styles.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Aランク<IconExtLink />
             </a>
@@ -286,6 +288,9 @@ const SkillSection = props => {
         content: (
           <div
             onClick={() => props.setCurrentModal('UDEMY')}
+            onKeyDown={e => {
+              if (e.keyCode === 13) props.setCurrentModal('UDEMY');
+            }}
             role="button"
             tabIndex={0}
           >
@@ -319,6 +324,9 @@ const SkillSection = props => {
               <div
                 css={styles.helpButton}
                 onClick={() => props.setCurrentModal('SKILL_HELP')}
+                onKeyDown={e => {
+                  if (e.keyCode === 13) props.setCurrentModal('SKILL_HELP');
+                }}
                 role="button"
                 tabIndex={0}
               >
@@ -657,6 +665,7 @@ const ProfileSection = () => {
                     href="https://www.youtube.com/channel/UCbcCsHMZEjfsQZ5aaxNYNiw"
                     css={{ color: '#262626' }}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     バンド活動<IconExtLink />
                   </a>
@@ -705,6 +714,7 @@ const ProfileSection = () => {
                 <a
                   href="https://www.nutanix.jp/company/customers/all-customers/hamada-city/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   css={styles.link}
                 >
                   Nutanixによるプライベートクラウド基盤の構築<IconExtLink />
@@ -712,6 +722,7 @@ const ProfileSection = () => {
                 <a
                   href="https://jpn.nec.com/case/city.hamada/index.html"
                   target="_blank"
+                  rel="noopener noreferrer"
                   css={styles.link}
                 >
                   SDNの導入<IconExtLink />

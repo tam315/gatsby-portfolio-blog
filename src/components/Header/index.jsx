@@ -180,6 +180,7 @@ class Header extends React.Component {
         width: '28px',
         marginRight: '1.5rem',
         opacity: shouldBeHide ? settings.opacityHide : 1,
+        outline: 0,
         transition: `opacity ${settings.transitionSpeed} ease-out`,
         '@media (min-width:750px)': {
           display: 'none',
@@ -250,6 +251,9 @@ class Header extends React.Component {
         <div
           css={styles.humbergerIcon}
           onClick={this.onHumbergerClick}
+          onKeyDown={e => {
+            if (e.keyCode === 13) this.onHumbergerClick();
+          }}
           role="button"
           tabIndex={0}
         >

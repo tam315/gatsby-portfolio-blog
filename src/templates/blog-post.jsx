@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
 import PropTypes from 'prop-types';

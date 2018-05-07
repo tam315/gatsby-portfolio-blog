@@ -1,4 +1,4 @@
-/* eslint no-console: 0 */
+/* eslint no-console: 0 import/no-unresolved: 0 */
 const AWS = require('aws-sdk');
 
 AWS.config.update({
