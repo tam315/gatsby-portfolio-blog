@@ -73,11 +73,12 @@ class Contact extends React.Component {
             '送信を正常に完了しました。概ね2営業日以内にご連絡差し上げますので、いましばらくお待ちくださいませ。',
         });
       })
-      .catch(() => {
+      .catch(err => {
         window.alert('送信に失敗しました。');
         this.setState({
           isSending: false,
         });
+        window.Raven.captureException(err);
       });
   }
 
