@@ -80,6 +80,10 @@ module.exports = {
         dsn: 'https://5810361c02584d38b6c795628dae3e1a@sentry.io/1201814',
         // Raven.js version, this is optional.
         version: '3.24.2',
+        config: {
+          // for Release Tracking
+          release: '0e4fdef81448dcfa0e16ecc4433ff3997aa53572',
+        },
       },
     },
     {
