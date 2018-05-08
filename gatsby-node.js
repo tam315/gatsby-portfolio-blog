@@ -10,7 +10,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     createNodeField({
       node,
       name: 'slug',
-      value: slug,
+      value: slug.toLowerCase(),
     });
   }
 };
