@@ -11,93 +11,142 @@ const propTypes = {
 };
 
 const Udemy = props => {
-  const cources = [
+  const learnedList = [
     {
       junle: 'Adobe XD',
-      name: 'Web UI UX Design using Adobe XD',
-      url: 'https://www.udemy.com/ui-ux-web-design-using-adobe-xd',
+      courses: [
+        {
+          name: 'Web UI UX Design using Adobe XD',
+          url: 'https://www.udemy.com/ui-ux-web-design-using-adobe-xd',
+        },
+      ],
     },
     {
-      junle: 'Angular(v1), MongoDB',
-      name: 'Build a Real Time web app in node.js , Angular.js, mongoDB ',
-      url: 'https://www.udemy.com/realtime-meanstack/',
-    },
-    {
-      junle: 'Angular(v2), Typescript',
-      name: 'Angular 2 Jump Start With Typescript ',
-      url: 'https://www.udemy.com/angular-2-jump-start-with-typescript/',
-    },
-    {
-      junle: 'AngularJS(v1)',
-      name: 'Learn and Understand AngularJS ',
-      url: 'https://www.udemy.com/learn-angularjs/',
+      junle: 'Angular',
+      courses: [
+        {
+          name: 'Build a Real Time web app in node.js , Angular.js, mongoDB ',
+          url: 'https://www.udemy.com/realtime-meanstack/',
+        },
+        {
+          name: 'Angular 2 Jump Start With Typescript ',
+          url: 'https://www.udemy.com/angular-2-jump-start-with-typescript/',
+        },
+        {
+          name: 'Learn and Understand AngularJS ',
+          url: 'https://www.udemy.com/learn-angularjs/',
+        },
+      ],
     },
     {
       junle: 'Git',
-      name: 'Git Complete: The definitive, step-by-step guide to Git ',
-      url: 'https://www.udemy.com/git-complete/',
+      courses: [
+        {
+          name: 'Git Complete: The definitive, step-by-step guide to Git ',
+          url: 'https://www.udemy.com/git-complete/',
+        },
+      ],
     },
     {
       junle: 'Javascript',
-      name: "ES6 Javascript: The Complete Developer's Guide ",
-      url: 'https://www.udemy.com/javascript-es6-tutorial/',
-    },
-    {
-      junle: 'Javascript',
-      name: 'JavaScript - Understanding the Weird Parts',
-      url: 'https://www.udemy.com/understand-javascript/',
-    },
-    {
-      junle: 'Javascript, Jquery',
-      name: 'Projects In JavaScript & Jquery',
-      url: 'https://www.udemy.com/projects-in-javascript-jquery/',
+      courses: [
+        {
+          name: "ES6 Javascript: The Complete Developer's Guide ",
+          url: 'https://www.udemy.com/javascript-es6-tutorial/',
+        },
+        {
+          name: 'JavaScript - Understanding the Weird Parts',
+          url: 'https://www.udemy.com/understand-javascript/',
+        },
+        {
+          name: 'Learning Data Structures in JavaScript from Scratch',
+          url:
+            'https://www.udemy.com/learning-data-structures-in-javascript-from-scratch/',
+        },
+        {
+          name: 'Projects In JavaScript & Jquery',
+          url: 'https://www.udemy.com/projects-in-javascript-jquery/',
+        },
+      ],
     },
     {
       junle: 'MongoDB',
-      name: 'The Complete Developers Guide to MongoDB ',
-      url: 'https://www.udemy.com/the-complete-developers-guide-to-mongodb/',
+      courses: [
+        {
+          name: 'The Complete Developers Guide to MongoDB ',
+          url:
+            'https://www.udemy.com/the-complete-developers-guide-to-mongodb/',
+        },
+      ],
     },
     {
       junle: 'MySQL',
-      name: 'MySQL Database For Beginners ',
-      url: 'https://www.udemy.com/draft/12802/',
+      courses: [
+        {
+          name: 'MySQL Database For Beginners ',
+          url: 'https://www.udemy.com/draft/12802/',
+        },
+      ],
     },
     {
       junle: 'NodeJS',
-      name: 'Learn and Understand NodeJS ',
-      url: 'https://www.udemy.com/understand-nodejs/',
+      courses: [
+        {
+          name: 'Learn and Understand NodeJS ',
+          url: 'https://www.udemy.com/understand-nodejs/',
+        },
+      ],
     },
     {
-      junle: 'PHP, MySQL',
-      name: 'Projects in PHP and MySQL',
-      url:
-        'https://www.udemy.com/the-complete-web-development-course-learn-by-building-apps/',
+      junle: 'PHP',
+      courses: [
+        {
+          name: 'Projects in PHP and MySQL',
+          url:
+            'https://www.udemy.com/the-complete-web-development-course-learn-by-building-apps/',
+        },
+      ],
     },
     {
-      junle: 'React',
-      name: 'Build Web Apps with React JS and Flux ',
-      url: 'https://www.udemy.com/learn-and-understand-reactjs/',
-    },
-    {
-      junle: 'React, Redux',
-      name: 'Modern React with Redux ',
-      url: 'https://www.udemy.com/react-redux/',
+      junle: 'React / Redux',
+      courses: [
+        {
+          name: 'Build Web Apps with React JS and Flux ',
+          url: 'https://www.udemy.com/learn-and-understand-reactjs/',
+        },
+        {
+          name: 'Modern React with Redux ',
+          url: 'https://www.udemy.com/react-redux/',
+        },
+      ],
     },
     {
       junle: 'Serverless',
-      name: 'AWS Serverless APIs & Apps - A Complete Introduction',
-      url:
-        'https://www.udemy.com/aws-serverless-a-complete-introduction/learn/v4/questions',
+      courses: [
+        {
+          name: 'AWS Serverless APIs & Apps - A Complete Introduction',
+          url:
+            'https://www.udemy.com/aws-serverless-a-complete-introduction/learn/v4/questions',
+        },
+      ],
     },
     {
       junle: 'Typescript',
-      name: 'Introduction to TypeScript ',
-      url: 'https://www.udemy.com/typescript/',
+      courses: [
+        {
+          name: 'Introduction to TypeScript ',
+          url: 'https://www.udemy.com/typescript/',
+        },
+      ],
     },
     {
       junle: 'Webpack',
-      name: "Webpack 2: The Complete Developer's Guide ",
-      url: 'https://www.udemy.com/webpack-2-the-complete-developers-guide/',
+      courses: [
+        {
+          name: "Webpack 2: The Complete Developer's Guide ",
+          url: 'https://www.udemy.com/webpack-2-the-complete-developers-guide/',
+        },
+      ],
     },
   ];
 
@@ -113,6 +162,7 @@ const Udemy = props => {
       margin: '1rem',
       maxHeight: '90vh',
       maxWidth: '600px',
+      padding: '2rem',
       position: 'relative',
       top: 'auto',
       left: 'auto',
@@ -132,16 +182,29 @@ const Udemy = props => {
       width: '18px',
     },
     courseContainer: {
-      marginBottom: '1rem',
+      marginBottom: '2rem',
+      ':last-child': {
+        marginBottom: 0,
+      },
     },
     courseJunle: {
+      borderLeft: '10px solid gray',
       fontWeight: 'bold',
-      fontSize: '0.9rem',
+      paddingLeft: '10px',
     },
     courseName: {
       color: '#262626',
+      display: 'block',
       fontSize: '0.7em',
       marginRight: '2px',
+      marginTop: '0.5rem',
+      textDecoration: 'none',
+      '::before': {
+        content: '- ',
+      },
+      ':hover': {
+        background: '#eee',
+      },
     },
   };
 
@@ -160,13 +223,21 @@ const Udemy = props => {
         onClick={() => props.setCurrentModal(null)}
       />
 
-      {cources.map(course => (
-        <div css={styles.courseContainer} key={course.name}>
-          <div css={styles.courseJunle}>{course.junle}</div>
-          <a href={course.url} target="_blank" css={styles.courseName}>
-            {course.name}
-          </a>
-          <IconExtLink />
+      {learnedList.map(list => (
+        <div css={styles.courseContainer} key={list.junle}>
+          <div css={styles.courseJunle}>{list.junle}</div>
+
+          {list.courses.map(course => (
+            <a
+              href={course.url}
+              target="_blank"
+              css={styles.courseName}
+              key={course.name}
+            >
+              {course.name}
+              <IconExtLink />
+            </a>
+          ))}
         </div>
       ))}
     </ReactModal>
