@@ -391,6 +391,8 @@ const PerformanceSection = () => {
   const performances = [
     {
       name: 'Yuuniworks(このサイト)',
+      description:
+        'Single Page Applicationとして作成した、事業広報用Webページです。',
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Gatsby', description: 'Static Site Generator' },
@@ -410,7 +412,9 @@ const PerformanceSection = () => {
       imgPath: jissekiYuuniJpg,
     },
     {
-      name: '割り勘計算ツール',
+      name: 'SplitBills',
+      description:
+        '酔っぱらった状態で納得のいく割勘計算を行うための小道具です。',
       techStack: [
         { name: 'Angular4', description: 'Front-end Framework' },
         { name: 'Firebase', description: 'ホスティング' },
@@ -424,6 +428,8 @@ const PerformanceSection = () => {
     },
     {
       name: '資産運用支援ツール（作成中）',
+      description:
+        '投資信託につきものである「リバランス」を楽に行うための支援ツールです。',
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Redux', description: 'State Container' },
@@ -444,30 +450,39 @@ const PerformanceSection = () => {
       paddingTop: 0,
     },
     itemTitle: {
-      marginBottom: rhythm(1),
       color: '#262626',
       display: 'block',
       fontWeight: 'bold',
+      marginBottom: '1rem',
       textDecoration: 'none',
     },
-    githubIcon: {
-      width: rhythm(3 / 2),
-      height: rhythm(3 / 2),
-    },
-    badge: {
-      background: 'rgba(0,0,0,0.5)',
-      boxShadow:
-        '0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12)',
-      color: '#fff',
-      cursor: 'pointer',
-      display: 'inline-block',
+    description: {
       fontSize: '0.8rem',
-      margin: '0 10px 12px 0',
-      padding: '5px 9px',
+      marginBottom: '0.8rem',
     },
-    badgeLink: {
-      background: '#6292F1',
+    externalLink: {
+      color: '#999',
+      fontSize: '0.8rem',
       textDecoration: 'none',
+      marginRight: '1rem',
+      ':hover': {
+        background: '#eee',
+      },
+    },
+    techStackGrid: {
+      borderTop: '1px dotted #999',
+      display: 'grid',
+      fontSize: '0.8rem',
+      gridGap: '0.4rem',
+      gridTemplateColumns: '1fr 1fr',
+      marginTop: '0.8rem',
+      paddingTop: '1rem',
+      ' > span': {
+        cursor: 'default',
+      },
+      ' > span::before': {
+        content: '- ',
+      },
     },
   };
 
@@ -508,40 +523,37 @@ const PerformanceSection = () => {
                 <IconExtLink />
               </a>
 
-              <ul>
+              <p css={styles.description}>{performance.description}</p>
+
+              {performance.githubURL ? (
+                <a
+                  href={performance.githubURL}
+                  target="_blank"
+                  css={styles.externalLink}
+                >
+                  ソースコード
+                </a>
+              ) : null}
+
+              {performance.blogPath ? (
+                <Link
+                  to={performance.blogPath}
+                  target="_blank"
+                  css={styles.externalLink}
+                >
+                  関連ブログ
+                </Link>
+              ) : null}
+
+              <ul css={styles.techStackGrid}>
                 {performance.techStack.map(tech => (
-                  <span
-                    css={styles.badge}
-                    data-for={tech.name}
-                    data-tip
-                    key={tech.name}
-                  >
+                  <span data-for={tech.name} data-tip key={tech.name}>
                     {tech.name}
                     <ReactTooltip id={tech.name} effect="solid">
                       {tech.description}
                     </ReactTooltip>
                   </span>
                 ))}
-
-                {performance.githubURL ? (
-                  <a
-                    href={performance.githubURL}
-                    target="_blank"
-                    css={{ ...styles.badge, ...styles.badgeLink }}
-                  >
-                    ソースコード
-                  </a>
-                ) : null}
-
-                {performance.blogPath ? (
-                  <Link
-                    to={performance.blogPath}
-                    target="_blank"
-                    css={{ ...styles.badge, ...styles.badgeLink }}
-                  >
-                    解説ブログ
-                  </Link>
-                ) : null}
               </ul>
             </div>
           </WhiteBox>
