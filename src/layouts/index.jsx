@@ -5,10 +5,9 @@ import faCaretSquareRight from '@fortawesome/fontawesome-free-solid/faCaretSquar
 import faExternalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt';
 import faStar from '@fortawesome/fontawesome-free-solid/faStar';
 import faTimesCircle from '@fortawesome/fontawesome-free-solid/faTimesCircle';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import Helmet from 'react-helmet';
-
 import Header from '../components/Header';
 import RipIe from '../components/RipIe';
 

@@ -1,6 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import Contact from './Contact';
 import SkillHelp from './SkillHelp';
 import Udemy from './Udemy';

@@ -1,16 +1,13 @@
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
-
+import SEO from '../components/SEO';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
-import SEO from '../components/SEO';
 import WhiteBox from '../components/WhiteBox';
-
-import { rhythm } from '../utils/typography';
-
 import rssSvg from '../icons/rss.svg';
+import { rhythm } from '../utils/typography';
 
 const propTypes = {
   data: PropTypes.shape({

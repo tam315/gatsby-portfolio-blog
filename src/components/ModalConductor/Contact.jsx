@@ -1,12 +1,10 @@
 /* eslint-disable no-alert */
 
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactModal from 'react-modal';
-import PropTypes from 'prop-types';
-
 import { PulseLoader } from 'react-spinners';
-
 import closeSvg from '../../icons/close.svg';
 
 const propTypes = {

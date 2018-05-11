@@ -1,9 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactModal from 'react-modal';
-import PropTypes from 'prop-types';
-
 import IconExtLink from '../../components/IconExtLink';
-
 import closeSvg from '../../icons/close.svg';
 
 const propTypes = {

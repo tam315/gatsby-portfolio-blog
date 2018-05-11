@@ -2,21 +2,17 @@
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
+import Link from 'gatsby-link';
+import 'prismjs/themes/prism-tomorrow.css';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-
-import 'prismjs/themes/prism-tomorrow.css';
-
+import SEO from '../components/SEO';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
-import SEO from '../components/SEO';
 import WhiteBox from '../components/WhiteBox';
-
-import { rhythm } from '../utils/typography';
-
 import profileJpg from '../images/profile.jpg';
+import { rhythm } from '../utils/typography';
 
 const propTypes = {
   data: PropTypes.shape({

@@ -1,10 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactModal from 'react-modal';
-import PropTypes from 'prop-types';
-
-import Stars from '../Stars';
-
 import closeSvg from '../../icons/close.svg';
+import Stars from '../Stars';
 
 const propTypes = {
   setCurrentModal: PropTypes.func.isRequired,

@@ -1,6 +1,5 @@
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import React from 'react';
-
 import ripIeSvg from '../../icons/rip-ie.svg';
 
 class RipIe extends React.Component {

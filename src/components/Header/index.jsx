@@ -1,9 +1,8 @@
-import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
+import React from 'react';
 import onClickOutside from 'react-onclickoutside';
 import { Link as LinkForScroll } from 'react-scroll';
-
 import humbergerSvg from '../../icons/humberger.svg';
 import logoSvg from '../../icons/logo.svg';
 
