@@ -1,25 +1,20 @@
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
 import { Link as LinkForScroll } from 'react-scroll';
 import ReactTooltip from 'react-tooltip';
-
 import AgeCalculator from '../components/AgeCalculator';
 import Hr from '../components/Hr';
 import IconExtLink from '../components/IconExtLink';
 import ModalConductor from '../components/ModalConductor';
-import SectionHeader from '../components/SectionHeader';
-import SectionContainer from '../components/SectionContainer';
 import SEO from '../components/SEO';
+import SectionContainer from '../components/SectionContainer';
+import SectionHeader from '../components/SectionHeader';
 import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
-
-import { rhythm } from '../utils/typography';
-
 import '../css/global.css';
-
 import arrowSvg from '../icons/arrow.svg';
 import footerFacebookSvg from '../icons/footer-facebook.svg';
 import footerFormSvg from '../icons/footer-form.svg';
@@ -29,12 +24,12 @@ import footerPhoneSvg from '../icons/footer-phone.svg';
 import footerPinSvg from '../icons/footer-pin.svg';
 import logoSvg from '../icons/logo.svg';
 import questionSvg from '../icons/question.svg';
-
 import jissekiShisanPng from '../images/jisseki-shisan.png';
 import jissekiWarikanPng from '../images/jisseki-warikan.png';
 import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
 import profileJpg from '../images/profile.jpg';
 import topImageJpg from '../images/top-image.jpg';
+import { rhythm } from '../utils/typography';
 
 const TopSection = () => {
   const styles = {
@@ -100,7 +95,7 @@ const GaiyouSection = props => {
   const articles = [
     [
       '何ができる？',
-      'React/Reduxを用いたSPA等のフロントエンド開発や、NodeJSを使ったAPI開発を得意としています。',
+      'SPA/PWA等の開発や、ServerlessなAPI開発を得意としています。',
     ],
     [
       '契約形態は？',
