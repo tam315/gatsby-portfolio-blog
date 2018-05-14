@@ -415,6 +415,7 @@ const PerformanceSection = () => {
         { name: 'Jasmine', description: 'Unit/E2E Test' },
         { name: 'Protractor', description: 'E2E Test' },
         { name: 'Semaphore', description: 'CI/CD' },
+        { name: 'Service Worker', description: 'オフライン対応' },
       ],
       webpageURL: 'http://split.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/splitbills',
