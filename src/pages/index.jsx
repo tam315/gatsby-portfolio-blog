@@ -2,7 +2,6 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Link as LinkForScroll } from 'react-scroll';
 import ReactTooltip from 'react-tooltip';
 import AgeCalculator from '../components/AgeCalculator';
@@ -940,43 +939,6 @@ class IndexPage extends React.Component {
         <FooterSection setCurrentModal={this.setCurrentModal} />
 
         <SEO />
-        <Helmet
-          script={[
-            {
-              type: 'application/ld+json',
-              innerHTML: JSON.stringify({
-                '@context': 'http://schema.org',
-                '@type': 'Corporation',
-                name: 'Yuuniworks',
-                url: 'http://www.yuuniworks.com/',
-                logo: 'https://www.yuuniworks.com/images/logo_for_schema.png',
-                address: {
-                  postalCode: '697-0123',
-                  addressCountry: 'JP',
-                  addressRegion: '島根県',
-                  addressLocality: '浜田市',
-                  streetAddress: '金城町七条',
-                },
-                contactPoint: [
-                  {
-                    '@type': 'ContactPoint',
-                    telephone: '+81-70-4398-9424',
-                    contactType: 'sales',
-                  },
-                ],
-                founder: {
-                  '@type': 'Person',
-                  givenName: '翔太',
-                  familyName: '田村',
-                },
-                foundingDate: '2018-4-11',
-                description:
-                  '島根県浜田市を拠点に、主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。',
-                sameAs: ['https://www.facebook.com/yuuniworks/'],
-              }),
-            },
-          ]}
-        />
       </div>
     );
   }

@@ -13,9 +13,11 @@ const propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.object,
   }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
 };
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, location }) => {
   const styles = {
     container: {
       maxWidth: '600px',
@@ -114,6 +116,7 @@ const BlogPage = ({ data }) => {
           description:
             '島根のフリーランスエンジニア「Yuuniworks」のブログです。フロントエンド界隈の技術的なネタを記録しています。',
         }}
+        location={location}
       />
 
       <Helmet

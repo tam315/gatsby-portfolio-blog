@@ -18,6 +18,8 @@ const propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }).isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
 };
 
 export default function BlogPost(props) {
@@ -224,7 +226,7 @@ export default function BlogPost(props) {
         </Link>
       </div>
 
-      <SEO postNode={post} />
+      <SEO postNode={post} location={props.location} />
 
       <Helmet
         script={[
@@ -238,36 +240,6 @@ export default function BlogPost(props) {
                 fjs.parentNode.insertBefore(js, fjs);
               }(document, 'script', 'facebook-jssdk'));
             `,
-          },
-          {
-            type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-              '@context': 'http://schema.org',
-              '@type': 'BlogPosting',
-              mainEntityOfPage: {
-                '@type': 'WebPage',
-                '@id': `http://www.yuuniworks.com/blog${post.fields.slug}`,
-              },
-              headline: post.frontmatter.title,
-              image: [
-                `https://www.yuuniworks.com${post.frontmatter.thumbnail}`,
-              ],
-              datePublished: post.frontmatter.date,
-              dateModified: post.frontmatter.dateModified,
-              author: {
-                '@type': 'Person',
-                name: 'Shota Tamura',
-              },
-              publisher: {
-                '@type': 'Organization',
-                name: 'Yuuniworks',
-                logo: {
-                  '@type': 'ImageObject',
-                  url: 'https://www.yuuniworks.com/images/logo_for_schema.png',
-                },
-              },
-              description: post.frontmatter.summary,
-            }),
           },
         ]}
       />
