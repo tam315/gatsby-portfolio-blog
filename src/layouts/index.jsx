@@ -8,6 +8,7 @@ import faTimesCircle from '@fortawesome/fontawesome-free-solid/faTimesCircle';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
+import 'string.prototype.startswith';
 import Header from '../components/Header';
 import RipIe from '../components/RipIe';
 

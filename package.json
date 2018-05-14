@@ -39,7 +39,8 @@
     "react-onclickoutside": "^6.7.1",
     "react-scroll": "^1.7.7",
     "react-spinners": "^0.3.1",
-    "react-tooltip": "^3.4.0"
+    "react-tooltip": "^3.4.0",
+    "string.prototype.startswith": "^0.2.0"
   },
   "license": "MIT",
   "scripts": {
