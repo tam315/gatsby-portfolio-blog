@@ -442,13 +442,18 @@ const PerformanceSection = () => {
     },
     itemContainer: {
       padding: rhythm(1),
-      paddingTop: 0,
+    },
+    itemImage: {
+      border: '1px solid #aaa',
+      objectFit: 'cover',
+      height: '160px',
+      width: '100%',
     },
     itemTitle: {
       color: '#262626',
       display: 'block',
       fontWeight: 'bold',
-      marginBottom: '1rem',
+      margin: '1rem 0',
       textDecoration: 'none',
     },
     description: {
@@ -489,26 +494,15 @@ const PerformanceSection = () => {
       <div css={styles.grid}>
         {performances.map(performance => (
           <WhiteBox key={performance.name}>
-            <a
-              href={performance.webpageURL}
-              target="_blank"
-              css={styles.itemTitle}
-            >
-              <div
-                css={{
-                  // アスペクト比率を維持、かつ、画像で範囲全体をカバー、かつ、最も小さく表示
-                  background: `url("${
-                    performance.imgPath
-                  }") no-repeat center center`,
-                  backgroundSize: 'cover',
-                  height: '160px',
-                  border: '1px solid #aaa',
-                  margin: rhythm(1),
-                }}
-              />
-            </a>
-
             <div css={styles.itemContainer}>
+              <a href={performance.webpageURL} target="_blank">
+                <img
+                  src={performance.imgPath}
+                  css={styles.itemImage}
+                  alt={performance.name}
+                />
+              </a>
+
               <a
                 href={performance.webpageURL}
                 target="_blank"
