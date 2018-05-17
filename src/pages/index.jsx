@@ -244,21 +244,19 @@ const SkillSection = props => {
     フロントエンド: {
       React: 4,
       Redux: 3,
-      Bootstrap: 3,
+      PWA: 3,
+      Workbox: 3,
       webpack: 2,
       PostCSS: 2,
-      'Angular(2以降)': 2,
+      Angular: 2,
     },
     バックエンド: {
       'TCP/IP': 4,
       Docker: 3,
       RDBMS: 3,
       Swagger: 2,
-      'AWS Lambda': 2,
-      'AWS DynamoDB': 2,
-      'AWS Cognito': 2,
-      Nginx: 2,
-      Kubernates: 2,
+      Serverless: 2,
+      Firebase: 2,
     },
     その他: [
       {

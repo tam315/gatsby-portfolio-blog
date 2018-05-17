@@ -106,6 +106,16 @@ const Udemy = props => {
       ],
     },
     {
+      junle: 'PWA',
+      courses: [
+        {
+          name: 'Progressive Web Apps (PWA) - The Complete Guide',
+          url:
+            'https://www.udemy.com/progressive-web-app-pwa-the-complete-guide/',
+        },
+      ],
+    },
+    {
       junle: 'React / Redux',
       courses: [
         {
