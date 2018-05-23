@@ -9,16 +9,14 @@ const propTypes = {
     excerpt: PropTypes.string,
   }),
   metaData: PropTypes.objectOf(PropTypes.string),
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired }),
 };
 
 const defaultProps = {
   postNode: null,
   metaData: null,
-  location: null,
 };
 
-function SEO({ postNode, metaData, location }) {
+function SEO({ postNode, metaData }) {
   // initial metadata
   let _metaData = {
     title: config.siteTitle,
@@ -88,25 +86,13 @@ function SEO({ postNode, metaData, location }) {
     },
   ];
 
-  if (location && location.pathname.startsWith('/blog/')) {
+  if (postNode) {
     breadcrumbItemList.push({
       '@type': 'ListItem',
       position: 2,
       item: {
         '@id': `${config.siteUrl}/blog/`,
         name: 'Blog',
-      },
-    });
-  }
-
-  if (postNode) {
-    breadcrumbItemList.push({
-      '@type': 'ListItem',
-      position: 3,
-      item: {
-        '@id': `${config.siteUrl}/blog/${postNode.fields.slug}`,
-        name: `${postNode.frontmatter.title}`,
-        image: config.siteUrl + postNode.frontmatter.thumbnail,
       },
     });
   }

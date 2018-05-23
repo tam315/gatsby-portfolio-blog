@@ -18,8 +18,6 @@ const propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }).isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
 };
 
 export default function BlogPost(props) {
@@ -226,7 +224,7 @@ export default function BlogPost(props) {
         </Link>
       </div>
 
-      <SEO postNode={post} location={props.location} />
+      <SEO postNode={post} />
 
       <Helmet
         script={[
