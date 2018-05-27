@@ -2,43 +2,43 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
-import footerFacebookSvg from '../icons/footer-facebook.svg';
-import footerFormSvg from '../icons/footer-form.svg';
-import footerGithubSvg from '../icons/footer-github.svg';
-import footerMailSvg from '../icons/footer-mail.svg';
-import footerPhoneSvg from '../icons/footer-phone.svg';
-import footerPinSvg from '../icons/footer-pin.svg';
+import svgFacebook from '../icons/footer-facebook.svg';
+import svgForm from '../icons/footer-form.svg';
+import svgGithub from '../icons/footer-github.svg';
+import svgMail from '../icons/footer-mail.svg';
+import svgPhone from '../icons/footer-phone.svg';
+import svgPin from '../icons/footer-pin.svg';
 import { rhythm } from '../utils/typography';
 
 const FooterSection = props => {
   const footerInfo = [
     {
-      imgPath: footerFormSvg,
+      imgPath: svgForm,
       description: 'フォームでのお問い合わせ',
       onClick: () => props.setCurrentModal('CONTACT'),
     },
     {
-      imgPath: footerMailSvg,
+      imgPath: svgMail,
       description: 'info@yuuniworks.com',
       link: 'mailto:info@yuuniworks.com',
     },
     {
-      imgPath: footerFacebookSvg,
+      imgPath: svgFacebook,
       description: 'facebook.com/yuuniworks',
       link: 'https://www.facebook.com/yuuniworks/',
     },
     {
-      imgPath: footerGithubSvg,
+      imgPath: svgGithub,
       description: 'github.com/junkboy0315',
       link: 'https://github.com/junkboy0315/',
     },
     {
-      imgPath: footerPhoneSvg,
+      imgPath: svgPhone,
       description: '070 4398 9424',
       link: 'tel:07043989424',
     },
     {
-      imgPath: footerPinSvg,
+      imgPath: svgPin,
       description: '島根県浜田市金城町七条',
       link: 'https://goo.gl/maps/V5G3DJSYy8u',
     },

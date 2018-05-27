@@ -13,12 +13,14 @@ const SkillSection = props => {
   const styles = {
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 300px))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 350px))',
       gridGap: rhythm(2),
       justifyContent: 'center',
-      padding: rhythm(1),
-      paddingTop: rhythm(2),
-      paddingBottom: rhythm(2),
+      maxWidth: '1200px',
+      margin: 'auto',
+    },
+    whiteBox: {
+      padding: rhythm(1.5),
     },
     containerKihon: {
       position:
@@ -132,70 +134,74 @@ const SkillSection = props => {
   return (
     <SectionContainer id="skill" colorNumber="2" skew>
       <SectionHeader text="スキル" colorNumber="2" />
-      <div>
-        <WhiteBox maxWidth="850">
-          <div css={styles.grid}>
-            <div css={styles.containerKihon}>
-              <h3>基本</h3>
-              <div
-                css={styles.helpButton}
-                onClick={() => props.setCurrentModal('SKILL_HELP')}
-                onKeyDown={e => {
-                  if (e.keyCode === 13) props.setCurrentModal('SKILL_HELP');
-                }}
-                role="button"
-                tabIndex={0}
-              >
-                <img src={questionSvg} alt="hint button" />
-              </div>
-              {Object.keys(skills['基本']).map(skill => (
-                <Skill
-                  skillName={skill}
-                  skillLevel={skills['基本'][skill]}
-                  key={skill}
-                />
-              ))}
+      <div css={styles.grid}>
+        <WhiteBox css={styles.whiteBox}>
+          <div css={styles.containerKihon}>
+            <h3>基本</h3>
+            <div
+              css={styles.helpButton}
+              onClick={() => props.setCurrentModal('SKILL_HELP')}
+              onKeyDown={e => {
+                if (e.keyCode === 13) props.setCurrentModal('SKILL_HELP');
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              <img src={questionSvg} alt="hint button" />
             </div>
+            {Object.keys(skills['基本']).map(skill => (
+              <Skill
+                skillName={skill}
+                skillLevel={skills['基本'][skill]}
+                key={skill}
+              />
+            ))}
+          </div>
+        </WhiteBox>
 
-            <div>
-              <h3>フロントエンド</h3>
-              {Object.keys(skills['フロントエンド']).map(skill => (
-                <Skill
-                  skillName={skill}
-                  skillLevel={skills['フロントエンド'][skill]}
-                  key={skill}
-                />
-              ))}
-            </div>
+        <WhiteBox css={styles.whiteBox}>
+          <div>
+            <h3>フロントエンド</h3>
+            {Object.keys(skills['フロントエンド']).map(skill => (
+              <Skill
+                skillName={skill}
+                skillLevel={skills['フロントエンド'][skill]}
+                key={skill}
+              />
+            ))}
+          </div>
+        </WhiteBox>
 
-            <div>
-              <h3>バックエンド</h3>
-              {Object.keys(skills['バックエンド']).map(skill => (
-                <Skill
-                  skillName={skill}
-                  skillLevel={skills['バックエンド'][skill]}
-                  key={skill}
-                />
-              ))}
-            </div>
+        <WhiteBox css={styles.whiteBox}>
+          <div>
+            <h3>バックエンド</h3>
+            {Object.keys(skills['バックエンド']).map(skill => (
+              <Skill
+                skillName={skill}
+                skillLevel={skills['バックエンド'][skill]}
+                key={skill}
+              />
+            ))}
+          </div>
+        </WhiteBox>
 
-            <div>
-              <h3>その他</h3>
-              <ul>
-                {skills['その他'].map(item => (
-                  <li css={styles.sonotaListItem} key={item.title}>
-                    <div css={styles.sonotaTitle}>
-                      <FontAwesomeIcon
-                        icon="caret-square-right"
-                        style={styles.caret}
-                      />
-                      {item.title}
-                    </div>
-                    <div css={styles.sonotaContent}>{item.content}</div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <WhiteBox css={styles.whiteBox}>
+          <div>
+            <h3>その他</h3>
+            <ul>
+              {skills['その他'].map(item => (
+                <li css={styles.sonotaListItem} key={item.title}>
+                  <div css={styles.sonotaTitle}>
+                    <FontAwesomeIcon
+                      icon="caret-square-right"
+                      style={styles.caret}
+                    />
+                    {item.title}
+                  </div>
+                  <div css={styles.sonotaContent}>{item.content}</div>
+                </li>
+              ))}
+            </ul>
           </div>
         </WhiteBox>
       </div>

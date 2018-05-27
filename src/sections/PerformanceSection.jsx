@@ -69,7 +69,7 @@ const PerformanceSection = () => {
       gridGap: rhythm(2),
       justifyContent: 'center',
     },
-    itemContainer: {
+    whiteBox: {
       padding: rhythm(1),
     },
     itemImage: {
@@ -122,58 +122,56 @@ const PerformanceSection = () => {
       {/* グリッド始点 */}
       <div css={styles.grid}>
         {performances.map(performance => (
-          <WhiteBox key={performance.name}>
-            <div css={styles.itemContainer}>
-              <a href={performance.webpageURL} target="_blank">
-                <img
-                  src={performance.imgPath}
-                  css={styles.itemImage}
-                  alt={performance.name}
-                />
-              </a>
+          <WhiteBox key={performance.name} css={styles.whiteBox}>
+            <a href={performance.webpageURL} target="_blank">
+              <img
+                src={performance.imgPath}
+                css={styles.itemImage}
+                alt={performance.name}
+              />
+            </a>
 
+            <a
+              href={performance.webpageURL}
+              target="_blank"
+              css={styles.itemTitle}
+            >
+              {performance.name}
+              <IconExtLink />
+            </a>
+
+            <p css={styles.description}>{performance.description}</p>
+
+            {performance.githubURL ? (
               <a
-                href={performance.webpageURL}
+                href={performance.githubURL}
                 target="_blank"
-                css={styles.itemTitle}
+                css={styles.externalLink}
               >
-                {performance.name}
-                <IconExtLink />
+                ソースコード
               </a>
+            ) : null}
 
-              <p css={styles.description}>{performance.description}</p>
+            {performance.blogPath ? (
+              <Link
+                to={performance.blogPath}
+                target="_blank"
+                css={styles.externalLink}
+              >
+                関連ブログ
+              </Link>
+            ) : null}
 
-              {performance.githubURL ? (
-                <a
-                  href={performance.githubURL}
-                  target="_blank"
-                  css={styles.externalLink}
-                >
-                  ソースコード
-                </a>
-              ) : null}
-
-              {performance.blogPath ? (
-                <Link
-                  to={performance.blogPath}
-                  target="_blank"
-                  css={styles.externalLink}
-                >
-                  関連ブログ
-                </Link>
-              ) : null}
-
-              <ul css={styles.techStackGrid}>
-                {performance.techStack.map(tech => (
-                  <span data-for={tech.name} data-tip key={tech.name}>
-                    {tech.name}
-                    <ReactTooltip id={tech.name} effect="solid">
-                      {tech.description}
-                    </ReactTooltip>
-                  </span>
-                ))}
-              </ul>
-            </div>
+            <ul css={styles.techStackGrid}>
+              {performance.techStack.map(tech => (
+                <span data-for={tech.name} data-tip key={tech.name}>
+                  {tech.name}
+                  <ReactTooltip id={tech.name} effect="solid">
+                    {tech.description}
+                  </ReactTooltip>
+                </span>
+              ))}
+            </ul>
           </WhiteBox>
         ))}
       </div>
