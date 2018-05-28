@@ -29,13 +29,11 @@ const GaiyouSection = props => {
 
   const styles = {
     container: {
+      display: 'grid',
+      gridGap: rhythm(1.5),
+      gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
       margin: 'auto',
       maxWidth: '700px',
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-      gridGap: rhythm(1.5),
       padding: rhythm(1.5),
     },
     caret: {
@@ -72,31 +70,24 @@ const GaiyouSection = props => {
     <SectionContainer id="gaiyou">
       <SectionHeader text="概要" colorNumber="1" />
 
-      <div css={styles.container}>
-        <WhiteBox>
-          <ul css={styles.grid}>
-            {articles.map(article => (
-              <li key={article[0]}>
-                <div css={styles.title}>
-                  <FontAwesomeIcon
-                    icon="caret-square-right"
-                    style={styles.caret}
-                  />
-                  {article[0]}
-                </div>
-                <div>{article[1]}</div>
-              </li>
-            ))}
-          </ul>
-        </WhiteBox>
+      <WhiteBox css={styles.container}>
+        {articles.map(article => (
+          <li key={article[0]}>
+            <div css={styles.title}>
+              <FontAwesomeIcon icon="caret-square-right" style={styles.caret} />
+              {article[0]}
+            </div>
+            <div>{article[1]}</div>
+          </li>
+        ))}
+      </WhiteBox>
 
-        <button
-          css={styles.button}
-          onClick={() => props.setCurrentModal('CONTACT')}
-        >
-          お問い合わせ
-        </button>
-      </div>
+      <button
+        css={styles.button}
+        onClick={() => props.setCurrentModal('CONTACT')}
+      >
+        お問い合わせ
+      </button>
     </SectionContainer>
   );
 };
