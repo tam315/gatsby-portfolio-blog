@@ -84,6 +84,7 @@ const SkillHelp = props => {
   return (
     <ReactModal
       isOpen
+      closeTimeoutMS={100}
       onRequestClose={() => props.setCurrentModal(null)}
       style={{
         overlay: styles.modalOverlay,

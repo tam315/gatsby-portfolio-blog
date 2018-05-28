@@ -182,6 +182,7 @@ class Contact extends React.Component {
     return (
       <ReactModal
         isOpen
+        closeTimeoutMS={100}
         onRequestClose={this.closeModal}
         style={{
           overlay: styles.modalOverlay,

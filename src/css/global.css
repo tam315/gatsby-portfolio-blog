@@ -21,3 +21,17 @@
     transform: translateX(0px);
   }
 }
+
+.ReactModalPortal > * {
+  opacity: 0;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+}
