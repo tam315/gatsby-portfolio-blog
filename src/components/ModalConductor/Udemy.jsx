@@ -119,12 +119,16 @@ const Udemy = props => {
       junle: 'React / Redux',
       courses: [
         {
-          name: 'Build Web Apps with React JS and Flux ',
-          url: 'https://www.udemy.com/learn-and-understand-reactjs/',
+          name: 'Advanced React and Redux',
+          url: 'https://www.udemy.com/react-redux-tutorial/',
         },
         {
-          name: 'Modern React with Redux ',
+          name: 'Modern React with Redux',
           url: 'https://www.udemy.com/react-redux/',
+        },
+        {
+          name: 'Build Web Apps with React JS and Flux ',
+          url: 'https://www.udemy.com/learn-and-understand-reactjs/',
         },
       ],
     },
