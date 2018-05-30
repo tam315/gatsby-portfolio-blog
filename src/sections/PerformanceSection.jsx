@@ -150,9 +150,11 @@ const PerformanceSection = () => {
               >
                 ソースコード
               </a>
-            ) : null}
+            ) : (
+              <div style={{ color: 'transparent' }}>_</div>
+            )}
 
-            {performance.blogPath ? (
+            {performance.blogPath && (
               <Link
                 to={performance.blogPath}
                 target="_blank"
@@ -160,7 +162,7 @@ const PerformanceSection = () => {
               >
                 関連ブログ
               </Link>
-            ) : null}
+            )}
 
             <ul css={styles.techStackGrid}>
               {performance.techStack.map(tech => (
