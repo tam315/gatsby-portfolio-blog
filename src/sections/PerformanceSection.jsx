@@ -40,7 +40,7 @@ const PerformanceSection = () => {
         '酔っぱらった状態で納得のいく割勘計算を行うための小道具です。',
       techStack: [
         { name: 'Angular4', description: 'Front-end Framework' },
-        { name: 'Firebase', description: 'ホスティング' },
+        { name: 'Netlify', description: 'ホスティング' },
         { name: 'Jasmine', description: 'Unit/E2E Test' },
         { name: 'Protractor', description: 'E2E Test' },
         { name: 'Semaphore', description: 'CI/CD' },
