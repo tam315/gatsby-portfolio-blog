@@ -7,7 +7,7 @@ dateModified: '2018-06-14T11:22:26+09:00'
 thumbnail: /blogImages/20180614.png
 ---
 
-複数ドメインの Web サービスを Kubernetes 上で楽に管理するための環境構築を行ったので、手順をメモしておきます。詳細は参考サイトに非常にわかりやすくまとまっているので、ご参照ください。なお、環境は GCP を想定しています。
+複数ドメインの Web サービスを Kubernetes 上で楽に管理するための環境構築を行ったので、手順をメモしておきます。詳細は参考サイトに非常にわかりやすくまとまっているので、ご参照ください。なお、環境は Google Kubernetes Engine を想定しています。
 
 ## 目標
 
@@ -21,13 +21,25 @@ thumbnail: /blogImages/20180614.png
 
 ## Ingress Controller の選定
 
-GCE 標準の Ingress Controller では、HTTP から HTTPS へのリダイレクトができません。このため、nginx-ingress を使用しました。
+Ingress Contoller に、標準である[GLBC](https://github.com/kubernetes/ingress-gce)(GCE L7 load balancer controller)を使った場合と、
+[Nginx Ingress Controller](https://github.com/kubernetes/ingress-nginx)を使った場合では、内部の動きが異なってきます。
+
+例えば、GLBC を使った場合は、Ingress をデプロイすると自動的に **L7** ロードバランサが生成され、ここで通信を終端します。この L7 ロードバランサを使って、ダイレクトにバックエンドに通信を振り分けます。
+
+一方、Nginx Ingress Controller を使った場合は、L7 ロードバランサは作成されません。代わりに nginx-ingress-controller という**サービス**が **L4** ロードバランサを生成し、通信を終端します。この際、ingress の yaml に記載した内容は**単なる設定情報（Ingress Resource）**としてのみ機能します。一旦、Nginx Ingress Controller が通信を受けて、Ingress Resource に問い合わせを行い、
+L7 レベルのルーティングを行う、という流れです（[参考サイト](https://cloud.google.com/community/tutorials/nginx-ingress-gke)に図が載っています）。
+
+このあたりを理解するのはなかなか骨が折れますが、[こちらの記事](https://www.mkubaczyk.com/2017/12/13/kubernetes-ingress-controllers-nginx-gce-google-kubernetes-engine/)によくまとまっているので、興味のある方は見てみてください。
+
+今回は Nginx Ingress Controller を選択しました。GLBC には、HTTP から HTTPS へのリダイレクトを行う機能がないためです。
+
+なお、今回の構成では、設定情報はすべて Ingress Resource で管理するため、Nginx Ingress Controller は stateless であり、いつでも削除・再設置できます。
 
 ## 参考サイト
 
 このページでやっていることは、下記の 2 つの記事をミックスしたものです。
 
-* [1．GCE 標準の Ingress を使って証明書の自動取得をする](https://github.com/ahmetb/gke-letsencrypt)
+* [1．標準の Ingress Contorller（GLBC）を使って証明書の自動取得をする](https://github.com/ahmetb/gke-letsencrypt)
 * [2．Ingress Controller に nginx-ingress を使う](https://cloud.google.com/community/tutorials/nginx-ingress-gke)
 
 ## 手順
@@ -80,10 +92,6 @@ kubectl edit svc nginx-ingress-controller --namespace=kube-system
 # type: LoadBalancer の直下に下記を追加する
 loadBalancerIP: "1.23.4.56"
 ```
-
-#### 補足
-
-<small>GCP 標準の Ingress を使った場合は、Ingress 自身がロードバランサを生成するように見えたのですが、nginx-ingress を使った場合は、nginx-ingress-controller という**サービス**がロードバランサを生成し、通信を終端します。この際、ingress の yaml に記載した内容は**単なる設定情報（Ingress Resource）**として機能します。nginx-ingress が通信を受け、Ingress Resource に問い合わせを行い、処理方法を判断します（[参考サイト](https://cloud.google.com/community/tutorials/nginx-ingress-gke)に図が載っています）。なお、今回の構成では、設定情報はすべて Ingress Resource で管理するため、nginx-ingress は stateless であり、いつでも削除・設置できます。この点を理解するのに、時間がかかりました。</small>
 
 ### 4. DNS の設定変更
 
@@ -233,15 +241,19 @@ spec:
           servicePort: 80
 ```
 
-もし、nginx-ingress の使用をやめて GCP 標準の Ingress Controller に戻したい場合は、下記の手順を行います。
+もし、nginx-ingress の使用をやめて 標準の Ingress Controller である GLBC に戻したい場合は、下記の手順を行います。
 
-* Ingress の定義から以下の行を削除して再デプロイする
+* Ingress の定義を下記の通り変更し、再デプロイする。
 
-  ```
+  ```yaml
+  # 下記の行を削除する
   kubernetes.io/ingress.class: nginx
+
+  # もしくは下記の通り記述する（記載がない場合は暗黙的にgceが指定されますが、明示してもOK）
+  kubernetes.io/ingress.class: gce
   ```
 
-* DNS の向き先を Ingress が生成したロードバランサに変更する。IP は`kubectl get ingress`で取得できる。
+* DNS の向き先を GLBC(**L7** ロードバランサ)に変更する。IP は`kubectl get ingress`で取得できる。
 
 なお、Ingress Controller の種類にかかわらず、設定情報は Ingress Resource によって抽象化されているため、cert-manager はどちらの環境でも問題なく動作します。
 
