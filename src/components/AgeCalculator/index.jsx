@@ -6,34 +6,8 @@ const propTypes = {
 };
 
 class AgeCalculator extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.birthday = new Date(props.birthday);
-
-    this.state = {
-      age: this.calcAge(),
-    };
-
-    this.updateAge = this.updateAge.bind(this);
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(this.updateAge, 50);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  updateAge() {
-    this.setState({
-      age: this.calcAge(),
-    });
-  }
-
-  calcAge() {
-    const datetimeFrom = new Date(this.birthday);
+  static calcAge(birthday) {
+    const datetimeFrom = new Date(birthday);
     const datetimeTo = new Date();
 
     // その年の誕生日を迎えたと仮定し、年齢を仮計算する
@@ -53,14 +27,41 @@ class AgeCalculator extends React.Component {
     return result;
   }
 
-  render() {
-    const age = this.state.age.toFixed(9).split('.');
+  constructor(props) {
+    super(props);
+
+    this.birthday = new Date(props.birthday);
+
+    this.state = {
+      age: AgeCalculator.calcAge(this.birthday),
+    };
+  }
+
+  componentDidMount = () => {
+    this.updateAge();
+  };
+
+  componentWillUnmount = () => {
+    window.cancelAnimationFrame(this.animationRequestId);
+  };
+
+  updateAge = () => {
+    this.setState({
+      age: AgeCalculator.calcAge(this.birthday),
+    });
+    this.animationRequestId = window.requestAnimationFrame(this.updateAge);
+  };
+
+  render = () => {
+    const { age } = this.state;
+
+    const [integerPart, fractionPart] = age.toFixed(9).split('.');
     return (
       <div>
-        {age[0]}.<span css={{ fontSize: '0.8rem' }}>{age[1]}</span>歳
+        {integerPart}.<span css={{ fontSize: '0.8rem' }}>{fractionPart}</span>歳
       </div>
     );
-  }
+  };
 }
 
 AgeCalculator.propTypes = propTypes;
