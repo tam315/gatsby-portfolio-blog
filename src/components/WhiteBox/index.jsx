@@ -7,7 +7,7 @@ const propTypes = {
     PropTypes.node,
   ]).isRequired,
   css: PropTypes.object, // eslint-disable-line
-  hover: PropTypes.boolean,
+  hover: PropTypes.bool,
 };
 
 const defaultProps = {
