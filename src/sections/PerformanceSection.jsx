@@ -5,17 +5,38 @@ import IconExtLink from '../components/IconExtLink';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import WhiteBox from '../components/WhiteBox';
-import jissekiShisanPng from '../images/jisseki-shisan.png';
 import jissekiWarikanPng from '../images/jisseki-warikan.png';
+import jissekiTravelrPng from '../images/jisseki-travelr.png';
 import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
   const performances = [
     {
-      name: 'Yuuniworks(このサイト)',
-      description:
-        'Single Page Applicationとして作成した、事業広報用Webページです。',
+      name: 'Travelr',
+      description: '古い写真と新しい写真を見比べて楽しむサービスです。',
+      techStack: [
+        { name: 'React', description: 'UI' },
+        { name: 'Redux', description: 'State管理' },
+        { name: 'redux-observable', description: 'reduxミドルウェア' },
+        { name: 'material-ui', description: 'UIライブラリ' },
+        { name: 'Workbox', description: 'PWA対応' },
+        { name: 'jest/enzyme', description: 'テスト' },
+        { name: 'Netlify', description: 'ホスティング' },
+        { name: 'Typescript', description: '型付け' },
+        { name: 'Firebase', description: '認証管理及びストレージ' },
+        { name: 'Node.js', description: 'APIサーバ' },
+        { name: 'PostgreSQL/PostGIS', description: 'データベース' },
+        { name: 'Kubernetes', description: 'コンテナ管理' },
+      ],
+      webpageURL: 'http://travelr.yuuniworks.com',
+      githubURL: 'https://github.com/junkboy0315/travelr',
+      blogPath: '/blog/2018-07-31-デモシステムを作成しました/',
+      imgPath: jissekiTravelrPng,
+    },
+    {
+      name: 'Yuuniworks',
+      description: 'Gatsbyを使って作成した、当方の事業広報用Webページです。',
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Gatsby', description: 'Static Site Generator' },
@@ -39,7 +60,7 @@ const PerformanceSection = () => {
       description:
         '酔っぱらった状態で納得のいく割勘計算を行うための小道具です。',
       techStack: [
-        { name: 'Angular4', description: 'Front-end Framework' },
+        { name: 'Angular6', description: 'Front-end Framework' },
         { name: 'Netlify', description: 'ホスティング' },
         { name: 'Jasmine', description: 'Unit/E2E Test' },
         { name: 'Protractor', description: 'E2E Test' },
@@ -49,16 +70,6 @@ const PerformanceSection = () => {
       webpageURL: 'http://split.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/splitbills',
       imgPath: jissekiWarikanPng,
-    },
-    {
-      name: '資産運用支援ツール（作成中）',
-      description:
-        '投資信託につきものである「リバランス」を楽に行うための支援ツールです。',
-      techStack: [
-        { name: 'React', description: 'UI' },
-        { name: 'Redux', description: 'State Container' },
-      ],
-      imgPath: jissekiShisanPng,
     },
   ];
 
