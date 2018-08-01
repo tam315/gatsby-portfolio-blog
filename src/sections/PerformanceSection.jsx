@@ -123,7 +123,11 @@ const PerformanceSection = () => {
       <div css={styles.grid}>
         {performances.map(performance => (
           <WhiteBox key={performance.name} css={styles.whiteBox}>
-            <a href={performance.webpageURL} target="_blank">
+            <a
+              href={performance.webpageURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={performance.imgPath}
                 css={styles.itemImage}
@@ -134,6 +138,7 @@ const PerformanceSection = () => {
             <a
               href={performance.webpageURL}
               target="_blank"
+              rel="noopener noreferrer"
               css={styles.itemTitle}
             >
               {performance.name}
@@ -146,6 +151,7 @@ const PerformanceSection = () => {
               <a
                 href={performance.githubURL}
                 target="_blank"
+                rel="noopener noreferrer"
                 css={styles.externalLink}
               >
                 ソースコード
