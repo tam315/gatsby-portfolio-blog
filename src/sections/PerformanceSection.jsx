@@ -172,9 +172,16 @@ const PerformanceSection = () => {
 
             <ul css={styles.techStackGrid}>
               {performance.techStack.map(tech => (
-                <span data-for={tech.name} data-tip key={tech.name}>
+                <span
+                  data-for={tech.name + tech.description}
+                  data-tip
+                  key={tech.name}
+                >
                   {tech.name}
-                  <ReactTooltip id={tech.name} effect="solid">
+                  <ReactTooltip
+                    id={tech.name + tech.description}
+                    effect="solid"
+                  >
                     {tech.description}
                   </ReactTooltip>
                 </span>
