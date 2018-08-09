@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
 import Link from 'gatsby-link';
 import 'prismjs/themes/prism-tomorrow.css';
