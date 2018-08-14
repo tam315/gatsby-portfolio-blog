@@ -25,6 +25,7 @@ const PerformanceSection = () => {
         { name: 'Netlify', description: 'ホスティング' },
         { name: 'Typescript', description: '型付け' },
         { name: 'Firebase', description: '認証管理及びストレージ' },
+        { name: 'GraphQL', description: '問い合わせ言語' },
         { name: 'Node.js', description: 'APIサーバ' },
         { name: 'PostgreSQL/PostGIS', description: 'データベース' },
         { name: 'Kubernetes', description: 'コンテナ管理' },

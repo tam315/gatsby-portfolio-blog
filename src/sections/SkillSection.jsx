@@ -59,20 +59,17 @@ const SkillSection = props => {
     基本: {
       Javascript: 4,
       'Node.js': 4,
-      'HTML 5': 4,
-      'CSS 3': 4,
-      DOM: 4,
-      git: 3,
-      'TDD/BDD': 3,
+      'HTML5/CSS3': 4,
+      Git: 3,
+      Jest: 3,
       Typescript: 3,
+      GraphQL: 2,
       Python: 2,
       RxJS: 2,
     },
     フロントエンド: {
-      React: 4,
-      Redux: 4,
+      'React/Redux': 4,
       'redux-observable': 3,
-      Jest: 3,
       Enzyme: 3,
       Workbox: 3,
       'Material-UI': 3,
@@ -117,7 +114,7 @@ const SkillSection = props => {
             role="button"
             tabIndex={0}
           >
-            Udemy（<span css={styles.link}>学習したコースの一覧</span>）
+            Udemy（<span css={styles.link}>習得済みコース一覧</span>）
           </div>
         ),
       },

@@ -40,8 +40,17 @@ const Udemy = props => {
       junle: 'Git',
       courses: [
         {
-          name: 'Git Complete: The definitive, step-by-step guide to Git ',
+          name: 'Git Complete: The definitive, step-by-step guide to Git',
           url: 'https://www.udemy.com/git-complete/',
+        },
+      ],
+    },
+    {
+      junle: 'GraphQL',
+      courses: [
+        {
+          name: 'GraphQL with React: The Complete Developers Guide',
+          url: 'https://www.udemy.com/graphql-with-react-course/',
         },
       ],
     },
@@ -244,6 +253,7 @@ const Udemy = props => {
             <a
               href={course.url}
               target="_blank"
+              rel="noopener noreferrer"
               css={styles.courseName}
               key={course.name}
             >
