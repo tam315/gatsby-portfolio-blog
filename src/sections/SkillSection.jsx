@@ -57,11 +57,11 @@ const SkillSection = props => {
 
   const skills = {
     基本: {
-      Javascript: 5,
+      JavaScript: 5,
       'HTML5/CSS3': 5,
       'Node.js': 4,
       Jest: 4,
-      Typescript: 4,
+      TypeScript: 4,
       GraphQL: 3,
       Python: 3,
       RxJS: 3,
