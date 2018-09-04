@@ -8,6 +8,7 @@ import WhiteBox from '../components/WhiteBox';
 import jissekiWarikanPng from '../images/jisseki-warikan.png';
 import jissekiTravelrPng from '../images/jisseki-travelr.png';
 import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
+import jissekiNote from '../images/jisseki-note.png';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
@@ -36,7 +37,7 @@ const PerformanceSection = () => {
       imgPath: jissekiTravelrPng,
     },
     {
-      name: 'Yuuniworks',
+      name: 'Yuuniworks Web',
       description: 'Gatsbyを使って作成した、当方の事業広報用Webページです。',
       techStack: [
         { name: 'React', description: 'UI' },
@@ -72,14 +73,29 @@ const PerformanceSection = () => {
       githubURL: 'https://github.com/junkboy0315/splitbills',
       imgPath: jissekiWarikanPng,
     },
+    {
+      name: 'Yuuniworks Notes',
+      description:
+        'VuePressで作成したドキュメントサイトです。Algoliaによる全文検索を実装しています。',
+      techStack: [
+        { name: 'VuePress', description: 'Static Site Generator' },
+        { name: 'Vue.js', description: 'UI' },
+        { name: 'Algolia DocSearch', description: '高度な全文検索' },
+      ],
+      webpageURL: 'http://note.yuuniworks.com',
+      githubURL: 'https://github.com/junkboy0315/markdown-notes',
+      imgPath: jissekiNote,
+    },
   ];
 
   const styles = {
     grid: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 350px))',
       gridGap: rhythm(2),
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 350px))',
       justifyContent: 'center',
+      margin: 'auto',
+      maxWidth: 1200,
     },
     whiteBox: {
       padding: rhythm(1),
