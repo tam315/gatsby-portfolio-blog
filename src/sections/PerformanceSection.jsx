@@ -9,13 +9,15 @@ import jissekiWarikanPng from '../images/jisseki-warikan.png';
 import jissekiTravelrPng from '../images/jisseki-travelr.png';
 import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
 import jissekiNote from '../images/jisseki-note.png';
+import jissekiCompare from '../images/jisseki-compare.png';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
   const performances = [
     {
       name: 'Travelr',
-      description: '古い写真と新しい写真を見比べて楽しむサービスです。',
+      description:
+        '古い写真と新しい写真を比較して楽しむ写真投稿サービスです。デモ用に作成したものです。',
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Redux', description: 'State管理' },
@@ -42,6 +44,7 @@ const PerformanceSection = () => {
       techStack: [
         { name: 'React', description: 'UI' },
         { name: 'Gatsby', description: 'Static Site Generator' },
+        { name: 'GraphQL', description: 'クエリ言語' },
         {
           name: 'AWS API Gateway',
           description: '問い合わせフォーム用バックエンド',
@@ -56,6 +59,18 @@ const PerformanceSection = () => {
       githubURL: 'https://github.com/junkboy0315/yuuni-web',
       blogPath: '/blog/2018-04-09-JAMStackなWebサイトの作成/',
       imgPath: jissekiYuuniJpg,
+    },
+    {
+      name: 'react-compare-image',
+      description:
+        'スライダを使って画像を比較するためのコンポーネントです。しばしば海外からのPRがあります。',
+      techStack: [
+        { name: 'React', description: 'UI' },
+        { name: 'DOM', description: '要素の情報取得' },
+      ],
+      webpageURL: 'https://www.npmjs.com/package/react-compare-image',
+      githubURL: 'https://github.com/junkboy0315/react-compare-image',
+      imgPath: jissekiCompare,
     },
     {
       name: 'SplitBills',
