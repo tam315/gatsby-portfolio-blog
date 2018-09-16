@@ -36,7 +36,7 @@ const ProfileSection = () => {
       textAlign: 'center',
     },
     gaiyouPicture: {
-      width: '150px',
+      width: '200px',
       borderRadius: '50%',
     },
     gaiyouListItem: {
