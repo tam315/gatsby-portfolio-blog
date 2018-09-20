@@ -2,14 +2,16 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DiscussionEmbed } from 'disqus-react';
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import 'prismjs/themes/prism-tomorrow.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-import SEO from '../components/SEO';
+import Layout from '../components/Layout';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
+import SEO from '../components/SEO';
 import WhiteBox from '../components/WhiteBox';
 import profileJpg from '../images/profile.jpg';
 import { rhythm } from '../utils/typography';
@@ -179,57 +181,64 @@ export default function BlogPost(props) {
   };
 
   return (
-    <SectionContainer colorNumber="1" isTop>
-      <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
+    <Layout location={props.location}>
+      <SectionContainer colorNumber="1" isTop>
+        <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
 
-      <div css={styles.container}>
-        <Link to="/blog/" css={styles.backButton}>
-          <FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} />{' '}
-          記事一覧に戻る
-        </Link>
+        <div css={styles.container}>
+          <Link to="/blog/" css={styles.backButton}>
+            <FontAwesomeIcon
+              icon="arrow-left"
+              style={styles.backButton.arrow}
+            />
+            記事一覧に戻る
+          </Link>
 
-        <WhiteBox>
-          <article css={styles.boxInner}>
-            <time css={styles.datetime} dateTime={post.frontmatter.date}>
-              {post.frontmatter.date.slice(0, 10)}
-            </time>
-            <h1 css={styles.title}>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </article>
-        </WhiteBox>
+          <WhiteBox>
+            <article css={styles.boxInner}>
+              <time css={styles.datetime} dateTime={post.frontmatter.date}>
+                {post.frontmatter.date.slice(0, 10)}
+              </time>
+              <h1 css={styles.title}>{post.frontmatter.title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </article>
+          </WhiteBox>
 
-        <WhiteBox>
-          <aside css={styles.comments}>
-            <DiscussionEmbed shortname="yuuniworks" config={disqusConfig} />
-          </aside>
-        </WhiteBox>
+          <WhiteBox>
+            <aside css={styles.comments}>
+              <DiscussionEmbed shortname="yuuniworks" config={disqusConfig} />
+            </aside>
+          </WhiteBox>
 
-        <WhiteBox>
-          <footer css={styles.footer}>
-            <img src={profileJpg} alt="profile" />
-            <div>
-              <p>田村 翔太</p>
-              <p>
-                <Link to="/">Yuuniworks</Link>{' '}
-                代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle
-                Page Applicationや、NodeJSを使ったAPI開発を得意としています。
-              </p>
-            </div>
-          </footer>
-        </WhiteBox>
+          <WhiteBox>
+            <footer css={styles.footer}>
+              <img src={profileJpg} alt="profile" />
+              <div>
+                <p>田村 翔太</p>
+                <p>
+                  <Link to="/">Yuuniworks</Link>{' '}
+                  代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle
+                  Page Applicationや、NodeJSを使ったAPI開発を得意としています。
+                </p>
+              </div>
+            </footer>
+          </WhiteBox>
 
-        <Link to="/blog/" css={styles.backButton}>
-          <FontAwesomeIcon icon="arrow-left" style={styles.backButton.arrow} />{' '}
-          記事一覧に戻る
-        </Link>
-      </div>
+          <Link to="/blog/" css={styles.backButton}>
+            <FontAwesomeIcon
+              icon="arrow-left"
+              style={styles.backButton.arrow}
+            />
+            記事一覧に戻る
+          </Link>
+        </div>
 
-      <SEO postNode={post} />
+        <SEO postNode={post} />
 
-      <Helmet
-        script={[
-          {
-            innerHTML: `
+        <Helmet
+          script={[
+            {
+              innerHTML: `
               (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
@@ -238,10 +247,11 @@ export default function BlogPost(props) {
                 fjs.parentNode.insertBefore(js, fjs);
               }(document, 'script', 'facebook-jssdk'));
             `,
-          },
-        ]}
-      />
-    </SectionContainer>
+            },
+          ]}
+        />
+      </SectionContainer>
+    </Layout>
   );
 }
 

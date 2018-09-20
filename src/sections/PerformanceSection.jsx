@@ -57,7 +57,7 @@ const PerformanceSection = () => {
       ],
       webpageURL: 'http://www.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/yuuni-web',
-      blogPath: '/blog/2018-04-09-JAMStackなWebサイトの作成/',
+      blogPath: '/blog/2018-04-09-jamstackなwebサイトの作成/',
       imgPath: jissekiYuuniJpg,
     },
     {

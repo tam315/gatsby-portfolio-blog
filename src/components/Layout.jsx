@@ -11,8 +11,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import 'string.prototype.startswith';
-import Header from '../components/Header';
-import RipIe from '../components/RipIe';
+import Header from './Header';
+import RipIe from './RipIe';
 
 library.add(
   faArrowLeft,
@@ -22,12 +22,6 @@ library.add(
   faStarEmpty,
   faTimesCircle,
 );
-
-const propTypes = {
-  children: PropTypes.func.isRequired,
-  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
-    .isRequired,
-};
 
 const TemplateWrapper = ({ children, location }) => {
   const style = {
@@ -46,11 +40,9 @@ const TemplateWrapper = ({ children, location }) => {
       </Helmet>
       <Header location={location} />
 
-      {children()}
+      {children}
     </div>
   );
 };
-
-TemplateWrapper.propTypes = propTypes;
 
 export default TemplateWrapper;
