@@ -10,7 +10,7 @@ const GaiyouSection = props => {
   const articles = [
     [
       '何ができる？',
-      'React/Reduxを使ったSPA/PWA等の開発や、ServerlessなAPI開発が可能です。',
+      'シングルページアプリケーション開発、静的サイトジェネレータによるWebページの作成、Node.js等によるバックエンド開発等を行っています。',
     ],
     [
       '契約形態は？',
