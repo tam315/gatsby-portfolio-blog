@@ -10,19 +10,15 @@ const GaiyouSection = props => {
   const articles = [
     [
       '何ができる？',
-      'シングルページアプリケーション開発、静的サイトジェネレータによるWebページの作成、Node.js等によるバックエンド開発等を行っています。',
+      'シングルページアプリケーション開発、静的サイトジェネレータによるWebページの作成、Node.js等によるバックエンド開発等を行っています。<br /><br /><a href="https://github.com/junkboy0315/" target="_blank">Githubアカウントはこちら</a>',
     ],
     [
       '契約形態は？',
-      '準委任契約による人的リソースの提供が可能です。内容によっては請負契約も可能です。',
+      '準委任契約(時間単価4,000円～)によるリソースの提供が可能です。開発内容によっては、請負契約も可能です。',
     ],
     [
       '常駐できる？',
       'リモートワークを前提とさせて頂いておりますが、遠方での打ち合わせ等にも柔軟に対応いたします。',
-    ],
-    [
-      'いくらかかる？',
-      '準委任契約の場合は4000円/hから承っております。請負契約の場合は期間や内容に応じたお見書を作成いたします。',
     ],
     [
       'いま仕事できる？',
@@ -80,7 +76,8 @@ const GaiyouSection = props => {
               <FontAwesomeIcon icon="caret-square-right" style={styles.caret} />
               {article[0]}
             </div>
-            <div>{article[1]}</div>
+            {/* eslint-disable-next-line */}
+            <div dangerouslySetInnerHTML={{ __html: article[1] }} />
           </li>
         ))}
       </WhiteBox>
