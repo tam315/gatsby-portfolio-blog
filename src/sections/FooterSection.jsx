@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
-import svgFacebook from '../icons/footer-facebook.svg';
 import svgForm from '../icons/footer-form.svg';
 import svgGithub from '../icons/footer-github.svg';
 import svgMail from '../icons/footer-mail.svg';
@@ -23,11 +22,6 @@ const FooterSection = props => {
       link: 'mailto:info@yuuniworks.com',
     },
     {
-      imgPath: svgFacebook,
-      description: 'facebook.com/yuuniworks',
-      link: 'https://www.facebook.com/yuuniworks/',
-    },
-    {
       imgPath: svgGithub,
       description: 'github.com/junkboy0315',
       link: 'https://github.com/junkboy0315/',
@@ -46,11 +40,12 @@ const FooterSection = props => {
 
   const styles = {
     container: {
-      display: 'flex',
-      flexWrap: 'wrap',
+      display: 'grid',
+      gridColumnGap: rhythm(1),
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 250px))',
       justifyContent: 'center',
       margin: 'auto',
-      maxWidth: '850px',
+      maxWidth: '550px',
     },
     link: {
       color: '#fff',
@@ -65,13 +60,11 @@ const FooterSection = props => {
     image: {
       width: '30px',
       height: '30px',
-      marginLeft: '40px',
     },
     description: {
       color: '#fff',
       marginBottom: 0,
-      marginLeft: rhythm(1 / 2),
-      width: '15rem',
+      paddingLeft: rhythm(1 / 2),
     },
   };
 
@@ -86,6 +79,7 @@ const FooterSection = props => {
             onClick={info.onClick || null}
             css={styles.link}
             target="_blank"
+            rel="noopener noreferrer"
             key={info.description}
           >
             <div css={styles.ItemContainer}>
