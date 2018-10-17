@@ -38,6 +38,7 @@ const GaiyouSection = props => {
     caret: {
       color: '#6292F1',
       marginRight: rhythm(1 / 8),
+      width: '0.875em',
     },
     title: {
       fontWeight: 'bold',
