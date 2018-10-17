@@ -9,6 +9,7 @@ import PerformanceSection from '../sections/PerformanceSection';
 import ProfileSection from '../sections/ProfileSection';
 import SkillSection from '../sections/SkillSection';
 import TopSection from '../sections/TopSection';
+import Layout from '../components/Layout';
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout location={this.props.location}>
         {this.state.currentModal && (
           <ModalConductor
             currentModal={this.state.currentModal}
@@ -46,7 +47,7 @@ class IndexPage extends React.Component {
         <FooterSection setCurrentModal={this.setCurrentModal} />
 
         <SEO />
-      </div>
+      </Layout>
     );
   }
 }
