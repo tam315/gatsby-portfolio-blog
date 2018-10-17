@@ -34,9 +34,6 @@ const TemplateWrapper = ({ children, location }) => {
       <RipIe />
       <Helmet>
         <html lang="ja" />
-
-        {/* polifyll to use react-onclickoutside on IE11 */}
-        <script src="//cdnjs.cloudflare.com/ajax/libs/dom4/2.0.0/dom4.js" />
       </Helmet>
       <Header location={location} />
 
