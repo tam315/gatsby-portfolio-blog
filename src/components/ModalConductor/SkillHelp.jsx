@@ -11,24 +11,16 @@ const propTypes = {
 const SkillHelp = props => {
   const articles = [
     {
-      level: 5,
-      description: '3年程度の経験を持つ平均的なエンジニア程度',
-    },
-    {
-      level: 4,
-      description: '1年程度の経験を持つ平均的なエンジニア程度',
-    },
-    {
       level: 3,
-      description: '常時ドキュメントを参照しながらであれば利用できる程度',
+      description: '1年以上の経験を持つ平均的なエンジニア程度。',
     },
     {
       level: 2,
-      description: 'チュートリアルをこなした程度',
+      description: '常時ドキュメントを参照しながらであれば利用できる程度。',
     },
     {
       level: 1,
-      description: '知っている・聞いたことがある程度',
+      description: '使ったことがある程度。',
     },
   ];
 

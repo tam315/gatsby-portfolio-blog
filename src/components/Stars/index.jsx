@@ -21,7 +21,7 @@ const Stars = ({ countOfStars }) => {
   for (let i = 0; i < countOfStars; i += 1) {
     stars.push(1);
   }
-  for (let i = 5; i > countOfStars; i -= 1) {
+  for (let i = 3; i > countOfStars; i -= 1) {
     stars.push(null);
   }
 
