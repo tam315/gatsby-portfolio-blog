@@ -5,27 +5,41 @@ import IconExtLink from '../components/IconExtLink';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import WhiteBox from '../components/WhiteBox';
-import jissekiWarikanPng from '../images/jisseki-warikan.png';
-import jissekiTravelrPng from '../images/jisseki-travelr.png';
-import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
-import jissekiNote from '../images/jisseki-note.png';
 import jissekiCompare from '../images/jisseki-compare.png';
+import jissekiNote from '../images/jisseki-note.png';
+import jissekiRebalancer from '../images/jisseki-rebalancer.jpg';
+import jissekiTravelrPng from '../images/jisseki-travelr.png';
+import jissekiWarikanPng from '../images/jisseki-warikan.png';
+import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
   const performances = [
     {
+      name: 'Portfolio Rebalancer',
+      description:
+        'ポートフォリオのリバランスを簡単に行えるようにすることで、資産運用を支援するツールです。',
+      techStack: [
+        { name: 'Vue.js/Vuex', description: 'UI/State管理' },
+        { name: 'Nuxt.js', description: 'Vue.jsフレームワーク' },
+        { name: 'Bulma', description: 'CSSライブラリ' },
+        { name: 'Firebase Auth', description: '認証管理' },
+        { name: 'Firebase Firestore', description: 'データベース' },
+      ],
+      webpageURL: 'http://rebalancer.yuuniworks.com',
+      githubURL: 'https://github.com/junkboy0315/rebalancer',
+      imgPath: jissekiRebalancer,
+    },
+    {
       name: 'Travelr',
       description:
         '古い写真と新しい写真を比較して楽しむ写真投稿サービスです。デモ用に作成したものです。',
       techStack: [
-        { name: 'React', description: 'UI' },
-        { name: 'Redux', description: 'State管理' },
+        { name: 'React/Redux', description: 'UI/State管理' },
         { name: 'redux-observable', description: 'reduxミドルウェア' },
         { name: 'material-ui', description: 'UIライブラリ' },
         { name: 'Workbox', description: 'PWA対応' },
         { name: 'jest/enzyme', description: 'テスト' },
-        { name: 'Netlify', description: 'ホスティング' },
         { name: 'Typescript', description: '型付け' },
         { name: 'Firebase', description: '認証管理及びストレージ' },
         { name: 'GraphQL', description: '問い合わせ言語' },
@@ -39,35 +53,10 @@ const PerformanceSection = () => {
       imgPath: jissekiTravelrPng,
     },
     {
-      name: 'Yuuniworks Web',
-      description: 'Gatsbyを使って作成した、当方の事業広報用Webページです。',
-      techStack: [
-        { name: 'React', description: 'UI' },
-        { name: 'Gatsby', description: 'Static Site Generator' },
-        { name: 'GraphQL', description: 'クエリ言語' },
-        {
-          name: 'AWS API Gateway',
-          description: '問い合わせフォーム用バックエンド',
-        },
-        { name: 'AWS Lambda', description: '問い合わせフォーム用バックエンド' },
-        { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
-        { name: 'Netlify', description: 'ホスティング、CI/CD' },
-        { name: 'Netlify CMS', description: 'CMS' },
-        { name: 'Sentry', description: 'クライアントサイドのエラー収集' },
-      ],
-      webpageURL: 'http://www.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/yuuni-web',
-      blogPath: '/blog/2018-04-09-jamstackなwebサイトの作成/',
-      imgPath: jissekiYuuniJpg,
-    },
-    {
       name: 'react-compare-image',
       description:
-        'スライダを使って画像を比較するためのコンポーネントです。しばしば海外からのPRがあります。',
-      techStack: [
-        { name: 'React', description: 'UI' },
-        { name: 'DOM', description: '要素の情報取得' },
-      ],
+        'スライダを使って画像を比較するためのReactコンポーネントです。しばしば海外からのPRがあります。',
+      techStack: [{ name: 'React', description: 'UI' }],
       webpageURL: 'https://www.npmjs.com/package/react-compare-image',
       githubURL: 'https://github.com/junkboy0315/react-compare-image',
       imgPath: jissekiCompare,
@@ -89,12 +78,32 @@ const PerformanceSection = () => {
       imgPath: jissekiWarikanPng,
     },
     {
+      name: 'Yuuniworks Web',
+      description: 'Gatsbyを使って作成した、当方の事業広報用Webページです。',
+      techStack: [
+        { name: 'Gatsby', description: 'Static Site Generator' },
+        { name: 'GraphQL', description: 'クエリ言語' },
+        {
+          name: 'AWS API Gateway',
+          description: '問い合わせフォーム用バックエンド',
+        },
+        { name: 'AWS Lambda', description: '問い合わせフォーム用バックエンド' },
+        { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
+        { name: 'Netlify', description: 'ホスティング、CI/CD' },
+        { name: 'Netlify CMS', description: 'CMS' },
+        { name: 'Sentry', description: 'クライアントサイドのエラー収集' },
+      ],
+      webpageURL: 'http://www.yuuniworks.com',
+      githubURL: 'https://github.com/junkboy0315/yuuni-web',
+      blogPath: '/blog/2018-04-09-jamstackなwebサイトの作成/',
+      imgPath: jissekiYuuniJpg,
+    },
+    {
       name: 'Yuuniworks Notes',
       description:
         'VuePressで作成したドキュメントサイトです。Algoliaによる全文検索を実装しています。',
       techStack: [
         { name: 'VuePress', description: 'Static Site Generator' },
-        { name: 'Vue.js', description: 'UI' },
         { name: 'Algolia DocSearch', description: '高度な全文検索' },
       ],
       webpageURL: 'http://note.yuuniworks.com',
