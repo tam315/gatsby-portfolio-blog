@@ -34,6 +34,10 @@ const TemplateWrapper = ({ children, location }) => {
       <RipIe />
       <Helmet>
         <html lang="ja" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;subset=japanese"
+          rel="stylesheet"
+        />
       </Helmet>
       <Header location={location} />
 
