@@ -144,9 +144,6 @@ export default function BlogPost(props) {
           marginBottom: '1rem',
           textAlign: 'center',
         },
-        ' div p:last-child': {
-          fontSize: '0.8rem',
-        },
         ' p': {
           marginBottom: 0,
         },
@@ -161,9 +158,6 @@ export default function BlogPost(props) {
         ' div p:first-child': {
           fontWeight: 'bold',
           marginBottom: '1rem',
-        },
-        ' div p:last-child': {
-          fontSize: '0.8rem',
         },
         ' p': {
           marginBottom: 0,
@@ -217,8 +211,7 @@ export default function BlogPost(props) {
                 <p>田村 翔太</p>
                 <p>
                   <Link to="/">Yuuniworks</Link>{' '}
-                  代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Reduxを用いたSingle
-                  Page Applicationや、NodeJSを使ったAPI開発を得意としています。
+                  代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Vue.jsを用いたSPAの開発や、NodeJSを使ったAPI開発を得意としています。
                 </p>
               </div>
             </footer>
