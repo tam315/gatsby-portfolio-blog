@@ -13,7 +13,7 @@ class RipIe extends React.Component {
     this.onCloseClick = this.onCloseClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // Judgement if the browser is IE
     if (typeof document !== 'undefined' && document.documentMode) {
       this.setState({
