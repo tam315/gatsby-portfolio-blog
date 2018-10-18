@@ -72,14 +72,14 @@ const SkillSection = props => {
       'Material-UI': 3,
       Angular: 2,
       'PWA / Workbox': 2,
-      'redux-observable': 1,
+      'Nuxt.js / Hugo / Gatsby': 2,
     },
     バックエンド: {
       Docker: 3,
-      RDBMS: 3,
+      RDBMS: 2,
       GCP: 2,
       Firebase: 2,
-      Kubernetes: 1,
+      Kubernetes: 2,
     },
     その他: [
       {
