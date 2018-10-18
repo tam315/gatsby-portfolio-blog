@@ -78,7 +78,7 @@ class RipIe extends React.Component {
 
         <p>
           当サイトはInternet
-          Explorerに対応したくありません。性能のよい、下記のようなブラウザを使ってみませんか。
+          Explorerに対応しておりません。より性能のよい、下記のようなブラウザを使ってみませんか？
         </p>
         <ul css={{ float: 'left' }}>
           <li>
