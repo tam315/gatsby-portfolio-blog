@@ -7,7 +7,7 @@ import Link from 'gatsby-link';
 import 'prismjs/themes/prism-tomorrow.css';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Helmet from 'react-helmet';
+import GoogleAds from '../components/GoogleAds';
 import Layout from '../components/Layout';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
@@ -24,9 +24,6 @@ const propTypes = {
 
 export default function BlogPost(props) {
   const styles = {
-    adwords: {
-      margin: '1rem 0',
-    },
     container: {
       maxWidth: '800px',
       margin: 'auto',
@@ -179,6 +176,7 @@ export default function BlogPost(props) {
 
   return (
     <Layout location={props.location}>
+      <GoogleAds />
       <SectionContainer colorNumber="1" isTop>
         <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
         <div css={styles.container}>
@@ -190,17 +188,6 @@ export default function BlogPost(props) {
             記事一覧に戻る
           </Link>
 
-          {/* adsense */}
-          <ins
-            css={styles.adwords}
-            className="adsbygoogle"
-            style={{ display: 'block' }}
-            data-ad-client="ca-pub-7134126650568891"
-            data-ad-slot="8579224298"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-
           <WhiteBox>
             <article css={styles.boxInner}>
               <time css={styles.datetime} dateTime={post.frontmatter.date}>
@@ -208,16 +195,6 @@ export default function BlogPost(props) {
               </time>
               <h1 css={styles.title}>{post.frontmatter.title}</h1>
               <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              {/* adsense */}
-              <ins
-                css={styles.adwords}
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client="ca-pub-7134126650568891"
-                data-ad-slot="8579224298"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
             </article>
           </WhiteBox>
 
@@ -249,19 +226,6 @@ export default function BlogPost(props) {
           </Link>
         </div>
         <SEO postNode={post} />
-        <Helmet>
-          {/* adsense */}
-          <script
-            async
-            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          />
-          <script />
-          <script>
-            {`
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          `}
-          </script>
-        </Helmet>
       </SectionContainer>
     </Layout>
   );
