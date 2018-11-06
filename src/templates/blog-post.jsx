@@ -258,10 +258,7 @@ export default function BlogPost(props) {
           <script />
           <script>
             {`
-          (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-7134126650568891",
-            enable_page_level_ads: true
-          });
+          (adsbygoogle = window.adsbygoogle || []).push({});
           `}
           </script>
         </Helmet>
