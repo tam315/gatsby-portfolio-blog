@@ -133,8 +133,7 @@ const ProfileSection = () => {
             <span css={styles.keirekiGray}>(2018.4 - )</span>
           </p>
           <p>
-            フリーランスエンジニアとして独立。Single Page
-            Applicationの開発を中心に受託を行う。
+            フリーランスエンジニアとして独立。フルスタックに活動中。
             APIとフロントエンドが分離された美しく優しい世界を広めるべく、日々邁進中。
           </p>
 

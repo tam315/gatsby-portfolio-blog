@@ -2,7 +2,7 @@ module.exports = {
   corporationName: 'Yuuniworks',
   siteTitle: 'Yuuniworks / 島根のフリーランスエンジニア',
   siteDescription:
-    'フリーランスのフロントエンドエンジニアです。React/Reduxを用いたSPAや、NodeJSによるAPI開発を得意としています。',
+    'フリーランスのフルスタックエンジニアです。Python/Node.js/GoによるAPIの開発、React/Vue.js等によるSPAの開発などを行っています。',
   siteKeywords:
     'SPA,Serverless,サーバーレス,Lambda,AWS,React,Redux,Angular,フリーランス',
   siteUrl: 'https://www.yuuniworks.com',

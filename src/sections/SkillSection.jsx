@@ -56,26 +56,23 @@ const SkillSection = props => {
   };
 
   const skills = {
-    基本: {
-      'JavaScript / Typescript': 3,
-      'HTML / CSS': 3,
-      Jest: 3,
-      'Node.js': 2,
-      GraphQL: 1,
-      Python: 1,
-      RxJS: 1,
-    },
     フロントエンド: {
+      'JavaScript / Typescript': 3,
       'React / Redux': 3,
       'Vue.js / Vuex': 3,
-      Enzyme: 3,
+      'Jest/Enzyme': 3,
       'Material-UI': 3,
       Angular: 2,
       'PWA / Workbox': 2,
       'Nuxt.js / Hugo / Gatsby': 2,
+      GraphQL: 1,
+      RxJS: 1,
     },
     バックエンド: {
       Docker: 3,
+      'Node.js': 2,
+      Python: 2,
+      Go: 2,
       RDBMS: 2,
       GCP: 2,
       Firebase: 2,
@@ -115,11 +112,7 @@ const SkillSection = props => {
       },
       {
         title: '言語',
-        content: (
-          <div>
-            日本語<br />英語（○読む書く聞く、×話す）
-          </div>
-        ),
+        content: <div>日本語、英語</div>,
       },
       {
         title: '好きなツール',
@@ -133,8 +126,8 @@ const SkillSection = props => {
       <SectionHeader text="スキル" colorNumber="2" />
       <div css={styles.grid}>
         <WhiteBox css={styles.whiteBox}>
-          <div css={styles.containerKihon}>
-            <h3>基本</h3>
+          <div>
+            <h3>フロントエンド関連</h3>
             <div
               css={styles.helpButton}
               onClick={() => props.setCurrentModal('SKILL_HELP')}
@@ -146,19 +139,6 @@ const SkillSection = props => {
             >
               <img src={questionSvg} alt="hint button" />
             </div>
-            {Object.keys(skills['基本']).map(skill => (
-              <Skill
-                skillName={skill}
-                skillLevel={skills['基本'][skill]}
-                key={skill}
-              />
-            ))}
-          </div>
-        </WhiteBox>
-
-        <WhiteBox css={styles.whiteBox}>
-          <div>
-            <h3>フロントエンド</h3>
             {Object.keys(skills['フロントエンド']).map(skill => (
               <Skill
                 skillName={skill}
@@ -171,7 +151,7 @@ const SkillSection = props => {
 
         <WhiteBox css={styles.whiteBox}>
           <div>
-            <h3>バックエンド</h3>
+            <h3>バックエンド関連</h3>
             {Object.keys(skills['バックエンド']).map(skill => (
               <Skill
                 skillName={skill}

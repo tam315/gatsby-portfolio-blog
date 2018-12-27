@@ -10,7 +10,7 @@ const GaiyouSection = props => {
   const articles = [
     [
       '何ができる？',
-      'シングルページアプリケーション開発、静的サイトジェネレータによるWebページの作成、Node.js等によるバックエンド開発等を行っています。<br /><br /><a href="https://github.com/junkboy0315/" target="_blank">Githubアカウントはこちら</a>',
+      'Python/Node.js/GoによるAPIの開発、React/Vue.js等によるSPAの開発などを行っています。<br /><br /><a href="https://github.com/junkboy0315/" target="_blank">Githubアカウントはこちら</a>',
     ],
     [
       '契約形態は？',
@@ -18,7 +18,7 @@ const GaiyouSection = props => {
     ],
     [
       '常駐できる？',
-      'リモートワークを前提とさせて頂いておりますが、遠方での打ち合わせ等にも柔軟に対応いたします。',
+      'フルリモートワークを前提とさせて頂いておりますが、遠方での打ち合わせ等にも柔軟に対応いたします。',
     ],
     [
       'いま仕事できる？',

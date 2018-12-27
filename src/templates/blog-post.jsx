@@ -210,8 +210,8 @@ export default function BlogPost(props) {
               <div>
                 <p>田村 翔太</p>
                 <p>
-                  <Link to="/">Yuuniworks</Link>{' '}
-                  代表。島根県浜田市を拠点に主にフロントエンド開発のお手伝いをしているフリーランスエンジニアです。React/Vue.jsを用いたSPAの開発や、NodeJSを使ったAPI開発を得意としています。
+                  <Link to="/">Yuuniworks</Link>
+                  代表。島根県浜田市を拠点に活動するフルスタックエンジニアです。Python/Node.js/GoによるAPIの開発、React/Vue.js等によるSPAの開発などを行っています。
                 </p>
               </div>
             </footer>

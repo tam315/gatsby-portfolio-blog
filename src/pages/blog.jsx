@@ -118,7 +118,7 @@ const BlogPage = ({ data, location }) => {
           metaData={{
             title: 'Yuuniworks Blog',
             description:
-              '島根のフリーランスエンジニア「Yuuniworks」のブログです。フロントエンド界隈の技術的なネタを記録しています。',
+              '島根のフルスタックエンジニア「Yuuniworks」のブログです。技術的なネタを記録しています。',
           }}
         />
 
