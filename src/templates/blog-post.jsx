@@ -7,7 +7,6 @@ import Link from 'gatsby-link';
 import 'prismjs/themes/prism-tomorrow.css';
 import PropTypes from 'prop-types';
 import React from 'react';
-import GoogleAds from '../components/GoogleAds';
 import Layout from '../components/Layout';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
@@ -176,7 +175,6 @@ export default function BlogPost(props) {
 
   return (
     <Layout location={props.location}>
-      <GoogleAds />
       <SectionContainer colorNumber="1" isTop>
         <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
         <div css={styles.container}>
