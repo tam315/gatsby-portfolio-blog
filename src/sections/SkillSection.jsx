@@ -62,7 +62,6 @@ const SkillSection = props => {
       'Vue.js / Vuex': 3,
       'Jest/Enzyme': 3,
       'Material-UI': 3,
-      Angular: 2,
       'PWA / Workbox': 2,
       'Nuxt.js / Hugo / Gatsby': 2,
       GraphQL: 1,
@@ -71,8 +70,9 @@ const SkillSection = props => {
     バックエンド: {
       Docker: 3,
       'Node.js': 2,
-      Python: 2,
+      'Python / Flask': 2,
       Go: 2,
+      'PHP / Laravel': 2,
       RDBMS: 2,
       GCP: 2,
       Firebase: 2,
