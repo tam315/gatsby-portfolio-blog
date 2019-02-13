@@ -69,9 +69,9 @@ const SkillSection = props => {
     },
     バックエンド: {
       Docker: 3,
-      'Node.js': 2,
-      'Python / Flask': 2,
+      'Python / Django': 2,
       Go: 2,
+      'Node.js': 2,
       'PHP / Laravel': 2,
       RDBMS: 2,
       GCP: 2,
