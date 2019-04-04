@@ -5,7 +5,6 @@ import SectionHeader from '../components/SectionHeader';
 import svgForm from '../icons/footer-form.svg';
 import svgGithub from '../icons/footer-github.svg';
 import svgMail from '../icons/footer-mail.svg';
-import svgPhone from '../icons/footer-phone.svg';
 import svgPin from '../icons/footer-pin.svg';
 import { rhythm } from '../utils/typography';
 
@@ -27,14 +26,9 @@ const FooterSection = props => {
       link: 'https://github.com/junkboy0315/',
     },
     {
-      imgPath: svgPhone,
-      description: '070 4398 9424',
-      link: 'tel:07043989424',
-    },
-    {
       imgPath: svgPin,
-      description: '島根県浜田市金城町七条',
-      link: 'https://goo.gl/maps/V5G3DJSYy8u',
+      description: '島根県浜田市長沢町',
+      link: 'https://goo.gl/maps/52rwLFoSCNA2',
     },
   ];
 
@@ -42,10 +36,9 @@ const FooterSection = props => {
     container: {
       display: 'grid',
       gridColumnGap: rhythm(1),
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 250px))',
+      gridTemplateColumns: '250px',
       justifyContent: 'center',
       margin: 'auto',
-      maxWidth: '550px',
     },
     link: {
       color: '#fff',
