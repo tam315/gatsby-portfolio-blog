@@ -6,6 +6,10 @@ date: '2018-05-18T09:45:12+09:00'
 dateModified: '2018-05-18T09:45:12+09:00'
 thumbnail: /blogImages/20180518.png
 ---
+2019.02.18更新　Dan Abramovさんによって元記事が更新されました。いまは[Hook](https://reactjs.org/docs/hooks-overview.html)が使えるので、この記事にこだわりすぎるな、とのことです。
+
+---
+
 Reduxを使うにあたって、どのようにコンポーネントの使い分けるかということについて、下記のサイトが非常にわかりやすかったので、忘れないようにメモしておきます。
 [https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
 ](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
