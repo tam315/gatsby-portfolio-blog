@@ -94,7 +94,7 @@ class Header extends React.Component {
     const settings = {
       transitionSpeed: '0.15s',
       barColor: 'rgba(0, 0, 15, 0.8)',
-      opacityHide: 0.2,
+      opacityHide: 0,
     };
 
     const { isMenuOpen, isScrolled } = this.state;
