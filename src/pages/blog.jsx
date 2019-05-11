@@ -34,11 +34,7 @@ const BlogPage = ({ data, location }) => {
       },
     },
     boxInner: {
-      display: 'flex',
       padding: rhythm(1),
-      '@media (max-width: 450px)': {
-        flexDirection: 'column',
-      },
     },
     link: {
       display: 'block',
@@ -80,34 +76,11 @@ const BlogPage = ({ data, location }) => {
             >
               <WhiteBox hover>
                 <article css={styles.boxInner}>
-                  <div
-                    css={{
-                      // アスペクト比率を維持、かつ、画像で範囲全体をカバー、かつ、最も小さく表示
-                      background: `url("${
-                        node.frontmatter.thumbnail
-                      }") no-repeat center center`,
-                      backgroundSize: 'cover',
-                      flex: '0 0 100px',
-                      border: '1px solid rgba(0,0,0,0.2)',
-                      marginRight: '1rem',
-                      '@media (max-width: 450px)': {
-                        marginRight: 0,
-                        marginBottom: '1rem',
-                        flex: '0 0 150px',
-                      },
-                    }}
-                  />
-
-                  <div>
-                    <h1 css={styles.title}>{node.frontmatter.title}</h1>
-                    <div css={styles.summary}>{node.frontmatter.summary}</div>
-                    <time
-                      css={styles.datetime}
-                      dateTime={node.frontmatter.date}
-                    >
-                      {node.frontmatter.date.slice(0, 10)}
-                    </time>
-                  </div>
+                  <h1 css={styles.title}>{node.frontmatter.title}</h1>
+                  <div css={styles.summary}>{node.frontmatter.summary}</div>
+                  <time css={styles.datetime} dateTime={node.frontmatter.date}>
+                    {node.frontmatter.date.slice(0, 10)}
+                  </time>
                 </article>
               </WhiteBox>
             </Link>
