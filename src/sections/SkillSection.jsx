@@ -35,7 +35,7 @@ const SkillSection = props => {
       ' img': { width: '1.2rem' },
     },
     sonotaListItem: {
-      marginBottom: rhythm(1),
+      marginBottom: '1rem',
     },
     sonotaTitle: {
       color: '#262626',
@@ -68,57 +68,16 @@ const SkillSection = props => {
       RxJS: 1,
     },
     バックエンド: {
+      'AWS / GCP': 3,
       Docker: 3,
-      'Python / Django': 2,
+      'Python / Django / DRF': 3,
+      RDBMS: 3,
       Go: 2,
       'Node.js': 2,
       'PHP / Laravel': 2,
-      RDBMS: 2,
-      GCP: 2,
       Firebase: 2,
       Kubernetes: 2,
     },
-    その他: [
-      {
-        title: 'スキルテスト',
-        content: (
-          <div>
-            Paizaコーディング{' '}
-            <a
-              href="https://paiza.jp/guide/career#rank"
-              css={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Aランク<IconExtLink />
-            </a>
-          </div>
-        ),
-      },
-      {
-        title: 'スキル習得方法',
-        content: (
-          <div
-            onClick={() => props.setCurrentModal('UDEMY')}
-            onKeyDown={e => {
-              if (e.keyCode === 13) props.setCurrentModal('UDEMY');
-            }}
-            role="button"
-            tabIndex={0}
-          >
-            Udemy（<span css={styles.link}>習得済みコース一覧</span>）
-          </div>
-        ),
-      },
-      {
-        title: '言語',
-        content: <div>日本語、英語</div>,
-      },
-      {
-        title: '好きなツール',
-        content: 'VSCode、HHKB Pro2',
-      },
-    ],
   };
 
   return (
@@ -166,18 +125,45 @@ const SkillSection = props => {
           <div>
             <h3>その他</h3>
             <ul>
-              {skills['その他'].map(item => (
-                <li css={styles.sonotaListItem} key={item.title}>
-                  <div css={styles.sonotaTitle}>
-                    <FontAwesomeIcon
-                      icon="caret-square-right"
-                      style={styles.caret}
-                    />
-                    {item.title}
-                  </div>
-                  <div css={styles.sonotaContent}>{item.content}</div>
+              <li css={styles.sonotaListItem}>
+                <div css={styles.sonotaTitle}>
+                  <FontAwesomeIcon
+                    icon="caret-square-right"
+                    style={styles.caret}
+                  />
+                  資格
+                </div>
+                <li css={styles.sonotaContent}>
+                  <a
+                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819"
+                    css={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    AWS Certified Cloud Practitioner <IconExtLink />
+                  </a>
                 </li>
-              ))}
+              </li>
+              <li css={styles.sonotaListItem}>
+                <div css={styles.sonotaTitle}>
+                  <FontAwesomeIcon
+                    icon="caret-square-right"
+                    style={styles.caret}
+                  />
+                  言語
+                </div>
+                <li css={styles.sonotaContent}>日本語、英語</li>
+              </li>
+              <li css={styles.sonotaListItem}>
+                <div css={styles.sonotaTitle}>
+                  <FontAwesomeIcon
+                    icon="caret-square-right"
+                    style={styles.caret}
+                  />
+                  好きなツール
+                </div>
+                <li css={styles.sonotaContent}>VSCode, HHKB Pro2</li>
+              </li>
             </ul>
           </div>
         </WhiteBox>

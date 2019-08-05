@@ -55,7 +55,7 @@ const PerformanceSection = () => {
     {
       name: 'react-compare-image',
       description:
-        'スライダを使って画像を比較するためのReactコンポーネントです。しばしば海外からのPRがあります。',
+        'スライダを使って画像を比較するためのReactコンポーネントです。世界中で利用されています。',
       techStack: [{ name: 'React', description: 'UI' }],
       webpageURL: 'https://www.npmjs.com/package/react-compare-image',
       githubURL: 'https://github.com/junkboy0315/react-compare-image',
