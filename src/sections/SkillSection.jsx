@@ -7,20 +7,19 @@ import SectionHeader from '../components/SectionHeader';
 import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
 import questionSvg from '../icons/question.svg';
-import { rhythm } from '../utils/typography';
 
 const SkillSection = props => {
   const styles = {
     grid: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 350px))',
-      gridGap: rhythm(2),
+      gridGap: '3rem',
       justifyContent: 'center',
       maxWidth: '1200px',
       margin: 'auto',
     },
     whiteBox: {
-      padding: rhythm(1.5),
+      padding: '2rem',
     },
     containerKihon: {
       position:
@@ -29,12 +28,14 @@ const SkillSection = props => {
     helpButton: {
       color: '#999999',
       position: 'absolute',
-      right: '5px',
-      top: '20px',
+      right: '0',
+      top: '2px',
+      outline: 'none',
+      width: '15px',
       cursor: 'pointer',
       ' img': { width: '1.2rem' },
     },
-    sonotaListItem: {
+    otherListItem: {
       marginBottom: '1rem',
     },
     sonotaTitle: {
@@ -42,10 +43,10 @@ const SkillSection = props => {
       fontWeight: 'bold',
     },
     sonotaContent: {
-      marginTop: rhythm(1 / 4),
+      marginTop: '.5rem',
     },
     caret: {
-      marginRight: rhythm(1 / 4),
+      marginRight: '.5rem',
       opacity: 0.8,
     },
     link: {
@@ -85,7 +86,7 @@ const SkillSection = props => {
       <SectionHeader text="スキル" colorNumber="2" />
       <div css={styles.grid}>
         <WhiteBox css={styles.whiteBox}>
-          <div>
+          <div style={{ position: 'relative' }}>
             <h3>フロントエンド関連</h3>
             <div
               css={styles.helpButton}
@@ -125,7 +126,7 @@ const SkillSection = props => {
           <div>
             <h3>その他</h3>
             <ul>
-              <li css={styles.sonotaListItem}>
+              <li css={styles.otherListItem}>
                 <div css={styles.sonotaTitle}>
                   <FontAwesomeIcon
                     icon="caret-square-right"
@@ -133,7 +134,7 @@ const SkillSection = props => {
                   />
                   資格
                 </div>
-                <li css={styles.sonotaContent}>
+                <div css={styles.sonotaContent}>
                   <a
                     href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819"
                     css={styles.link}
@@ -142,9 +143,9 @@ const SkillSection = props => {
                   >
                     AWS Certified Cloud Practitioner <IconExtLink />
                   </a>
-                </li>
+                </div>
               </li>
-              <li css={styles.sonotaListItem}>
+              <li css={styles.otherListItem}>
                 <div css={styles.sonotaTitle}>
                   <FontAwesomeIcon
                     icon="caret-square-right"
@@ -152,9 +153,9 @@ const SkillSection = props => {
                   />
                   言語
                 </div>
-                <li css={styles.sonotaContent}>日本語、英語</li>
+                <div css={styles.sonotaContent}>日本語、英語</div>
               </li>
-              <li css={styles.sonotaListItem}>
+              <li css={styles.otherListItem}>
                 <div css={styles.sonotaTitle}>
                   <FontAwesomeIcon
                     icon="caret-square-right"
@@ -162,7 +163,7 @@ const SkillSection = props => {
                   />
                   好きなツール
                 </div>
-                <li css={styles.sonotaContent}>VSCode, HHKB Pro2</li>
+                <div css={styles.sonotaContent}>VSCode, HHKB Pro2</div>
               </li>
             </ul>
           </div>
