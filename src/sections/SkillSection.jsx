@@ -136,7 +136,7 @@ const SkillSection = props => {
                 </div>
                 <div css={styles.sonotaContent}>
                   <a
-                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819"
+                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819&language=en"
                     css={styles.link}
                     target="_blank"
                     rel="noopener noreferrer"
