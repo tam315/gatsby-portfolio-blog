@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
-import IconExtLink from '../components/IconExtLink';
 import SectionContainer from '../components/SectionContainer';
 import SectionHeader from '../components/SectionHeader';
 import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
 import questionSvg from '../icons/question.svg';
+import awsClfPng from '../images/aws_clf.png';
+import awsSaaPng from '../images/aws_saa.png';
 
 const SkillSection = props => {
   const styles = {
@@ -53,6 +54,10 @@ const SkillSection = props => {
       color: '#262626',
       cursor: 'pointer',
       textDecorationLine: 'underline',
+    },
+    awsBadge: {
+      width: '80px',
+      marginRight: '0.5rem',
     },
   };
 
@@ -136,12 +141,28 @@ const SkillSection = props => {
                 </div>
                 <div css={styles.sonotaContent}>
                   <a
-                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819"
+                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-08-29&ci=AWS00969819&language=en"
                     css={styles.link}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    AWS Certified Cloud Practitioner <IconExtLink />
+                    <img
+                      src={awsSaaPng}
+                      css={styles.awsBadge}
+                      alt="AWS SAA Logo"
+                    />
+                  </a>
+                  <a
+                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819&language=en"
+                    css={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={awsClfPng}
+                      css={styles.awsBadge}
+                      alt="AWS CLF Logo"
+                    />
                   </a>
                 </div>
               </li>
