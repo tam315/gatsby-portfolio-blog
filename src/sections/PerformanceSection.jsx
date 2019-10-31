@@ -7,14 +7,37 @@ import SectionHeader from '../components/SectionHeader';
 import WhiteBox from '../components/WhiteBox';
 import jissekiCompare from '../images/jisseki-compare.png';
 import jissekiNote from '../images/jisseki-note.png';
+import jissekiPict from '../images/jisseki-pict.png';
 import jissekiRebalancer from '../images/jisseki-rebalancer.jpg';
 import jissekiTravelrPng from '../images/jisseki-travelr.png';
-import jissekiWarikanPng from '../images/jisseki-warikan.png';
 import jissekiYuuniJpg from '../images/jisseki-yuuni.jpg';
 import { rhythm } from '../utils/typography';
 
 const PerformanceSection = () => {
   const performances = [
+    {
+      name: 'react-compare-image',
+      description:
+        'スライダを使って画像を比較するためのReactコンポーネントです。世界中で利用されています。',
+      techStack: [{ name: 'React', description: 'UI' }],
+      webpageURL: 'https://www.npmjs.com/package/react-compare-image',
+      githubURL: 'https://github.com/junkboy0315/react-compare-image',
+      imgPath: jissekiCompare,
+    },
+    {
+      name: 'Pairwise Pict Online',
+      description: 'ペアワイズ法に基づきテストケースを生成できるサービスです。',
+      techStack: [
+        { name: 'create-react-app', description: 'Front-end Framework' },
+        { name: 'CircleCI', description: 'CI/CD' },
+        { name: 'GCP Cloud Build', description: 'CI/CD' },
+        { name: 'GCP Cloud Run', description: 'コンテナ管理' },
+        { name: 'Node.js', description: 'APIサーバ' },
+      ],
+      webpageURL: 'https://pairwise.yuuniworks.com',
+      githubURL: 'https://github.com/junkboy0315/pairwise-pict-online',
+      imgPath: jissekiPict,
+    },
     {
       name: 'Portfolio Rebalancer',
       description:
@@ -36,70 +59,19 @@ const PerformanceSection = () => {
         '古い写真と新しい写真を比較して楽しむ写真投稿サービスです。デモ用に作成したものです。',
       techStack: [
         { name: 'React/Redux', description: 'UI/State管理' },
-        { name: 'redux-observable', description: 'reduxミドルウェア' },
         { name: 'material-ui', description: 'UIライブラリ' },
         { name: 'Workbox', description: 'PWA対応' },
         { name: 'jest/enzyme', description: 'テスト' },
-        { name: 'Typescript', description: '型付け' },
         {
           name: 'Firebase',
           description: '認証管理、ストレージ、ファンクション',
         },
-        { name: 'GraphQL', description: '問い合わせ言語' },
-        { name: 'Node.js', description: 'APIサーバ' },
         { name: 'GCP Cloud SQL', description: 'データベース' },
-        { name: 'GCP Cloud Run', description: 'コンテナ管理' },
       ],
       webpageURL: 'http://travelr.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/travelr',
       blogPath: '/blog/2018-07-31-デモシステムを作成しました/',
       imgPath: jissekiTravelrPng,
-    },
-    {
-      name: 'react-compare-image',
-      description:
-        'スライダを使って画像を比較するためのReactコンポーネントです。世界中で利用されています。',
-      techStack: [{ name: 'React', description: 'UI' }],
-      webpageURL: 'https://www.npmjs.com/package/react-compare-image',
-      githubURL: 'https://github.com/junkboy0315/react-compare-image',
-      imgPath: jissekiCompare,
-    },
-    {
-      name: 'SplitBills',
-      description:
-        '酔っぱらった状態で納得のいく割勘計算を行うための小道具です。',
-      techStack: [
-        { name: 'Angular6', description: 'Front-end Framework' },
-        { name: 'Netlify', description: 'ホスティング' },
-        { name: 'Jasmine', description: 'Unit/E2E Test' },
-        { name: 'Protractor', description: 'E2E Test' },
-        { name: 'Semaphore', description: 'CI/CD' },
-        { name: 'Service Worker', description: 'オフライン対応' },
-      ],
-      webpageURL: 'https://split.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/splitbills',
-      imgPath: jissekiWarikanPng,
-    },
-    {
-      name: 'Yuuniworks Web',
-      description: 'Gatsbyを使って作成した、当方の事業広報用Webページです。',
-      techStack: [
-        { name: 'Gatsby', description: 'Static Site Generator' },
-        { name: 'GraphQL', description: 'クエリ言語' },
-        {
-          name: 'AWS API Gateway',
-          description: '問い合わせフォーム用バックエンド',
-        },
-        { name: 'AWS Lambda', description: '問い合わせフォーム用バックエンド' },
-        { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
-        { name: 'Netlify', description: 'ホスティング、CI/CD' },
-        { name: 'Netlify CMS', description: 'CMS' },
-        { name: 'Sentry', description: 'クライアントサイドのエラー収集' },
-      ],
-      webpageURL: 'https://www.yuuniworks.com',
-      githubURL: 'https://github.com/junkboy0315/yuuni-web',
-      blogPath: '/blog/2018-04-09-jamstackなwebサイトの作成/',
-      imgPath: jissekiYuuniJpg,
     },
     {
       name: 'Yuuniworks Notes',
@@ -112,6 +84,23 @@ const PerformanceSection = () => {
       webpageURL: 'https://note.yuuniworks.com',
       githubURL: 'https://github.com/junkboy0315/markdown-notes',
       imgPath: jissekiNote,
+    },
+    {
+      name: 'Yuuniworks Web',
+      description:
+        '当サイトです。静的サイトジェネレータのGatsbyを使って作成しています。',
+      techStack: [
+        { name: 'Gatsby', description: 'Static Site Generator' },
+        { name: 'GraphQL', description: 'クエリ言語' },
+        { name: 'AWS Lambda', description: '問い合わせフォーム用バックエンド' },
+        { name: 'AWS SES', description: '問い合わせフォーム用バックエンド' },
+        { name: 'Netlify CMS', description: 'CMS' },
+        { name: 'Sentry', description: 'クライアントサイドのエラー収集' },
+      ],
+      webpageURL: 'https://www.yuuniworks.com',
+      githubURL: 'https://github.com/junkboy0315/yuuni-web',
+      blogPath: '/blog/2018-04-09-jamstackなwebサイトの作成/',
+      imgPath: jissekiYuuniJpg,
     },
   ];
 
@@ -132,6 +121,7 @@ const PerformanceSection = () => {
       objectFit: 'cover',
       height: '160px',
       width: '100%',
+      filter: 'brightness(95%) grayscale(30%)',
     },
     itemTitle: {
       color: '#262626',
