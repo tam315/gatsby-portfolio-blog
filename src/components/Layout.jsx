@@ -7,7 +7,6 @@ import {
   faStar,
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 import 'string.prototype.startswith';
