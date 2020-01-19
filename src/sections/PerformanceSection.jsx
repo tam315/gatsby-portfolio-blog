@@ -17,8 +17,7 @@ const PerformanceSection = () => {
   const performances = [
     {
       name: 'react-compare-image',
-      description:
-        'スライダを使って画像を比較するためのReactコンポーネントです。世界中で利用されています。',
+      description: 'Image comparison tool.',
       techStack: [{ name: 'React', description: 'UI' }],
       webpageURL: 'https://www.npmjs.com/package/react-compare-image',
       githubURL: 'https://github.com/junkboy0315/react-compare-image',
@@ -26,7 +25,7 @@ const PerformanceSection = () => {
     },
     {
       name: 'Pairwise Pict Online',
-      description: 'ペアワイズ法に基づきテストケースを生成できるサービスです。',
+      description: 'Generating pairwise testcases online.',
       techStack: [
         { name: 'create-react-app', description: 'Front-end Framework' },
         { name: 'CircleCI', description: 'CI/CD' },
@@ -40,8 +39,7 @@ const PerformanceSection = () => {
     },
     {
       name: 'Portfolio Rebalancer',
-      description:
-        'ポートフォリオのリバランスを簡単に行えるようにすることで、資産運用を支援するツールです。',
+      description: 'Rebalance your assets.',
       techStack: [
         { name: 'Vue.js/Vuex', description: 'UI/State管理' },
         { name: 'Nuxt.js', description: 'Vue.jsフレームワーク' },
@@ -55,8 +53,7 @@ const PerformanceSection = () => {
     },
     {
       name: 'Travelr',
-      description:
-        '古い写真と新しい写真を比較して楽しむ写真投稿サービスです。デモ用に作成したものです。',
+      description: 'Compare old and new images.',
       techStack: [
         { name: 'React/Redux', description: 'UI/State管理' },
         { name: 'material-ui', description: 'UIライブラリ' },
@@ -75,8 +72,7 @@ const PerformanceSection = () => {
     },
     {
       name: 'Yuuniworks Notes',
-      description:
-        'VuePressで作成したドキュメントサイトです。Algoliaによる全文検索を実装しています。',
+      description: 'My note by vuepress.',
       techStack: [
         { name: 'VuePress', description: 'Static Site Generator' },
         { name: 'Algolia DocSearch', description: '高度な全文検索' },
@@ -87,8 +83,7 @@ const PerformanceSection = () => {
     },
     {
       name: 'Yuuniworks Web',
-      description:
-        '当サイトです。静的サイトジェネレータのGatsbyを使って作成しています。',
+      description: 'This website.',
       techStack: [
         { name: 'Gatsby', description: 'Static Site Generator' },
         { name: 'GraphQL', description: 'クエリ言語' },
@@ -162,9 +157,9 @@ const PerformanceSection = () => {
 
   return (
     <SectionContainer id="performance">
-      <SectionHeader text="実績" colorNumber="1" />
+      <SectionHeader text="Performance" colorNumber="1" />
 
-      {/* グリッド始点 */}
+      {/* Grid start */}
       <div css={styles.grid}>
         {performances.map(performance => (
           <WhiteBox key={performance.name} css={styles.whiteBox}>
@@ -199,7 +194,7 @@ const PerformanceSection = () => {
                 rel="noopener noreferrer"
                 css={styles.externalLink}
               >
-                ソースコード
+                Source codes
               </a>
             ) : (
               <div style={{ color: 'transparent' }}>_</div>
@@ -211,7 +206,7 @@ const PerformanceSection = () => {
                 target="_blank"
                 css={styles.externalLink}
               >
-                関連ブログ
+                Related articles
               </Link>
             )}
 
@@ -235,7 +230,7 @@ const PerformanceSection = () => {
           </WhiteBox>
         ))}
       </div>
-      {/* グリッド終点 */}
+      {/* Grid end */}
     </SectionContainer>
   );
 };

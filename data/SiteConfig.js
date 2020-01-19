@@ -1,11 +1,9 @@
 module.exports = {
-  corporationName: 'Yuuniworks',
-  siteTitle: 'Yuuniworks / 島根のフリーランスエンジニア',
-  siteDescription:
-    'フリーランスのフルスタックエンジニアです。Python/Node.js/GoによるAPIの開発、React/Vue.js等によるSPAの開発などを行っています。',
-  siteKeywords:
-    'SPA,Serverless,サーバーレス,Lambda,AWS,React,Redux,Angular,フリーランス',
-  siteUrl: 'https://www.yuuniworks.com',
+  corporationName: 'My Awesome Site',
+  siteTitle: 'My Awesome Site / John Doe',
+  siteDescription: 'I am freelance web developer',
+  siteKeywords: 'cloud, spa, django, rails',
+  siteUrl: 'https://www.my-awesome-site.com',
   siteLogo: '/images/logo_for_schema.png',
-  googleAnalyticsID: 'UA-116967778-1',
+  googleAnalyticsID: 'UA-123456789-1',
 };

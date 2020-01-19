@@ -18,13 +18,7 @@ class Contact extends React.Component {
     this.state = {
       name: '',
       mail: '',
-      message: `・御社名
-・ご担当者連絡先（電話・メール）
-・仕事内容
-・期間
-・予算
-・場所
-などご記入いただけますと幸いです。`,
+      message: '',
       isSending: false,
       isSent: false,
       resultMessage: '',
@@ -52,27 +46,23 @@ class Contact extends React.Component {
 
   onClickSubmit() {
     const mailContent = JSON.stringify({
-      subject: '【問合せ】yuuni-webサイトより',
-      body: `■名前：\n${this.state.name}\n\n■メール：\n${
-        this.state.mail
-      }\n\n■内容：\n${this.state.message}\n\n`,
+      subject: 'from your website ',
+      body: `Name:\n${this.state.name}\n\nMail:\n${this.state.mail}\n\nContent:\n${this.state.message}\n\n`,
     });
 
     axios({
       method: 'post',
-      url:
-        'https://3vejp046g6.execute-api.ap-northeast-1.amazonaws.com/production/submit',
+      url: 'https://some-dummy-api/',
       data: mailContent,
     })
       .then(() => {
         this.setState({
           isSent: true,
-          resultMessage:
-            '送信を正常に完了しました。概ね2営業日以内にご連絡差し上げますので、いましばらくお待ちくださいませ。',
+          resultMessage: 'Sent successfully',
         });
       })
       .catch(err => {
-        window.alert('送信に失敗しました。');
+        window.alert('Failed sending.');
         this.setState({
           isSending: false,
         });
@@ -86,11 +76,7 @@ class Contact extends React.Component {
       return;
     }
 
-    if (
-      window.confirm(
-        '送信が完了していません。入力した内容が失われますがよろしいですか？',
-      )
-    ) {
+    if (window.confirm('You will lose contents. Are you sure?')) {
       this.props.setCurrentModal(null);
     }
   }
@@ -199,15 +185,15 @@ class Contact extends React.Component {
               onClick={() => this.props.setCurrentModal(null)}
               css={styles.button}
             >
-              閉じる
+              Close
             </button>
           </div>
         ) : (
           <div>
-            <h2>お問い合わせ</h2>
+            <h2>Cotact</h2>
             <div css={styles.nameMailContainer}>
               <label css={styles.nameMailItem} htmlFor="name">
-                お名前：
+                Name:
                 <input
                   name="name"
                   onChange={this.handleInputChange}
@@ -217,7 +203,7 @@ class Contact extends React.Component {
               </label>
 
               <label css={styles.nameMailItem} htmlFor="mail">
-                メールアドレス：
+                Mail:
                 <input
                   name="mail"
                   onChange={this.handleInputChange}
@@ -229,7 +215,7 @@ class Contact extends React.Component {
             </div>
 
             <label htmlFor="message">
-              お問い合わせ内容：
+              Message:
               <textarea
                 name="message"
                 onChange={this.handleInputChange}
@@ -242,7 +228,7 @@ class Contact extends React.Component {
               {this.state.isSending ? (
                 <PulseLoader color="#fff" loading size={9} />
               ) : (
-                '送信'
+                'Submit'
               )}
             </button>
           </div>

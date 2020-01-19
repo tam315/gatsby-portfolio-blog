@@ -6,25 +6,18 @@ import SectionHeader from '../components/SectionHeader';
 import WhiteBox from '../components/WhiteBox';
 import { rhythm } from '../utils/typography';
 
-const GaiyouSection = props => {
+const OverviewSection = props => {
   const articles = [
     [
-      '何ができる？',
-      'クラウドインフラの構築運用、APIの開発からフロントエンドまで、分野を横断した対応が可能です。',
+      'What can you do?',
+      'Architecting and operating cloud infrastructures, developping APIs and frontend SPAs.',
     ],
+    ['Conditions of a contract?', 'Full remote, hourly wages.'],
     [
-      '契約形態は？',
-      '時間単価での準委任契約となります。' +
-        'フルリモートが前提とはなりますが、遠方での打ち合わせ等にも柔軟に対応いたします。',
+      'Do you have github account?',
+      '<a href="https://github.com/junkboy0315/" target="_blank">Here</a>!',
     ],
-    [
-      'Githubアカウントは？',
-      '当方のGithubアカウントは<a href="https://github.com/junkboy0315/" target="_blank">こちら</a>になります',
-    ],
-    [
-      'いま仕事できる？',
-      '内容・期間によっては受託可能です。お気軽にお問い合わせください。',
-    ],
+    ['Can you work from today?', 'Depends on conditions, please ask!'],
   ];
 
   const styles = {
@@ -69,7 +62,7 @@ const GaiyouSection = props => {
 
   return (
     <SectionContainer id="gaiyou">
-      <SectionHeader text="概要" colorNumber="1" />
+      <SectionHeader text="Overview" colorNumber="1" />
 
       <WhiteBox css={styles.container}>
         {articles.map(article => (
@@ -88,14 +81,14 @@ const GaiyouSection = props => {
         css={styles.button}
         onClick={() => props.setCurrentModal('CONTACT')}
       >
-        お問い合わせ
+        Contact
       </button>
     </SectionContainer>
   );
 };
 
-GaiyouSection.propTypes = {
+OverviewSection.propTypes = {
   setCurrentModal: PropTypes.func.isRequired,
 };
 
-export default GaiyouSection;
+export default OverviewSection;

@@ -27,7 +27,7 @@ function SEO({ postNode, metaData }) {
 
   // override _metadata if node is blogpost
   if (postNode) {
-    _metaData.title = `${postNode.frontmatter.title} / Yuuniworks Blog`;
+    _metaData.title = `${postNode.frontmatter.title} / My Awesome Blog`;
     _metaData.description = postNode.excerpt;
     _metaData.keywords = config.siteKeywords;
     _metaData.image = config.siteUrl + postNode.frontmatter.thumbnail;
@@ -50,27 +50,27 @@ function SEO({ postNode, metaData }) {
     url: config.siteUrl,
     logo: `${config.siteUrl}${config.siteLogo}`,
     address: {
-      postalCode: '697-0123',
+      postalCode: '111-2222',
       addressCountry: 'JP',
-      addressRegion: '島根県',
-      addressLocality: '浜田市',
-      streetAddress: '金城町七条',
+      addressRegion: 'Shimane',
+      addressLocality: 'Hamada',
+      streetAddress: 'Somewhere',
     },
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+81-70-4398-9424',
+        telephone: '+81-12-2344-7823',
         contactType: 'sales',
       },
     ],
     founder: {
       '@type': 'Person',
-      givenName: '翔太',
-      familyName: '田村',
+      givenName: 'John',
+      familyName: 'Doe',
     },
     foundingDate: '2018-4-11',
     description: config.siteDescription,
-    sameAs: ['https://www.facebook.com/yuuniworks/'],
+    sameAs: ['https://www.facebook.com/some-thing/'],
   });
 
   // JSON-LD Breadcrumb

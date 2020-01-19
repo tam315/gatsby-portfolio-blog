@@ -58,7 +58,7 @@ class AgeCalculator extends React.Component {
     const [integerPart, fractionPart] = age.toFixed(9).split('.');
     return (
       <div>
-        {integerPart}.<span css={{ fontSize: '0.8rem' }}>{fractionPart}</span>歳
+        {integerPart}.<span css={{ fontSize: '0.8rem' }}>{fractionPart}</span>
       </div>
     );
   };

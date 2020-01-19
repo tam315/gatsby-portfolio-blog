@@ -1,7 +1,6 @@
 /* eslint-disable react/no-danger */
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DiscussionEmbed } from 'disqus-react';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -167,23 +166,17 @@ export default function BlogPost(props) {
 
   const post = props.data.markdownRemark;
 
-  const disqusConfig = {
-    url: `http://www.yuuniworks.com/blog${post.fields.slug}`,
-    identifier: `http://www.yuuniworks.com/blog${post.fields.slug}`,
-    title: post.frontmatter.title,
-  };
-
   return (
     <Layout location={props.location}>
       <SectionContainer colorNumber="1" isTop>
-        <SectionHeader colorNumber="1" text="Yuuniworks Blog" link="/blog/" />
+        <SectionHeader colorNumber="1" text="My Awesome Blog" link="/blog/" />
         <div css={styles.container}>
           <Link to="/blog/" css={styles.backButton}>
             <FontAwesomeIcon
               icon="arrow-left"
               style={styles.backButton.arrow}
             />
-            記事一覧に戻る
+            Back to articles
           </Link>
 
           <WhiteBox>
@@ -197,20 +190,11 @@ export default function BlogPost(props) {
           </WhiteBox>
 
           <WhiteBox>
-            <aside css={styles.comments}>
-              <DiscussionEmbed shortname="yuuniworks" config={disqusConfig} />
-            </aside>
-          </WhiteBox>
-
-          <WhiteBox>
             <footer css={styles.footer}>
               <img src={profileJpg} alt="profile" />
               <div>
-                <p>田村 翔太</p>
-                <p>
-                  <Link to="/">Yuuniworks</Link>
-                  代表。島根県浜田市を拠点に活動するフルスタックエンジニアです。Python/Node.js/GoによるAPIの開発、React/Vue.js等によるSPAの開発などを行っています。
-                </p>
+                <p>John Doe</p>
+                <p>Freelance Web Developer.</p>
               </div>
             </footer>
           </WhiteBox>
@@ -220,7 +204,7 @@ export default function BlogPost(props) {
               icon="arrow-left"
               style={styles.backButton.arrow}
             />
-            記事一覧に戻る
+            Back to articles
           </Link>
         </div>
         <SEO postNode={post} />

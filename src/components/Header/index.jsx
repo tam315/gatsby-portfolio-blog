@@ -139,9 +139,7 @@ class Header extends React.Component {
         cursor: 'pointer',
         opacity: shouldBeHide ? settings.opacityHide : 1,
         textDecoration: 'none',
-        transition: `background ${settings.transitionSpeed} ease-out, opacity ${
-          settings.transitionSpeed
-        } ease-out`,
+        transition: `background ${settings.transitionSpeed} ease-out, opacity ${settings.transitionSpeed} ease-out`,
         '.active': {
           background: 'rgba(100, 100, 110, 0.95)',
         },
@@ -188,23 +186,23 @@ class Header extends React.Component {
     };
 
     const menuItem = [
-      { name: '概要', id: 'gaiyou', path: '/#gaiyou' },
-      { name: 'スキル', id: 'skill', path: '/#skill' },
-      { name: '実績', id: 'performance', path: '/#performance' },
-      { name: 'プロフィール', id: 'profile', path: '/#profile' },
-      { name: '問い合わせ', id: 'contact', path: '/#contact' },
-      { name: 'ブログ', id: 'blog', path: '/blog/' },
+      { name: 'Overview', id: 'gaiyou', path: '/#gaiyou' },
+      { name: 'Skill', id: 'skill', path: '/#skill' },
+      { name: 'Performance', id: 'performance', path: '/#performance' },
+      { name: 'Profile', id: 'profile', path: '/#profile' },
+      { name: 'Contact', id: 'contact', path: '/#contact' },
+      { name: 'Blog', id: 'blog', path: '/blog/' },
     ];
 
     return (
       <nav css={styles.navbar}>
         {isRootPath ? (
           <LinkForScroll to="top" smooth duration={150} css={styles.logo}>
-            <img src={logoSvg} alt="Yuuniworksのロゴ" />
+            <img src={logoSvg} alt="my logo" />
           </LinkForScroll>
         ) : (
           <Link to="/" css={styles.logo}>
-            <img src={logoSvg} alt="Yuuniworksのロゴ" />
+            <img src={logoSvg} alt="my logo" />
           </Link>
         )}
 

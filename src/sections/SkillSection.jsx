@@ -6,8 +6,6 @@ import SectionHeader from '../components/SectionHeader';
 import Skill from '../components/Skill';
 import WhiteBox from '../components/WhiteBox';
 import questionSvg from '../icons/question.svg';
-import awsClfPng from '../images/aws_clf.png';
-import awsSaaPng from '../images/aws_saa.png';
 
 const SkillSection = props => {
   const styles = {
@@ -23,8 +21,7 @@ const SkillSection = props => {
       padding: '2rem',
     },
     containerKihon: {
-      position:
-        'relative' /* 親要素をrelativeにしないと子(?マーク)がはみ出すため */,
+      position: 'relative',
     },
     helpButton: {
       color: '#999999',
@@ -62,7 +59,7 @@ const SkillSection = props => {
   };
 
   const skills = {
-    フロントエンド: {
+    Frontend: {
       'JavaScript / Typescript': 3,
       'React / Redux': 3,
       'Vue.js / Vuex': 3,
@@ -72,7 +69,7 @@ const SkillSection = props => {
       GraphQL: 1,
       RxJS: 1,
     },
-    バックエンド: {
+    Backend: {
       'AWS / GCP': 3,
       Docker: 3,
       'Node.js': 3,
@@ -86,11 +83,11 @@ const SkillSection = props => {
 
   return (
     <SectionContainer id="skill" colorNumber="2" skew>
-      <SectionHeader text="スキル" colorNumber="2" />
+      <SectionHeader text="Skills" colorNumber="2" />
       <div css={styles.grid}>
         <WhiteBox css={styles.whiteBox}>
           <div style={{ position: 'relative' }}>
-            <h3>フロントエンド関連</h3>
+            <h3>Frontend</h3>
             <div
               css={styles.helpButton}
               onClick={() => props.setCurrentModal('SKILL_HELP')}
@@ -102,10 +99,10 @@ const SkillSection = props => {
             >
               <img src={questionSvg} alt="hint button" />
             </div>
-            {Object.keys(skills['フロントエンド']).map(skill => (
+            {Object.keys(skills.Frontend).map(skill => (
               <Skill
                 skillName={skill}
-                skillLevel={skills['フロントエンド'][skill]}
+                skillLevel={skills.Frontend[skill]}
                 key={skill}
               />
             ))}
@@ -114,11 +111,11 @@ const SkillSection = props => {
 
         <WhiteBox css={styles.whiteBox}>
           <div>
-            <h3>バックエンド関連</h3>
-            {Object.keys(skills['バックエンド']).map(skill => (
+            <h3>Backend</h3>
+            {Object.keys(skills.Backend).map(skill => (
               <Skill
                 skillName={skill}
-                skillLevel={skills['バックエンド'][skill]}
+                skillLevel={skills.Backend[skill]}
                 key={skill}
               />
             ))}
@@ -127,7 +124,7 @@ const SkillSection = props => {
 
         <WhiteBox css={styles.whiteBox}>
           <div>
-            <h3>その他</h3>
+            <h3>Others</h3>
             <ul>
               <li css={styles.otherListItem}>
                 <div css={styles.sonotaTitle}>
@@ -135,34 +132,9 @@ const SkillSection = props => {
                     icon="caret-square-right"
                     style={styles.caret}
                   />
-                  資格
+                  Certifications
                 </div>
-                <div css={styles.sonotaContent}>
-                  <a
-                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-08-29&ci=AWS00969819&language=en"
-                    css={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={awsSaaPng}
-                      css={styles.awsBadge}
-                      alt="AWS SAA Logo"
-                    />
-                  </a>
-                  <a
-                    href="https://www.certmetrics.com/amazon/public/badge.aspx?i=9&t=c&d=2019-08-05&ci=AWS00969819&language=en"
-                    css={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={awsClfPng}
-                      css={styles.awsBadge}
-                      alt="AWS CLF Logo"
-                    />
-                  </a>
-                </div>
+                <div css={styles.sonotaContent}>AWS-SAA, AWS-CLF</div>
               </li>
               <li css={styles.otherListItem}>
                 <div css={styles.sonotaTitle}>
@@ -170,9 +142,9 @@ const SkillSection = props => {
                     icon="caret-square-right"
                     style={styles.caret}
                   />
-                  言語
+                  Languages
                 </div>
-                <div css={styles.sonotaContent}>日本語、英語</div>
+                <div css={styles.sonotaContent}>Japanese, English</div>
               </li>
               <li css={styles.otherListItem}>
                 <div css={styles.sonotaTitle}>
@@ -180,7 +152,7 @@ const SkillSection = props => {
                     icon="caret-square-right"
                     style={styles.caret}
                   />
-                  好きなツール
+                  Tools
                 </div>
                 <div css={styles.sonotaContent}>VSCode, HHKB Pro2</div>
               </li>

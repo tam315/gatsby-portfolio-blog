@@ -1,6 +1,6 @@
 {
-  "name": "yuuni-web",
-  "description": "a web site of yuuniworks",
+  "name": "gatsby-portfolio-blog",
+  "description": "gatsby template of portfolio and blog.",
   "version": "1.0.0",
   "author": "Shota Tamura <tamura@yuuniworks.com>",
   "dependencies": {

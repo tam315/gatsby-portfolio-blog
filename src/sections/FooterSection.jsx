@@ -12,13 +12,13 @@ const FooterSection = props => {
   const footerInfo = [
     {
       imgPath: svgForm,
-      description: 'フォームでのお問い合わせ',
+      description: 'Contact by a form',
       onClick: () => props.setCurrentModal('CONTACT'),
     },
     {
       imgPath: svgMail,
-      description: 'info@yuuniworks.com',
-      link: 'mailto:info@yuuniworks.com',
+      description: 'some@dummy.mail.address',
+      link: 'mailto:some@dummy.mail.address',
     },
     {
       imgPath: svgGithub,
@@ -27,7 +27,7 @@ const FooterSection = props => {
     },
     {
       imgPath: svgPin,
-      description: '島根県浜田市長沢町',
+      description: 'East of Japan',
       link: 'https://goo.gl/maps/52rwLFoSCNA2',
     },
   ];
@@ -63,7 +63,7 @@ const FooterSection = props => {
 
   return (
     <SectionContainer id="contact" colorNumber="2" skew skewFillBottom>
-      <SectionHeader text="お問い合わせ・ご連絡先" colorNumber="2" />
+      <SectionHeader text="Contact" colorNumber="2" />
 
       <div css={styles.container}>
         {footerInfo.map(info => (

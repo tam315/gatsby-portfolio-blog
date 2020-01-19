@@ -63,7 +63,7 @@ const BlogPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SectionContainer colorNumber="1" isTop>
-        <SectionHeader colorNumber="1" text="Yuuniworks Blog" />
+        <SectionHeader colorNumber="1" text="My Awesome Blog" />
         <div css={styles.container}>
           <a href={rssPath} css={styles.rssLink}>
             <img src={rssSvg} alt="rss" />
@@ -89,9 +89,8 @@ const BlogPage = ({ data, location }) => {
 
         <SEO
           metaData={{
-            title: 'Yuuniworks Blog',
-            description:
-              '島根のフルスタックエンジニア「Yuuniworks」のブログです。技術的なネタを記録しています。',
+            title: 'My Awesome Blog',
+            description: 'My Awesome blog description',
           }}
         />
 
@@ -101,7 +100,7 @@ const BlogPage = ({ data, location }) => {
               rel: 'alternate',
               type: 'application/atom+xml',
               href: rssPath,
-              title: 'RSS for Yuuniworks Blog',
+              title: 'RSS for My Awesome Blog',
             },
           ]}
         />
