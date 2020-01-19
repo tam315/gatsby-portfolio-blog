@@ -41,7 +41,7 @@ const TopSection = () => {
         <img src={logoSvg} alt="Yuuniworksのロゴ" />
       </h1>
       <div css={styles.description}>
-        田村翔太と申します。<br />
+        My name is John Doe.<br />
         <a
           href="https://goo.gl/maps/HjyoY7NJ9j92"
           css={{ color: 'white' }}
