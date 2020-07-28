@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-glamor',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -19,12 +20,8 @@ module.exports = {
               allMarkdownRemark.edges.map(edge =>
                 Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.summary,
-                  url: `${site.siteMetadata.siteUrl}/blog${
-                    edge.node.fields.slug
-                  }`,
-                  guid: `${site.siteMetadata.siteUrl}/blog${
-                    edge.node.fields.slug
-                  }`,
+                  url: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
                   enclosure: {
                     url:
                       site.siteMetadata.siteUrl +
